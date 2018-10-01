@@ -7,8 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轱辘</title>
     <style>
-        *{margin:0;padding:0;box-sizing: border-box;}
-        :root{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
             --button-height: 32px;
             --font-size: 14px;
             --button-bg: white;
@@ -18,19 +23,32 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
+
         #app {
             margin: 20px;
         }
+
         body {
             font-size: var(--font-size);
+        }
+    </style>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-button></g-button>
+    <g-button >按钮</g-button>
+    <g-button icon="shezhi1" icon-position="left">按钮</g-button>
+    <g-button icon="shezhi1" icon-position="right">按钮</g-button>
+
 </div>
 
+
+<script src="//at.alicdn.com/t/font_860042_6ov6fcwl72w.js"></script>
 <script src="./src/app.js"></script>
 </body>
 </html>
