@@ -36,14 +36,23 @@
 </head>
 <body>
 <div id="app">
+
     <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
     <g-button icon="shezhi1" icon-position="left" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
     <g-button icon="shezhi1" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</g-button>
-    <g-icon name="upload"></g-icon>
+
+    <g-button-group>
+        <g-button icon="left">上一页</g-button>
+        <g-button>1</g-button>
+        <g-button>2</g-button>
+        <g-button>3</g-button>
+        <g-button>…</g-button>
+        <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
 </div>
 
 
-<script src="//at.alicdn.com/t/font_860042_xwtp9v5616.js"></script>
+<script src="//at.alicdn.com/t/font_860042_dp5sptsf4cm.js"></script>
 <script src="./src/app.js"></script>
 </body>
 </html>
