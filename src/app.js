@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Button from './g-button.vue'
-import Icon from './g-icon.vue'
-import ButtonGroup from './g-button-group'
+import Button from './button.vue'
+import Icon from './icon.vue'
+import ButtonGroup from './button-group'
 
 
 Vue.component('g-button',Button);
@@ -24,6 +24,7 @@ chai.use(spies);
 const expect = chai.expect;
 // 单元测试
 {
+    //测试按钮含有icon
     const Constructor = Vue.extend(Button);
     const vm = new Constructor({
         propsData: {
@@ -38,6 +39,7 @@ const expect = chai.expect;
     vm.$destroy()
 }
 {
+    //传入loading,会有loading
     const Constructor = Vue.extend(Button);
     const vm = new Constructor({
         propsData: {
