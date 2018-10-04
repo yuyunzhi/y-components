@@ -30,27 +30,45 @@
             font-size: var(--font-size);
         }
     </style>
+    <style>
+        .box{
+            margin:30px;
+        }
+    </style>
 
 </head>
 <body>
 <div id="app">
 
-    <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
-    <g-button icon="shezhi1" icon-position="left" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
-    <g-button icon="shezhi1" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</g-button>
+    <div class="box">
+        <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
+        <g-button icon="shezhi1" icon-position="left" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
+        <g-button icon="shezhi1" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</g-button>
 
-    <g-button-group>
-        <g-button icon="left">上一页</g-button>
-        <g-button>1</g-button>
-        <g-button>2</g-button>
-        <g-button>3</g-button>
-        <g-button>…</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>1</g-button>
+            <g-button>2</g-button>
+            <g-button>3</g-button>
+            <g-button>…</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
+
+    </div>
+
+
+    <div class="box">
+        <g-input value="123" disabled></g-input>
+        <g-input value="123" readonly></g-input>
+        <g-input value="123"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="123" error="姓名不能少于两个字"></g-input>
+    </div>
 </div>
 
 
-<script src="//at.alicdn.com/t/font_860042_dp5sptsf4cm.js"></script>
+<script src="//at.alicdn.com/t/font_860042_b2l86rcb93w.js"></script>
 <script src="./src/app.js"></script>
 </body>
 </html>
