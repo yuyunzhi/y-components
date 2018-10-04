@@ -15,5 +15,14 @@ new Vue({
         loading1:false,
         loading2:false,
         loading3:false,
+        msg:123
+    },
+    methods:{
+        InputChange(e){
+          console.log('1')
+        },
+        bindContent(e){
+            this.msg=e
+        }
     }
 });
