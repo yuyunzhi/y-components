@@ -1,12 +1,57 @@
 <template>
     <div class="toast">
         <slot></slot>
+        <div class="line"></div>
+        <span class="close" v-if="closeButton" @click="onClickButton">{{closeButton.text}}</span>
     </div>
 </template>
 
 <script>
     export default {
-        name: "GululuToast"
+        name: "GululuToast",
+        props: {
+            autoClose: {
+                type: Boolean,
+                default: true
+            },
+            autoCloseDelay: {
+                type: Number,
+                default: 3
+            },
+            closeButton:{
+                type:Object,
+                default: ()=>{
+                    return {
+                        text:'关闭',
+                        callback:undefined,
+                    }
+                }
+            }
+        },
+        mounted(){
+            if(this.autoClose){
+                setTimeout(()=>{
+                    this.close()
+                },this.autoCloseDelay*1000)
+            }
+        },
+        methods:{
+            close(){
+                this.$el.remove();
+               // this.$destroy()
+            },
+            onClickButton(){
+                //删除自己
+                this.close();
+                //删除后调用函数
+                if(this.closeButton && typeof this.closeButton.callback === 'function'){
+                    this.closeButton.callback(this)//this.代表当前实例
+                }
+            },
+            log(){
+                console.log('我是toast里面的函数')
+            }
+        }
     }
 </script>
 
@@ -29,5 +74,13 @@ $toast-bg:rgba(0,0,0,.75);
     border-radius:4px;
     box-shadow:0 0 3px 0 rgba(0,0,0,0.50);
     padding:0 16px;
+}
+.close{
+    padding-left:16px;
+}
+.line{
+    height:100%;
+    border-left:1px solid #666;
+    margin-left:16px;
 }
 </style>

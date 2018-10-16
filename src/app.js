@@ -44,8 +44,21 @@ new Vue({
         bindContent(e){
             this.msg=e
         },
+        log(){
+          console.log('我是app里面的log函数')
+        },
         showToast(){
-            this.$toast('totototototo')
+            this.$toast('i am message',{
+                autoClose:true,
+                autoCloseDelay:1,
+                closeButton:{
+                    text:'关闭',
+                    callback:(toast)=>{
+                        this.log();
+                        toast.log()
+                    },
+                }
+            })
         },
     }
 });
