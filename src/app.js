@@ -50,7 +50,7 @@ new Vue({
         showToast(){
             //$toast第一个参数可以是字符串也可以是html
             this.$toast('完',{
-                //position:'bottom',
+                position:'bottom',
                 enableHtml:true,
                 autoClose:true,
                 autoCloseDelay: 15,//秒
