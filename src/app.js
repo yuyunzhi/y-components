@@ -50,9 +50,10 @@ new Vue({
         showToast(){
             //$toast第一个参数可以是字符串也可以是html
             this.$toast('完',{
+                //position:'bottom',
                 enableHtml:true,
                 autoClose:true,
-                autoCloseDelay: 3,//秒
+                autoCloseDelay: 15,//秒
                 closeButton:{
                     text:'关闭',
                     callback:(toast)=>{
