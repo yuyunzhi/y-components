@@ -48,9 +48,11 @@ new Vue({
           console.log('我是app里面的log函数')
         },
         showToast(){
-            this.$toast('i am message',{
+            //$toast第一个参数可以是字符串也可以是html
+            this.$toast('完',{
+                enableHtml:true,
                 autoClose:true,
-                autoCloseDelay:1,
+                autoCloseDelay: 3,//秒
                 closeButton:{
                     text:'关闭',
                     callback:(toast)=>{

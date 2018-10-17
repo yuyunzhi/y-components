@@ -1,7 +1,10 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-        <div class="line"></div>
+    <div class="toast" ref="toast">
+        <div class="message">
+            <slot v-if="!enableHtml"></slot>
+            <div v-else v-html="$slots.default"></div>
+        </div>
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickButton">{{closeButton.text}}</span>
     </div>
 </template>
@@ -26,16 +29,30 @@
                         callback:undefined,
                     }
                 }
+            },
+            enableHtml:{
+                type:Boolean,
+                default:false
             }
         },
         mounted(){
-            if(this.autoClose){
-                setTimeout(()=>{
-                    this.close()
-                },this.autoCloseDelay*1000)
-            }
+            this.updateStyles();
+            this.execAutoClose()
+
         },
         methods:{
+            execAutoClose(){
+                if(this.autoClose){
+                    setTimeout(()=>{
+                        this.close()
+                    },this.autoCloseDelay*1000)
+                }
+            },
+            updateStyles(){
+                this.$nextTick(()=>{
+                    this.$refs.line.style.height=`${this.$refs.toast.getBoundingClientRect().height}px`
+                })
+            },
             close(){
                 this.$el.remove();
                // this.$destroy()
@@ -49,7 +66,7 @@
                 }
             },
             log(){
-                console.log('我是toast里面的函数')
+                console.log('我是toast里面的log函数')
             }
         }
     }
@@ -57,11 +74,11 @@
 
 <style scoped lang="scss">
 $font-size:14px;
-$toast-height:40px;
+$toast-min-height:40px;
 $toast-bg:rgba(0,0,0,.75);
 .toast{
     font-size:$font-size;
-    height: $toast-height;
+    min-height: $toast-min-height;
     line-height:1.8;
     position: fixed;
     top:0;
@@ -75,8 +92,13 @@ $toast-bg:rgba(0,0,0,.75);
     box-shadow:0 0 3px 0 rgba(0,0,0,0.50);
     padding:0 16px;
 }
+
+.message {
+    padding: 8px 0;
+}
 .close{
     padding-left:16px;
+    flex-shrink: 0;
 }
 .line{
     height:100%;
