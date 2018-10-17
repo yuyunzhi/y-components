@@ -38,6 +38,17 @@
             height:100px;
             border:1px solid red;
         }
+        .toast{
+            border:1px solid #666;
+            background:white;
+            padding:5px;
+            border-radius:3px;
+            cursor:pointer;
+            &:hover{
+            background:#666;
+            color:white;
+             }
+        }
     </style>
 
 </head>
@@ -90,7 +101,9 @@
 
 
     <div class="box">
-        <button @click="showToast">Toast按钮</button>
+        <button class="toast"  @click="showToast1">Toast-top</button>
+        <button class="toast" @click="showToast2">Toast-middle</button>
+        <button class="toast" @click="showToast3">Toast-bottom</button>
     </div>
 </div>
 

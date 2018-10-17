@@ -47,9 +47,19 @@ new Vue({
         log(){
           console.log('我是app里面的log函数')
         },
-        showToast(){
+        showToast1(){
+          this.$toast('完完完',{
+              position:'top'
+            })
+        },
+        showToast2(){
+            this.$toast('完完完',{
+                position:'middle'
+            })
+        },
+        showToast3(){
             //$toast第一个参数可以是字符串也可以是html
-            this.$toast('完',{
+            this.$toast('完完完',{
                 position:'bottom',
                 enableHtml:true,
                 autoClose:true,
