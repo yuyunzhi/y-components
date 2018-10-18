@@ -15,11 +15,11 @@
 <script>
     //构造组件的选项
     export default {
-        name: 'GuluToast',
+        name: 'GululuToast',
         props: {
             autoClose: {
                 type: [Boolean, Number],
-                default: 5,
+                default: 3,
                 validator (value) {
                     return value === false || typeof value === 'number';
                 }

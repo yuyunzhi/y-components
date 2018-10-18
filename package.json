@@ -1,6 +1,6 @@
 {
   "name": "yukaka",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
