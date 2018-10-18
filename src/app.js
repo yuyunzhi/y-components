@@ -45,7 +45,7 @@ new Vue({
         loading2:false,
         loading3:false,
         msg:123,
-        selectedTab:'sports'
+        selectedTab:'sports',
     },
     methods:{
         yyy(name){

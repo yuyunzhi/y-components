@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-head">
+    <div class="tabs-head" >
         <slot></slot>
         <div class="actions-wrapper">
             <slot name="actions"></slot>
@@ -12,12 +12,23 @@
         name: "GululuTabsHead",
         inject:['eventBus'],
         created(){
-            console.log('tabs-head',this.eventBus)
+
 
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
+$tab-height:40px;
+.tabs-head{
+    display:flex;
+    height: $tab-height;
+    justify-content: flex-start;
+    align-items: center;
+    border:1px solid red;
+    .actions-wrapper{
+        margin-left:auto;
+    }
+}
 </style>

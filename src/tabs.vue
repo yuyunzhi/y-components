@@ -33,15 +33,18 @@ import Vue from 'vue'
 
         },
         mounted(){
-            this.$emit('update:selected','abc')
-        },
-        created(){
             //console.log('tabs',this.eventBus)
-            //this.$emit('update:selected','xxx')
+            //console.log(this.selected) ;  //打出来的是sports
+            //初始状态sports
+            this.eventBus.$emit('update:selected',this.selected);
+
+
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.tabs{
 
+}
 </style>

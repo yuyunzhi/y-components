@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-pane">
+    <div class="tabs-pane" :class="classes" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -8,14 +8,39 @@
     export default {
         name: "GululuTabsPane",
         inject:['eventBus'],
-        mounted(){
+        data(){
+            return {
+                active:false,
+            }
+        },
+        computed:{
+            classes(){
+                return {'active': this.active === true }
+            }
+        },
+        props:{
+            name:{
+                type:String,
+                required:true,
+            }
+        },
+        created(){
             this.eventBus.$on('update:selected',(name)=>{
-                console.log('pane name:',name)
+                if( name === this.name ){
+                    this.active= true;
+                }else{
+                    this.active=false;
+                }
             });
         },
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.tabs-pane{
+    &.active{
+        background:red;
+    }
+}
 
 </style>
