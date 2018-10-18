@@ -48,22 +48,21 @@ new Vue({
           console.log('我是app里面的log函数')
         },
         showToast1(){
-          this.$toast('完完完',{
+          this.$toast('一首凉凉送给你',{
               position:'top'
             })
         },
         showToast2(){
-            this.$toast('完完完',{
+            this.$toast('两首凉凉送给你',{
                 position:'middle'
             })
         },
         showToast3(){
             //$toast第一个参数可以是字符串也可以是html
-            this.$toast('完完完',{
+            this.$toast('三首凉凉送给你',{
                 position:'bottom',
                 enableHtml:true,
-                autoClose:true,
-                autoCloseDelay: 15,//秒
+                autoClose:3,//false 或具体 数字
                 closeButton:{
                     text:'关闭',
                     callback:(toast)=>{

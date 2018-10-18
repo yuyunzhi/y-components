@@ -44,10 +44,6 @@
             padding:5px;
             border-radius:3px;
             cursor:pointer;
-            &:hover{
-            background:#666;
-            color:white;
-             }
         }
     </style>
 
@@ -55,9 +51,9 @@
 <body>
 <div id="app">
 
-<!--
+
     <div class="box">
-        &lt;!&ndash;参数 :loading icon icon-position&ndash;&gt;
+        <!--参数 :loading icon icon-position-->
         <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
         <g-button icon="shezhi1" icon-position="left" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
         <g-button icon="shezhi1" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</g-button>
@@ -75,7 +71,7 @@
 
 
     <div class="box">
-        &lt;!&ndash;//g-input接收参数 value disabled readonly error 各类事件：@change @input @focus @blur&ndash;&gt;
+       <!--g-input接收参数 value disabled readonly error 各类事件：@change @input @focus @blur-->
         <g-input value="123" disabled></g-input>
         <g-input value="123" readonly></g-input>
         <g-input value="123"></g-input>
@@ -88,8 +84,8 @@
 
 
     <div class="box">
-        &lt;!&ndash;//g-row接收参数 gutter align&ndash;&gt;
-        &lt;!&ndash;//g-col接收参数 span  offset  :ipad  :narrow-pc :pc  :wide-pc&ndash;&gt;
+        <!--g-row接收参数 gutter align-->
+        <!--g-col接收参数 span  offset  :ipad  :narrow-pc :pc  :wide-pc-->
         <g-row gutter="0">
             <g-col class="col" span="8" ></g-col>
             <g-col class="col" span="2" offset="1"></g-col>
@@ -97,8 +93,6 @@
             <g-col class="col" span="9" offset="1" ></g-col>
         </g-row>
     </div>
--->
-
 
     <div class="box">
         <button class="toast"  @click="showToast1">Toast-top</button>
