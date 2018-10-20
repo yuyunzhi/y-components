@@ -56,6 +56,6 @@ import Vue from 'vue'
 
 <style scoped lang="scss">
 .tabs{
-border:1px solid red;
+
 }
 </style>
