@@ -42,6 +42,9 @@ $borderColor:blue;
     }
     >.actions-wrapper{
         margin-left:auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 </style>

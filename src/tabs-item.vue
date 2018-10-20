@@ -15,7 +15,10 @@
         },
         computed:{
             classes(){
-                return {'active': this.active === true }
+                return {
+                    active:this.active,
+                    disabled:this.disabled
+                }
             }
         },
         props:{
@@ -42,6 +45,7 @@
     },
         methods:{
             getName(){
+                if(this.disabled){return}
                 this.eventBus.$emit('update:selected',this.name,this);
             }
         }
@@ -50,6 +54,7 @@
 
 <style scoped lang="scss">
     $blue:blue;
+    $disabled-color:grey;
 .tabs-item{
     padding:0 1em;
     cursor: pointer;
@@ -59,6 +64,9 @@
     justify-content: center;
     &.active{
         color:$blue;
+    }
+    &.disabled{
+        color:$disabled-color;
     }
 }
 </style>
