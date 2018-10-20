@@ -36,7 +36,18 @@ import Vue from 'vue'
             //console.log('tabs',this.eventBus)
             //console.log(this.selected) ;  //打出来的是sports
             //初始状态sports
-            this.eventBus.$emit('update:selected',this.selected);
+
+            this.$children.forEach((vm,index)=>{
+                //console.log(vm.$options.name);GululuTabsHead  GululuTabsBody
+                if(vm.$options.name === 'GululuTabsHead'){
+                    vm.$children.forEach((item,index)=>{
+                        if(item.$options.name === 'GululuTabsItem' && item.name === this.selected){
+                            this.eventBus.$emit('update:selected',this.selected,item);
+                        }
+                    })
+                }
+            });
+
 
 
         }
@@ -45,6 +56,6 @@ import Vue from 'vue'
 
 <style scoped lang="scss">
 .tabs{
-
+border:1px solid red;
 }
 </style>

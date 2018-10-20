@@ -32,32 +32,33 @@
             this.eventBus.$on('update:selected',(name)=>{
                 if( name === this.name ){
                     this.active= true;
-                    console.log(this.name,'被选中了')
+
                 }else{
                     this.active=false;
-                    console.log(this.name,'未被选中')
+
                 }
             });
 
     },
         methods:{
             getName(){
-                this.eventBus.$emit('update:selected',this.name);
+                this.eventBus.$emit('update:selected',this.name,this);
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
+    $blue:blue;
 .tabs-item{
-    padding:0 2em;
+    padding:0 1em;
     cursor: pointer;
     height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
     &.active{
-        background:red;
+        color:$blue;
     }
 }
 </style>
