@@ -32,7 +32,7 @@
     </style>
     <style>
         .box{
-            margin:30px 0;
+            margin:30px;
         }
         .col{
             height:100px;
@@ -101,24 +101,32 @@
     </div>
 -->
 
-    <div class="box">
-       <!-- <g-tabs :selected="selectedTab" @update:selected="selectedTab= $event">-->
-        <g-tabs :selected.sync="selectedTab">
-            <g-tabs-head>
-                <template slot="actions">
-                    <button>按钮</button>
-                </template>
-                <g-tabs-item name="women">美女</g-tabs-item>
-                <g-tabs-item name="finance" disabled >财经</g-tabs-item>
-                <g-tabs-item name="sports">体育</g-tabs-item>
+    <!--<div class="box">-->
+       <!--&lt;!&ndash; <g-tabs :selected="selectedTab" @update:selected="selectedTab= $event">&ndash;&gt;-->
+        <!--<g-tabs :selected.sync="selectedTab">-->
+            <!--<g-tabs-head>-->
+                <!--<template slot="actions">-->
+                    <!--<button>按钮</button>-->
+                <!--</template>-->
+                <!--<g-tabs-item name="women">美女</g-tabs-item>-->
+                <!--<g-tabs-item name="finance" disabled >财经</g-tabs-item>-->
+                <!--<g-tabs-item name="sports">体育</g-tabs-item>-->
 
-            </g-tabs-head>
-            <g-tabs-body>
-                <g-tabs-pane name="women">美女xxxxx</g-tabs-pane>
-                <g-tabs-pane name="finance">财经xxxxx</g-tabs-pane>
-                <g-tabs-pane name="sports">体育xxxxx</g-tabs-pane>
-            </g-tabs-body>
-        </g-tabs>
+            <!--</g-tabs-head>-->
+            <!--<g-tabs-body>-->
+                <!--<g-tabs-pane name="women">美女xxxxx</g-tabs-pane>-->
+                <!--<g-tabs-pane name="finance">财经xxxxx</g-tabs-pane>-->
+                <!--<g-tabs-pane name="sports">体育xxxxx</g-tabs-pane>-->
+            <!--</g-tabs-body>-->
+        <!--</g-tabs>-->
+    <!--</div>-->
+
+    <div class="box">
+        <g-collapse>
+            <g-collapse-item title="标题1">内容1</g-collapse-item>
+            <g-collapse-item title="标题2">内容2</g-collapse-item>
+            <g-collapse-item title="标题3">内容3</g-collapse-item>
+        </g-collapse>
     </div>
 
 </div>
