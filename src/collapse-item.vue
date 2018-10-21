@@ -3,7 +3,7 @@
         <div class="title" @click="toggle">
             {{title}}
         </div>
-        <div class="content" v-if="open">
+        <div class="content" ref="content" v-if="open">
             <slot></slot>
         </div>
     </div>
@@ -17,6 +17,10 @@
             title:{
                 type:String,
                 required:true
+            },
+            name:{
+                type:String,
+                required:true,
             }
         },
         inject:['eventBus'],
@@ -26,25 +30,24 @@
           }
         },
         methods:{
-            toggle(){
-                if(this.open){
-                    this.open=false
-                }else{
-                    this.open=true;
-                    this.eventBus && this.eventBus.$emit('update:selected',this)
+            toggle (){
+                if (this.open) {
+                    this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
+                } else {
+                    this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
                 }
-
             },
-            close(){
-                this.open=false
-            }
         },
         mounted(){
-            this.eventBus && this.eventBus.$on('update:selected',(vm)=>{
-                if(vm !== this){
-                    this.close()
+            this.eventBus && this.eventBus.$on('update:selected', (names) => {
+                console.log('names',names)
+                if (names.indexOf(this.name) >= 0) {
+                    this.open = true
+                } else {
+                    this.open = false
                 }
             })
+
         }
     }
 </script>
@@ -52,6 +55,7 @@
 <style scoped lang="scss">
     $grey:#ddd;
     $border-radius:4px;
+    $background:rgb(250,250,250);
     .collapseItem{
         >.title{
             border:1px solid $grey;
@@ -62,9 +66,10 @@
             display: flex;
             align-items: center;
             padding:0 8px;
+            background:$background;
         }
         >.content{
-            padding:0 8px;
+            padding:8px;
         }
         &:first-child{
             >.title{
