@@ -8,32 +8,26 @@
     <title>轱辘</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            margin: 0px;
+            padding: 0px;
             box-sizing: border-box;
-        }
-        :root {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
         }
         #app {
 
         }
 
-        body {
-            font-size: var(--font-size);
-        }
     </style>
     <style>
         .box{
-            margin:30px;
+
         }
+.xxx{
+    border:1px solid blue;
+    position:relative;
+    width:500px;
+    left:50px;
+
+}
         .col{
             height:100px;
             border:1px solid red;
@@ -51,83 +45,71 @@
 <body>
 <div id="app">
 
+    <!--<div class="box">-->
+        <!--&lt;!&ndash;参数 :loading icon icon-position&ndash;&gt;-->
+        <!--<y-button>按钮</y-button>-->
+        <!--<y-button icon="shezhi1" icon-position="right">按钮</y-button>-->
+        <!--<y-button loading>按钮</y-button>-->
+        <!--<y-button disabled>按钮</y-button>-->
+        <!--<y-button-group>-->
+            <!--<y-button icon="left">上一页</y-button>-->
+            <!--<y-button icon="right" icon-position="right">下一页</y-button>-->
+        <!--</y-button-group>-->
+    <!--</div>-->
 
-  <!--  <div class="box">
-        &lt;!&ndash;参数 :loading icon icon-position&ndash;&gt;
-        <g-button :loading="loading1" @click="loading1=!loading1">按钮</g-button>
-        <g-button icon="shezhi1" icon-position="left" :loading="loading2" @click="loading2=!loading2">按钮</g-button>
-        <g-button icon="shezhi1" icon-position="right" :loading="loading3" @click="loading3=!loading3">按钮</g-button>
-
-        <g-button-group>
-            <g-button icon="left">上一页</g-button>
-            <g-button>1</g-button>
-            <g-button>2</g-button>
-            <g-button>3</g-button>
-            <g-button>…</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
-
-    </div>
-
-
-    <div class="box">
-       &lt;!&ndash;g-input接收参数 value disabled readonly error 各类事件：@change @input @focus @blur&ndash;&gt;
-        <g-input value="123" disabled></g-input>
-        <g-input value="123" readonly></g-input>
-        <g-input value="123"></g-input>
-        <g-input value="123" @change="InputChange" @input="bindContent"></g-input>
-        {{msg}}
+<!--    <div class="box">
+        <y-input value="这是输入框" @change="aaa" @input="bbb" @focus="ccc" @blur="ddd"></y-input>
+        <y-input value="这是输入框" disabled></y-input>
+        <y-input value="这是输入框" readonly></y-input>
     </div>
     <div class="box">
-        <g-input value="123" error="姓名不能少于两个字"></g-input>
-    </div>
+        <y-input value="12311" error="请重新输入手机号码"></y-input>
+    </div>-->
 
-
-    <div class="box">
-        &lt;!&ndash;g-row接收参数 gutter align&ndash;&gt;
-        &lt;!&ndash;g-col接收参数 span  offset  :ipad  :narrow-pc :pc  :wide-pc&ndash;&gt;
-        <g-row gutter="0">
-            <g-col class="col" span="8" ></g-col>
-            <g-col class="col" span="2" offset="1"></g-col>
-            <g-col class="col" span="2" offset="1"></g-col>
-            <g-col class="col" span="9" offset="1" ></g-col>
-        </g-row>
+<!--    <div class="box">
+        y-row接收参数 gutter align
+        y-col接收参数 span  offset  :ipad  :narrow-pc :pc  :wide-pc
+        <y-row gutter="0">
+            <y-col class="col" span="8" ></y-col>
+            <y-col class="col" span="2" offset="1"></y-col>
+            <y-col class="col" span="2" offset="1"></y-col>
+            <y-col class="col" span="9" offset="1" ></y-col>
+        </y-row>
     </div>
 
     <div class="box">
         <button class="toast"  @click="showToast1">Toast-top</button>
         <button class="toast" @click="showToast2">Toast-middle</button>
         <button class="toast" @click="showToast3">Toast-bottom</button>
-    </div>
--->
-
-    <!--<div class="box">-->
-       <!--&lt;!&ndash; <g-tabs :selected="selectedTab" @update:selected="selectedTab= $event">&ndash;&gt;-->
-        <!--<g-tabs :selected.sync="selectedTab">-->
-            <!--<g-tabs-head>-->
-                <!--<template slot="actions">-->
-                    <!--<button>按钮</button>-->
-                <!--</template>-->
-                <!--<g-tabs-item name="women">美女</g-tabs-item>-->
-                <!--<g-tabs-item name="finance" disabled >财经</g-tabs-item>-->
-                <!--<g-tabs-item name="sports">体育</g-tabs-item>-->
-
-            <!--</g-tabs-head>-->
-            <!--<g-tabs-body>-->
-                <!--<g-tabs-pane name="women">美女xxxxx</g-tabs-pane>-->
-                <!--<g-tabs-pane name="finance">财经xxxxx</g-tabs-pane>-->
-                <!--<g-tabs-pane name="sports">体育xxxxx</g-tabs-pane>-->
-            <!--</g-tabs-body>-->
-        <!--</g-tabs>-->
-    <!--</div>-->
+    </div>-->
 
     <div class="box">
-        <g-collapse :selected.sync="selectedTab" single>
-            <g-collapse-item title="海贼王" name="1">《ONE PIECE》是日本漫画家尾田荣一郎创作的一部著名的少年漫画作品，至今仍连载中，该作品内容为描述一名少年蒙奇·D·路飞想要得到“ONE PIECE”和成为“海贼王”的故事。</g-collapse-item>
-            <g-collapse-item title="火影忍者"  name="2"> 《火影忍者》，通常简称为“火影”，为日本漫画家岸本齐史创作的少年漫画，讲述忍者世界里围绕着身为对手的漩涡鸣人和宇智波佐助两人，与其他角色的经历。</g-collapse-item>
-            <g-collapse-item title="七龙珠"  name="3">《七龙珠》（日语：ドラゴンボール，英语：DRAGON BALL）是日本漫画家鸟山明的格鬥冒險漫画，該作品於1984年到1995年间在集英社《週刊少年Jump》週刊上连载。</g-collapse-item>
-        </g-collapse>
+        <!--<y-tabs :selected="selectedTab" @update:selected="selectedTab= $event">-->
+        <y-tabs :selected.sync="selectedTab" class="xxx">
+            <y-tabs-head>
+                <template slot="actions">
+                    <button>按钮</button>
+                </template>
+                <y-tabs-item name="one">one</y-tabs-item>
+                <y-tabs-item name="two" disabled >two</y-tabs-item>
+                <y-tabs-item name="three">three</y-tabs-item>
+
+            </y-tabs-head>
+            <y-tabs-body>
+                <y-tabs-pane name="one">内容 1</y-tabs-pane>
+                <y-tabs-pane name="two">内容 2</y-tabs-pane>
+                <y-tabs-pane name="three">内容 3</y-tabs-pane>
+            </y-tabs-body>
+        </y-tabs>
     </div>
+
+<!--    <div class="box">
+        <y-collapse :selected.sync="selectedTab" >
+            <y-collapse-item title="海贼王" name="1">《ONE PIECE》是日本漫画家尾田荣一郎创作的一部著名的少年漫画作品，至今仍连载中，该作品内容为描述一名少年蒙奇·D·路飞想要得到“ONE PIECE”和成为“海贼王”的故事。</y-collapse-item>
+            <y-collapse-item title="火影忍者"  name="2"> 《火影忍者》，通常简称为“火影”，为日本漫画家岸本齐史创作的少年漫画，讲述忍者世界里围绕着身为对手的漩涡鸣人和宇智波佐助两人，与其他角色的经历。</y-collapse-item>
+            <y-collapse-item title="七龙珠"  name="3">《七龙珠》（日语：ドラゴンボール，英语：DRAGON BALL）是日本漫画家鸟山明的格鬥冒險漫画，該作品於1984年到1995年间在集英社《週刊少年Jump》週刊上连载。</y-collapse-item>
+        </y-collapse>
+    </div>-->
 
 </div>
 

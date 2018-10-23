@@ -1,5 +1,5 @@
 <template>
-    <svg class="g-icon">
+    <svg class="y-icon">
         <use :xlink:href=`#i-${name}`></use>
     </svg>
 </template>
@@ -11,8 +11,9 @@
 </script>
 
 <style lang="scss" scoped>
-    .g-icon {
+    .y-icon {
         width: 1em;
         height: 1em;
+        fill:white;
     }
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
+    <button class="y-button" :class="classes"
     @click="$emit('click')"
     >
-        <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
-        <g-icon class="icon loading" v-if="loading" name="loading"></g-icon>
+        <y-icon class="icon" v-if="icon && !loading" :name="icon"></y-icon>
+        <y-icon class="icon loading" v-if="loading" name="loading"></y-icon>
         <span class="content">
             <slot ></slot>
         </span>
@@ -14,9 +14,18 @@
     import Icon from './icon'
     export default {
         components:{
-          'g-icon':Icon
+          'y-icon':Icon
         },
         //props:['icon','iconPosition']
+        computed:{
+            classes(){
+                return {
+                    [`icon-${this.iconPosition}`]:true,
+                    disabled:this.disabled
+                }
+            }
+        },
+
         props:{
             icon:{},
             loading:{
@@ -29,12 +38,28 @@
                 validator(value){
                     return !(value !== 'left' && value !== 'right');
                 }
+            },
+            disabled:{
+                type:Boolean,
+                default:false
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+
+    $button-height: 32px;
+    $font-size: 14px;
+    $button-bg: #40a9ff;
+    $button-active-bg:  #096dd9;//#40a9ff
+    $border-radius: 4px;
+    $color: white;
+    $border-color: white;
+    $border-color-hover: #1890ff;  //#096dd9
+
+    $disabled-color:rgb(153,153,153);
+    $disabled-bg:white;
     @keyframes spin {
         0%{transform: rotate(0)}
         100%{transform: rotate(360deg)}
@@ -42,30 +67,36 @@
     .loading{
         animation: spin 2s linear infinite;
     }
-    .g-button {
-        font-size: var(--font-size);
-        height: var(--button-height);
+    .y-button {
+        font-size: $font-size;
+        height: $button-height;
         padding: 0 1em;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+        background: $button-bg;
         display:inline-flex;
         justify-content: center;
         align-items: center;
         vertical-align: middle;
+        color:$color;
 
         &:hover {
-            border-color: var(--border-color-hover);
+            border-color: $border-color-hover;
             cursor: pointer;
 
         }
-        &:active {background-color: var(--button-active-bg);}
+        &:active {background-color: $button-active-bg;}
         &:focus {outline: none;}
         > .content{order:2;}
         > .icon{order:1;margin-right:.3em;}
         &.icon-right{
             > .content{order:1;}
             > .icon{order:2;margin-right:0;margin-left:.3em;}
+        }
+        &.disabled{
+            border:1px solid $disabled-color;
+            color:$disabled-color;
+            background:$disabled-bg;
         }
     }
 </style>

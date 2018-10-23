@@ -21,26 +21,26 @@ import Collapse from './collapse'
 import CollapseItem from './collapse-item'
 
 
-Vue.component('g-button', Button);
-Vue.component('g-icon', Icon);
-Vue.component('g-button-group', ButtonGroup);
-Vue.component('g-input', Input);
-Vue.component('g-row', Row);
-Vue.component('g-col', Col);
-Vue.component('g-layout', Layout);
-Vue.component('g-header', Header);
-Vue.component('g-content', Content);
-Vue.component('g-footer', Footer);
-Vue.component('g-sider', Sider);
-Vue.component('g-toast', Toast);
+Vue.component('y-button', Button);
+Vue.component('y-icon', Icon);
+Vue.component('y-button-group', ButtonGroup);
+Vue.component('y-input', Input);
+Vue.component('y-row', Row);
+Vue.component('y-col', Col);
+Vue.component('y-layout', Layout);
+Vue.component('y-header', Header);
+Vue.component('y-content', Content);
+Vue.component('y-footer', Footer);
+Vue.component('y-sider', Sider);
+Vue.component('y-toast', Toast);
 Vue.use(plugin);
-Vue.component('g-tabs', Tabs);
-Vue.component('g-tabs-head', TabsHead);
-Vue.component('g-tabs-body', TabsBody);
-Vue.component('g-tabs-item', TabsItem);
-Vue.component('g-tabs-pane', TabsPane);
-Vue.component('g-collapse', Collapse);
-Vue.component('g-collapse-item', CollapseItem);
+Vue.component('y-tabs', Tabs);
+Vue.component('y-tabs-head', TabsHead);
+Vue.component('y-tabs-body', TabsBody);
+Vue.component('y-tabs-item', TabsItem);
+Vue.component('y-tabs-pane', TabsPane);
+Vue.component('y-collapse', Collapse);
+Vue.component('y-collapse-item', CollapseItem);
 
 
 new Vue({
@@ -50,7 +50,7 @@ new Vue({
         loading2:false,
         loading3:false,
         msg:123,
-        selectedTab:['1','2']//'sports',
+        selectedTab:'one',//['1','2']//'sports',
     },
     methods:{
         yyy(name){
