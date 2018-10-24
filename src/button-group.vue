@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name:'YButtonGroup',
         mounted(){
             for(let node of this.$el.children){
                 let name = node.nodeName.toLowerCase();

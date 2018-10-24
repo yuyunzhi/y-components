@@ -16,8 +16,8 @@
 <script>
     import Icon from './icon'
     export default {
+        name:'YInput',
         components: {Icon},
-        name: 'GInput',
         props: {
             value: {
                 type: String

@@ -50,7 +50,7 @@ new Vue({
         loading2:false,
         loading3:false,
         msg:123,
-        selectedTab:'one',//['1','2']//'sports',
+        selectedTab:['1','2']//'sports',
     },
     methods:{
         yyy(name){
@@ -66,7 +66,7 @@ new Vue({
           console.log('我是app里面的log函数')
         },
         showToast1(){
-          this.$toast('一首凉凉送给你',{
+          this.$toast('这是消息体',{
               position:'top'
             })
         },
@@ -77,15 +77,14 @@ new Vue({
         },
         showToast3(){
             //$toast第一个参数可以是字符串也可以是html
-            this.$toast('三首凉凉送给你',{
-                position:'bottom',
+            this.$toast('这是消息体',{
+                position:'top',
                 enableHtml:true,
                 autoClose:3,//false 或具体 数字
                 closeButton:{
                     text:'关闭',
                     callback:(toast)=>{
                         this.log();
-                        toast.log()
                     },
                 }
             })

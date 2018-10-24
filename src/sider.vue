@@ -2,13 +2,15 @@
     <transition name="slide">
         <div class="sider" v-if="visible">
             <slot></slot>
-            <button @click="visible=false">close</button>
+            <button class="button"  @click="visible=false">
+                <y-icon class="icon" name="searchclose"></y-icon>
+            </button>
         </div>
     </transition>
 </template>
 <script>
     export default {
-        name: 'GululuSider',
+        name: 'YSider',
         data () {
             return {
                 visible: true
@@ -25,6 +27,17 @@
             position: absolute;
             top: 0;
             right: 0;
+        }
+        .button{
+            border:1px solid transparent;
+            background:transparent;
+            cursor: pointer;
+            margin-top:2px;
+            margin-right:2px;
+            .icon{
+                fill:#666;
+
+            }
         }
     }
     .slide-enter-active, .slide-leave-active {

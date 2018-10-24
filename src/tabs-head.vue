@@ -10,23 +10,39 @@
 
 <script>
     export default {
-        name: "GululuTabsHead",
+        name: "YTabsHead",
         inject:['eventBus'],
         mounted(){
             this.eventBus.$on("update:selected",(item,vm)=>{
                 let {width,height,top,left}=vm.$el.getBoundingClientRect();
-                //console.log('left',left);
+                let array=[];
+                vm.$parent.$children.forEach((component,index)=>{
+                    array.push(component.$el.getBoundingClientRect().width)
+                });
+                vm.$parent.$children.forEach((component,index)=>{
+                    let width=0;
+                    if(index===0){
+                        this.$refs.line.style.left=`0px`
+                    }else{
+                        if(component.name===item){
+                            for(let i=0;i<index;i++){
+                                width=width+array[i]
+                            }
+                        }
+                        this.$refs.line.style.left=`${width}px`
+                    }
+                });
                 this.$refs.line.style.width=`${width}px`;
-                this.$refs.line.style.left=`${left}px`
+
             })
-        }
+        },
     }
 </script>
 
 <style scoped lang="scss">
 
 $tab-height:40px;
-$borderColor:blue;
+$borderColor:#1890ff;
 .tabs-head{
     display:flex;
     height: $tab-height;

@@ -12,7 +12,7 @@
 <script>
 
     export default {
-        name: "GululuCollapseItem",
+        name: "YCollapseItem",
         props:{
             title:{
                 type:String,
@@ -40,7 +40,6 @@
         },
         mounted(){
             this.eventBus && this.eventBus.$on('update:selected', (names) => {
-                console.log('names',names)
                 if (names.indexOf(this.name) >= 0) {
                     this.open = true
                 } else {

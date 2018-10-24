@@ -15,7 +15,7 @@
         return valid
     };
     export default {
-        name: 'GululuCol',
+        name: 'YCol',
         props: {
             span: {
                 type: [Number, String]
@@ -33,6 +33,7 @@
                 gutter: 0,
             }
         },
+
         methods: {
             createClasses (obj, str = '') {
                 if (!obj) {return []}
@@ -55,10 +56,14 @@
                 ]
             },
             colStyle () {
-                return {
-                    paddingLeft: this.gutter / 2 + 'px',
-                    paddingRight: this.gutter / 2 + 'px',
-                }
+                this.$nextTick(()=>{
+                    console.log(this.gutter);
+                    return {
+                        paddingLeft: this.gutter / 2 + 'px',
+                        paddingRight: this.gutter / 2 + 'px',
+                    }
+                })
+
             }
         }
     }

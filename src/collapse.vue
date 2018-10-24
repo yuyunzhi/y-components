@@ -7,7 +7,7 @@
 <script>
     import Vue from 'vue'
     export default {
-        name: "GululuCollapse",
+        name: "YCollapse",
         props:{
             single:{
                 type:Boolean,

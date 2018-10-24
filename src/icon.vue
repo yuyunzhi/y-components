@@ -6,14 +6,16 @@
 
 <script>
     export default {
+        name:'YIcon',
         props:['name']
     }
 </script>
 
 <style lang="scss" scoped>
+    $color:#1890ff;//;
     .y-icon {
         width: 1em;
         height: 1em;
-        fill:white;
+        fill:$color;
     }
 </style>

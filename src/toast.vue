@@ -15,7 +15,7 @@
 <script>
     //构造组件的选项
     export default {
-        name: 'GululuToast',
+        name: 'YToast',
         props: {
             autoClose: {
                 type: [Boolean, Number],
@@ -45,7 +45,7 @@
             }
         },
         mounted () {
-            this.updateStyles()
+            this.updateStyles();
             this.execAutoClose()
         },
         computed: {
@@ -70,12 +70,12 @@
                 }
             },
             close () {
-                this.$el.remove()
-                this.$emit('close')
+                this.$el.remove();
+                this.$emit('close');
                 this.$destroy()
             },
             onClickClose () {
-                this.close()
+                this.close();
                 if (this.closeButton && typeof this.closeButton.callback === 'function') {
                     this.closeButton.callback(this)//this === toast实例
                 }
@@ -86,7 +86,9 @@
 <style scoped lang="scss">
     $font-size: 14px;
     $toast-min-height: 40px;
-    $toast-bg: rgba(0, 0, 0, 0.75);
+    $toast-bg: white;
+    $toast-border:rgb(230,230,230);
+    $toast-color:black;
     @keyframes slide-up {
         0% {opacity: 0; transform: translateY(100%);}
         100% {opacity: 1;transform: translateY(0%);}
@@ -131,8 +133,8 @@
     .toast {
         font-size: $font-size; min-height: $toast-min-height; line-height: 1.8;
         display: flex;
-        color: white; align-items: center; background: $toast-bg; border-radius: 4px;
-        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.50); padding: 0 16px;
+        color: $toast-color; align-items: center; background: $toast-bg; border-radius: 4px;
+        box-shadow: 0 0 3px 2px rgba(230, 230, 230, 0.50); padding: 0 16px;
         .message {
             padding: 8px 0;
         }
@@ -142,8 +144,9 @@
         }
         .line {
             height: 100%;
-            border-left: 1px solid #666;
+            border-left: 1px solid $toast-border;
             margin-left: 16px;
+            border-color:$toast-color;
         }
     }
 </style>

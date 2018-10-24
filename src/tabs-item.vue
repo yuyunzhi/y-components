@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "GululuTabsItem",
+        name: "YTabsItem",
         inject:['eventBus'],
         data(){
             return {
@@ -49,6 +49,7 @@
         methods:{
             onClick(){
                 if(this.disabled){return}
+
                 this.eventBus.$emit('update:selected',this.name,this);
                 this.$emit('click',this)
             }
@@ -57,7 +58,7 @@
 </script>
 
 <style scoped lang="scss">
-    $blue:blue;
+    $blue:#1890ff;
     $disabled-color:grey;
 .tabs-item{
     padding:0 1em;

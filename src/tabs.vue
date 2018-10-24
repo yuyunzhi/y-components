@@ -7,19 +7,12 @@
 <script>
 import Vue from 'vue'
     export default {
-        name: "GululuTabs",
+        name: "YTabs",
         props:{
             selected:{
                 type:String,
                 required: true,
             },
-            direction:{
-                type:String,
-                default:'horizontal',
-                validator(value){
-                    return ['horizontal','vertical'].indexOf(value)>=0
-                }
-            }
         },
         data(){
           return{
@@ -33,17 +26,14 @@ import Vue from 'vue'
 
         },
         mounted(){
-            //console.log('tabs',this.eventBus)
-            //console.log(this.selected) ;  //打出来的是sports
-            //初始状态sports
+
             if(this.$children.length === 0 ){
                 console && console.warn && console.warn('tabs的子组件应该是tabs-head 和 tabs-body')
             }
             this.$children.forEach((vm,index)=>{
-                //console.log(vm.$options.name);GululuTabsHead  GululuTabsBody
-                if(vm.$options.name === 'GululuTabsHead'){
+                if(vm.$options.name === 'YTabsHead'){
                     vm.$children.forEach((item,index)=>{
-                        if(item.$options.name === 'GululuTabsItem' && item.name === this.selected){
+                        if(item.$options.name === 'YTabsItem' && item.name === this.selected){
                             this.eventBus.$emit('update:selected',this.selected,item);
                         }
                     })

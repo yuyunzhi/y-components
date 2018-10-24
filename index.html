@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>轱辘</title>
+    <title>余咖咖的UI框架</title>
     <style>
         * {
             margin: 0px;
@@ -14,15 +14,16 @@
         }
         #app {
 
+            border:1px solid red;
         }
 
     </style>
     <style>
         .box{
-
+            margin:20px;
         }
 .xxx{
-    border:1px solid blue;
+
     position:relative;
     width:500px;
     left:50px;
@@ -30,7 +31,13 @@
 }
         .col{
             height:100px;
-            border:1px solid red;
+            background:#40a9ff;
+            color:white;
+            border:1px solid #1890ff;
+            text-align: center;
+            line-height:100px;
+            font-size:20px;
+
         }
         .toast{
             border:1px solid #666;
@@ -39,6 +46,11 @@
             border-radius:3px;
             cursor:pointer;
         }
+        .layout{color: white;}
+        .header{height: 40px; background:#40a9ff;text-align: center;line-height: 40px;}
+        .content{height: 80px; background:#096dd9;text-align: center;line-height: 80px;}
+        .footer{height: 40px; background:#40a9ff;text-align: center;line-height: 40px;}
+        .sider{height: 160px; background:#1890ff;text-align: center;line-height: 160px;width:30%;}
     </style>
 
 </head>
@@ -66,34 +78,54 @@
         <y-input value="12311" error="请重新输入手机号码"></y-input>
     </div>-->
 
-<!--    <div class="box">
-        y-row接收参数 gutter align
-        y-col接收参数 span  offset  :ipad  :narrow-pc :pc  :wide-pc
-        <y-row gutter="0">
-            <y-col class="col" span="8" ></y-col>
-            <y-col class="col" span="2" offset="1"></y-col>
-            <y-col class="col" span="2" offset="1"></y-col>
-            <y-col class="col" span="9" offset="1" ></y-col>
-        </y-row>
-    </div>
+    <!--<div class="box">-->
+        <!--<y-row>-->
+            <!--<y-col class="col" span="8">8</y-col>-->
+            <!--<y-col class="col" span="8">8</y-col>-->
+            <!--<y-col class="col" span="8">8</y-col>-->
+        <!--</y-row>-->
+    <!--</div>-->
 
+       <!--<div class="box">-->
+            <!--<y-row gutter="50">-->
+                <!--<y-col class="col" span="8">8</y-col>-->
+                <!--<y-col class="col" span="8">8</y-col>-->
+                <!--<y-col class="col" span="8">8</y-col>-->
+            <!--</y-row>-->
+        <!--</div>-->
+<div class="box">
+    <y-layout   class="layout">
+        <y-sider class="sider">sider</y-sider>
+        <y-layout>
+            <y-header class="header">header</y-header>
+            <y-content class="content">content</y-content>
+            <y-footer class="footer">footer</y-footer>
+        </y-layout>
+    </y-layout>
+</div>
+<!--
     <div class="box">
         <button class="toast"  @click="showToast1">Toast-top</button>
         <button class="toast" @click="showToast2">Toast-middle</button>
         <button class="toast" @click="showToast3">Toast-bottom</button>
-    </div>-->
+    </div>
+-->
 
-    <div class="box">
-        <!--<y-tabs :selected="selectedTab" @update:selected="selectedTab= $event">-->
+<!--    <div class="box">
+        &lt;!&ndash;<y-tabs :selected="selectedTab" @update:selected="selectedTab= $event">&ndash;&gt;
         <y-tabs :selected.sync="selectedTab" class="xxx">
             <y-tabs-head>
                 <template slot="actions">
                     <button>按钮</button>
                 </template>
                 <y-tabs-item name="one">one</y-tabs-item>
-                <y-tabs-item name="two" disabled >two</y-tabs-item>
-                <y-tabs-item name="three">three</y-tabs-item>
-
+                <y-tabs-item name="two" disabled >
+                    two
+                </y-tabs-item>
+                <y-tabs-item name="three">
+                    <y-icon name="shezhi1" style="margin-right:5px;"></y-icon>
+                    three
+                </y-tabs-item>
             </y-tabs-head>
             <y-tabs-body>
                 <y-tabs-pane name="one">内容 1</y-tabs-pane>
@@ -101,21 +133,21 @@
                 <y-tabs-pane name="three">内容 3</y-tabs-pane>
             </y-tabs-body>
         </y-tabs>
-    </div>
-
-<!--    <div class="box">
-        <y-collapse :selected.sync="selectedTab" >
-            <y-collapse-item title="海贼王" name="1">《ONE PIECE》是日本漫画家尾田荣一郎创作的一部著名的少年漫画作品，至今仍连载中，该作品内容为描述一名少年蒙奇·D·路飞想要得到“ONE PIECE”和成为“海贼王”的故事。</y-collapse-item>
-            <y-collapse-item title="火影忍者"  name="2"> 《火影忍者》，通常简称为“火影”，为日本漫画家岸本齐史创作的少年漫画，讲述忍者世界里围绕着身为对手的漩涡鸣人和宇智波佐助两人，与其他角色的经历。</y-collapse-item>
-            <y-collapse-item title="七龙珠"  name="3">《七龙珠》（日语：ドラゴンボール，英语：DRAGON BALL）是日本漫画家鸟山明的格鬥冒險漫画，該作品於1984年到1995年间在集英社《週刊少年Jump》週刊上连载。</y-collapse-item>
-        </y-collapse>
     </div>-->
+
+    <!--<div class="box">-->
+        <!--<y-collapse :selected.sync="selectedTab" >-->
+            <!--<y-collapse-item title="标题1" name="1">这是内容</y-collapse-item>-->
+            <!--<y-collapse-item title="标题2" name="2">这是内容</y-collapse-item>-->
+            <!--<y-collapse-item title="标题3"  name="3">这是内容</y-collapse-item>-->
+        <!--</y-collapse>-->
+    <!--</div>-->
 
 </div>
 
 
 
-<script src="//at.alicdn.com/t/font_860042_b2l86rcb93w.js"></script>
+<script src="//at.alicdn.com/t/font_860042_fabgsfluazl.js"></script>
 <script src="./src/app.js"></script>
 </body>
 </html>

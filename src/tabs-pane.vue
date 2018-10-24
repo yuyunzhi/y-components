@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: "GululuTabsPane",
+        name: "YTabsPane",
         inject:['eventBus'],
         data(){
             return {
@@ -38,6 +38,7 @@
 
 <style scoped lang="scss">
 .tabs-pane{
+    padding:0.5em 1em;
     &.active{
         //background:red;
     }
