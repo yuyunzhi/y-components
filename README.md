@@ -1,6 +1,6 @@
-# gululu 一个Vue UI 组件
+# y-components 一个Vue UI 组件
 
-![标](https://travis-ci.org/yuyunzhi/gululu-demo.svg?branch=master)
+![标](https://travis-ci.org/yuyunzhi/y-components.svg?branch=master)
 
 作者：余韵之
 ## 介绍
@@ -14,37 +14,20 @@
     *,*::before,*::after{box-sizing:border-box}
     ```
     
-    你还需要设置默认颜色等变量，复制以下代码：
-    ```
-    html{
-    --button-height: 32px;
-    --font-size: 14px;
-    --button-bg: white;
-    --button-active-bg: #eee;
-    --border-radius: 4px;
-    --color: #333;
-    --border-color: #999;
-    --border-color-hover: #666;
-    }
-    ```
-    
-    IE 15 及以上浏览器都支持此样式
-   
-2、安装 gululu
-```
-npm install --save gululu
-```  
+  
+2、安装 y-components
 
-3、引入 gululu
+
+3、引入 y-components
 ```
-import {Button,ButtonGroup,Icon} from 'gululu'
-import 'gululu/dist/index.css'
+import {Button,ButtonGroup,Icon} from 'y-components'
+import 'y-components/dist/index.css'
 
 export default{
     name:'app',
     components:{
-        'g-button':Button,
-        'g-icon':Icon
+        'y-button':Button,
+        'y-icon':Icon
     }
 }
 ```
