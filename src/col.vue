@@ -38,11 +38,14 @@
             createClasses (obj, str = '') {
                 if (!obj) {return []}
                 let array = [];
-                if (obj.span) { array.push(`col-${str}${obj.span}`) }
+                if (obj.span) {
+                    array.push(`col-${str}${obj.span}`)
+                }
                 if (obj.offset) { array.push(`offset-${str}${obj.offset}`) }
                 return array
             }
         },
+
         computed: {
             colClass () {
                 let {span, offset, ipad, narrowPc, pc, widePc} = this;
@@ -56,12 +59,12 @@
                 ]
             },
             colStyle () {
+                if(this.gutter){
                     return {
-                        paddingLeft: this.gutter / 2 + 'px',
-                        paddingRight: this.gutter / 2 + 'px',
+                        marginLeft: this.gutter / 2 + 'px',
+                        marginRight: this.gutter / 2 + 'px',
                     }
-
-
+                }
             }
         }
     }
@@ -72,12 +75,14 @@
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 width: ($n / 24) * 100%;
+
             }
         }
         $class-prefix: offset-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 margin-left: ($n / 24) * 100%;
+
             }
         }
         @media (min-width: 577px) {
