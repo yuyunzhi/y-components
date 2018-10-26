@@ -61,6 +61,7 @@
 
     $disabled-color:rgb(153,153,153);
     $disabled-bg:white;
+
     @keyframes spin {
         0%{transform: rotate(0)}
         100%{transform: rotate(360deg)}
@@ -80,11 +81,15 @@
         align-items: center;
         vertical-align: middle;
         color:$color;
-
+        .icon{
+            fill:white;
+        }
+        .content{
+            padding: 0;
+        }
         &:hover {
             border-color: $border-color-hover;
             cursor: pointer;
-
         }
         &:active {background-color: $button-active-bg;}
         &:focus {outline: none;}
@@ -98,6 +103,7 @@
             border:1px solid $disabled-color;
             color:$disabled-color;
             background:$disabled-bg;
+            cursor: not-allowed;
         }
     }
 </style>

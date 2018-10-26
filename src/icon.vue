@@ -12,10 +12,10 @@
 </script>
 
 <style lang="scss" scoped>
-    $color:#1890ff;//;
+    $color:white;//;
     .y-icon {
         width: 1em;
         height: 1em;
-        fill:$color;
+
     }
 </style>
