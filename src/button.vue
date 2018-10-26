@@ -12,6 +12,7 @@
 
 <script>
     import Icon from './icon'
+    import './svg'
     export default {
         name:'YButton',
         components:{
@@ -58,7 +59,6 @@
     $color: white;
     $border-color: white;
     $border-color-hover: #1890ff;  //#096dd9
-
     $disabled-color:rgb(153,153,153);
     $disabled-bg:white;
 

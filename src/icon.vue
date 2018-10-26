@@ -1,13 +1,14 @@
 <template>
-    <svg class="y-icon">
+    <svg class="y-icon" >
         <use :xlink:href=`#i-${name}`></use>
     </svg>
 </template>
 
 <script>
+    import './svg'
     export default {
         name:'YIcon',
-        props:['name']
+        props:['name'],
     }
 </script>
 

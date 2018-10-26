@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/y-components/',
     title: 'Y-Components UI',
     description: 'Just playing around',
     themeConfig: {

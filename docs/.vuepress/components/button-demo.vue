@@ -1,15 +1,14 @@
 <template>
     <div>
         <y-button class="button">按钮</y-button>
+        <y-button class="button" icon="shezhi1" icon-position="right">按钮</y-button>
+        <y-button class="button" loading>按钮</y-button>
         <y-button class="button" disabled>按钮</y-button>
-        <y-button class="button" icon="shezhi1">按钮</y-button>
-
-
-        <pre>
-            <code>
-                {{content}}
-            </code>
-        </pre>
+        <y-button-group>
+            <y-button icon="left">上一页</y-button>
+            <y-button icon="right" icon-position="right">下一页</y-button>
+        </y-button-group>
+        <pre><code>{{content}}</code></pre>
     </div>
 </template>
 
@@ -33,7 +32,7 @@
     <y-button icon="left">上一页</y-button>
     <y-button icon="right" icon-position="right">下一页</y-button>
 </y-button-group>
-                `
+                `.trim()
             }
         }
     }
