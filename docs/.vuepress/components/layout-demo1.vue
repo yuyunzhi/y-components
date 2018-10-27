@@ -1,10 +1,6 @@
 <template>
     <div>
-        <y-layout class="layout">
-            <y-header class="header">header</y-header>
-            <y-content class="content">content</y-content>
-            <y-footer class="footer">footer</y-footer>
-        </y-layout>
+        <img src="https://i.loli.net/2018/10/27/5bd3dbfc6bc92.png" alt="">
         <pre><code>{{content}}</code></pre>
     </div>
 </template>

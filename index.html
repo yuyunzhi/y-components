@@ -125,11 +125,11 @@
         <!--</y-layout>-->
     <!--</y-layout>-->
 <!--</div>-->
-    <div class="box">
-        <button class="toast"  @click="showToast1">Toast-top</button>
-        <button class="toast" @click="showToast2">Toast-middle</button>
-        <button class="toast" @click="showToast3">Toast-bottom</button>
-    </div>
+    <!--<div class="box">-->
+        <!--<button class="toast"  @click="showToast1">Toast-top</button>-->
+        <!--<button class="toast" @click="showToast2">Toast-middle</button>-->
+        <!--<button class="toast" @click="showToast3">Toast-bottom</button>-->
+    <!--</div>-->
 
 <!--    <div class="box">
         &lt;!&ndash;<y-tabs :selected="selectedTab" @update:selected="selectedTab= $event">&ndash;&gt;
@@ -155,13 +155,13 @@
         </y-tabs>
     </div>-->
 
-    <!--<div class="box">-->
-        <!--<y-collapse :selected.sync="selectedTab" >-->
-            <!--<y-collapse-item title="标题1" name="1">这是内容</y-collapse-item>-->
-            <!--<y-collapse-item title="标题2" name="2">这是内容</y-collapse-item>-->
-            <!--<y-collapse-item title="标题3"  name="3">这是内容</y-collapse-item>-->
-        <!--</y-collapse>-->
-    <!--</div>-->
+    <div class="box">
+        <y-collapse :selected.sync="selectedTab" >
+            <y-collapse-item title="标题1" name="1">这是内容</y-collapse-item>
+            <y-collapse-item title="标题2" name="2">这是内容</y-collapse-item>
+            <y-collapse-item title="标题3"  name="3">这是内容</y-collapse-item>
+        </y-collapse>
+    </div>
 
 </div>
 
