@@ -2,9 +2,9 @@
     <transition name="slide">
         <div class="sider" v-if="visible">
             <slot></slot>
-            <button class="button"  @click="visible=false">
-                <y-icon class="icon" name="searchclose"></y-icon>
-            </button>
+            <!--<button class="button"  @click="visible=false">-->
+                <!--<y-icon class="icon" name="searchclose"></y-icon>-->
+            <!--</button>-->
         </div>
     </transition>
 </template>
