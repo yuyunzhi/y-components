@@ -30,18 +30,12 @@ title:Layout
 - 如果为true 那么flex-direction：row
 - 如果为false那么为column方式排列
 
-```angular2html
+```
 mounted () {
     this.$children.forEach((vm) => {
         if (vm.$options.name === 'YSider') {
             this.layoutClass.hasSider = true
         }
     })
-}mounted () {
-     this.$children.forEach((vm) => {
-         if (vm.$options.name === 'YSider') {
-             this.layoutClass.hasSider = true
-         }
-     })
- }
+}
 ```
