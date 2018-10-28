@@ -5,21 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>余咖咖的UI框架</title>
+    <title>UI</title>
     <style>
         * {
 
             padding: 0px;
             box-sizing: border-box;
         }
-        #app {
 
-            border:1px solid red;
+        .box{
+            margin:120px;
         }
-
     </style>
     <style>
-        .box{
+/*        .box{
             margin:20px;
         }
 .xxx {
@@ -27,7 +26,7 @@
     position: relative;
     width: 500px;
     left: 50px;
-}
+}*/
         /*.col{*/
             /*height:100px;*/
             /*background:#40a9ff;*/
@@ -54,6 +53,34 @@
 </head>
 <body>
 <div id="app">
+
+
+    <div class="box">
+        <y-popover>
+            <y-button>上方弹出</y-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </y-popover>
+        <y-popover position="bottom">
+            <y-button>下方弹出</y-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </y-popover>
+        <y-popover position="left">
+            <y-button>左边弹出</y-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </y-popover>
+        <y-popover position="right">
+            <y-button>右边弹出</y-button>
+            <template slot="content">
+                弹出内容
+            </template>
+        </y-popover>
+    </div>
 
     <!--<div class="box">-->
         <!--&lt;!&ndash;参数 :loading icon icon-position&ndash;&gt;-->
@@ -155,13 +182,15 @@
         </y-tabs>
     </div>-->
 
-    <div class="box">
-        <y-collapse :selected.sync="selectedTab" >
-            <y-collapse-item title="标题1" name="1">这是内容</y-collapse-item>
-            <y-collapse-item title="标题2" name="2">这是内容</y-collapse-item>
-            <y-collapse-item title="标题3"  name="3">这是内容</y-collapse-item>
-        </y-collapse>
-    </div>
+    <!--<div class="box">-->
+        <!--<y-collapse :selected.sync="selectedTab" >-->
+            <!--<y-collapse-item title="标题1" name="1">这是内容</y-collapse-item>-->
+            <!--<y-collapse-item title="标题2" name="2">这是内容</y-collapse-item>-->
+            <!--<y-collapse-item title="标题3"  name="3">这是内容</y-collapse-item>-->
+        <!--</y-collapse>-->
+    <!--</div>-->
+
+
 
 </div>
 

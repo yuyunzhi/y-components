@@ -1,10 +1,10 @@
 <template>
   <button class="y-button" :class="classes"
     @click="$emit('click')">
-    <y-icon class="icon" v-if="icon && !loading" :name="icon"/>
+    <y-icon class="icon" v-if="icon && !loading" :name="icon"></y-icon>
     <y-icon class="loading icon" v-if="loading" name="loading"></y-icon>
     <div class="content">
-      <slot/>
+      <slot></slot>
     </div>
   </button>
 </template>

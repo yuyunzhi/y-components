@@ -19,7 +19,7 @@ import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
 import Collapse from './collapse'
 import CollapseItem from './collapse-item'
-
+import Popover from './popover'
 
 Vue.component('y-button', Button);
 Vue.component('y-icon', Icon);
@@ -41,53 +41,14 @@ Vue.component('y-tabs-item', TabsItem);
 Vue.component('y-tabs-pane', TabsPane);
 Vue.component('y-collapse', Collapse);
 Vue.component('y-collapse-item', CollapseItem);
-
+Vue.component('y-popover', Popover);
 
 new Vue({
     el:'#app',
     data:{
-        loading1:false,
-        loading2:false,
-        loading3:false,
-        msg:123,
-        selectedTab:['1','2']//'sports',
+
     },
     methods:{
-        yyy(name){
-            console.log('app name:',name);
-        },
-        InputChange(e){
-          console.log('1')
-        },
-        bindContent(e){
-            this.msg=e
-        },
-        log(){
-          console.log('我是app里面的log函数')
-        },
-        showToast1(){
-          this.$toast('这是消息体',{
-              position:'top'
-            })
-        },
-        showToast2(){
-            this.$toast('两首凉凉送给你',{
-                position:'middle'
-            })
-        },
-        showToast3(){
-            //$toast第一个参数可以是字符串也可以是html
-            this.$toast('这是消息体',{
-                position:'top',
-                enableHtml:true,
-                autoClose:3,//false 或具体 数字
-                closeButton:{
-                    text:'关闭',
-                    callback:(toast)=>{
-                        this.log();
-                    },
-                }
-            })
-        },
+
     }
 });
