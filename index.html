@@ -8,11 +8,9 @@
     <title>UI</title>
     <style>
         * {
-
             padding: 0px;
             box-sizing: border-box;
         }
-
         .box{
             margin:120px;
         }
@@ -55,32 +53,32 @@
 <div id="app">
 
 
-    <div class="box">
-        <y-popover>
-            <y-button>上方弹出</y-button>
-            <template slot="content">
-                弹出内容
-            </template>
-        </y-popover>
-        <y-popover position="bottom">
-            <y-button>下方弹出</y-button>
-            <template slot="content">
-                弹出内容
-            </template>
-        </y-popover>
-        <y-popover position="left">
-            <y-button>左边弹出</y-button>
-            <template slot="content">
-                弹出内容
-            </template>
-        </y-popover>
-        <y-popover position="right">
-            <y-button>右边弹出</y-button>
-            <template slot="content">
-                弹出内容
-            </template>
-        </y-popover>
-    </div>
+    <!--<div class="box">-->
+        <!--<y-popover>-->
+            <!--<y-button>上方弹出</y-button>-->
+            <!--<template slot="content" slot-scope="{close}">-->
+                <!--<y-button @click="close">关闭</y-button>-->
+            <!--</template>-->
+        <!--</y-popover>-->
+        <!--<y-popover position="bottom">-->
+            <!--<y-button>下方弹出</y-button>-->
+            <!--<template slot="content">-->
+                <!--弹出内容-->
+            <!--</template>-->
+        <!--</y-popover>-->
+        <!--<y-popover position="left">-->
+            <!--<y-button>左边弹出</y-button>-->
+            <!--<template slot="content">-->
+                <!--弹出内容-->
+            <!--</template>-->
+        <!--</y-popover>-->
+        <!--<y-popover position="right" trigger="hover">-->
+            <!--<y-button>右边弹出</y-button>-->
+            <!--<template slot="content">-->
+                <!--弹出内容-->
+            <!--</template>-->
+        <!--</y-popover>-->
+    <!--</div>-->
 
     <!--<div class="box">-->
         <!--&lt;!&ndash;参数 :loading icon icon-position&ndash;&gt;-->
