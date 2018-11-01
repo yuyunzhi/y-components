@@ -50,14 +50,39 @@ Vue.use(plugin);
 new Vue({
     el:'#app',
     data:{
-        source:[
-            {name:'江苏', children:[{name:'A',
-                    children:[{name:'B'},{name:'B'},{name:'B'},{name:'B'}]
-                },{name:'A'},{name:'A'},{name:'A'}]},
-            {name:'北京', children:[{name:'B'},{name:'B'},{name:'B'},{name:'B'}]},
-            {name:'广州',children:[{name:'C'},{name:'C'},{name:'C'},{name:'C'}]},
-            {name:'西藏',children:[{name:'D'},{name:'D'},{name:'D'},{name:'D'}]},
-        ]
+        source: [{
+            name: '浙江',
+            children: [
+                {
+                    name: '杭州',
+                    children: [
+                        {name: '上城'},
+                        {name: '下城'},
+                        {name: '江干'},
+                    ]
+                },
+                {
+                    name: '嘉兴',
+                    children: [
+                        {name: '南湖'},
+                        {name: '秀洲'},
+                        {name: '嘉善'},
+                    ]
+                },
+            ]
+        }, {
+            name: '福建',
+            children: [
+                {
+                    name: '福州',
+                    children: [
+                        {name: '鼓楼'},
+                        {name: '台江'},
+                        {name: '仓山'},
+                    ]
+                },
+            ]
+        }]
     },
     methods:{
 
