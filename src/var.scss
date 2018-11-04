@@ -13,3 +13,9 @@ $disabled-color:rgb(153,153,153);
 $font-size: 14px;
 $height: 32px;
 $red: #F1453D;
+
+
+$border-color-light: lighten($border-color, 30%);
+.box-shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
