@@ -1,7 +1,6 @@
 <template>
     <div class="cascaderItem" :style="{height: height}">
         <div class="left">
-            {{level}}
             <div class="label" v-for="item in items" @click="onClickLabel(item)">
                 <span class="name">{{item.name}}</span>
                 <span class="icons">
@@ -54,23 +53,21 @@
         computed: {
             rightItems () {
                 if (this.selected[this.level]) {
-                    let selected = this.items.filter((item) => item.name === this.selected[this.level].name);
+                    let selected = this.items.filter((item) => item.name === this.selected[this.level].name)
                     if (selected && selected[0].children && selected[0].children.length > 0) {
                         return selected[0].children
                     }
                 }
             },
         },
-        mounted () {
-        },
         methods: {
             rightArrowVisible (item) {
                 return this.loadData ? !item.isLeaf : item.children
             },
             onClickLabel (item) {
-                let copy = JSON.parse(JSON.stringify(this.selected));
-                copy[this.level] = item;
-                copy.splice(this.level + 1); // 一句话
+                let copy = JSON.parse(JSON.stringify(this.selected))
+                copy[this.level] = item
+                copy.splice(this.level + 1) // 一句话
                 this.$emit('update:selected', copy)
             },
             onUpdateSelected (newSelected) {

@@ -27,9 +27,10 @@
                         if(component.name===item){
                             for(let i=0;i<index;i++){
                                 width=width+array[i]
+                                this.$refs.line.style.left=`${width}px`
                             }
                         }
-                        this.$refs.line.style.left=`${width}px`
+
                     }
                 });
                 this.$refs.line.style.width=`${width}px`;

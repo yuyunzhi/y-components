@@ -51,7 +51,7 @@
      $button-active-bg:  #096dd9;//#40a9ff
      $border-radius: 4px;
      $color: white;
-     $border-color: white;
+      $border-color: white;
      $border-color-hover: #1890ff;  //#096dd9
      $disabled-color:rgb(153,153,153);
      $disabled-bg:white;
