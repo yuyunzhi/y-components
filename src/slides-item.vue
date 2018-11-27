@@ -1,7 +1,7 @@
 <template>
 
     <transition name="slide">
-        <div class="y-slides-item" v-if="visible">
+        <div class="y-slides-item" v-if="visible" :class="{reverse}">
             <slot></slot>
         </div>
     </transition>
@@ -20,6 +20,7 @@
         data() {
             return {
                 selected: null,
+                reverse:false
             }
         },
         mounted(){
@@ -27,7 +28,6 @@
         },
         computed:{
             visible(){
-                console.log(this.name===this.selected);
                 return this.selected === this.name
             }
         }
@@ -36,15 +36,14 @@
 
 <style scoped lang="scss">
     .y-slides-item {
-        position: absolute;
-        left:0;
-        top:0;
+
     }
     .slide-leave-active{
         position: absolute;
         left:0;
         top:0;
-        background:Red;
+        width:100%;
+        height:100%;
     }
     .slide-enter-active, .slide-leave-active {
         transition: all 1s;
@@ -52,9 +51,18 @@
 
     .slide-enter {
         transform: translateX(100%);
+        opacity: 0;
     }
-
-    .slide-leave-to {
+    .slide-enter.reverse{
         transform: translateX(-100%);
+        opacity: 0;
+    }
+    .slide-leave-to {
+        transform: translateX(-100%) scale(0.5);
+        opacity: 0;
+    }
+    .slide-leave-to.reverse{
+        transform: translateX(100%) scale(0.5);
+        opacity: 0;
     }
 </style>

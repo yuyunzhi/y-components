@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <y-slides :selected="selected" width="300px" height="200px">
+    <div class="wrapper">
+        <y-slides :selected.sync="selected" >
             <y-slides-item name="1">
                 <div class="box">1</div>
             </y-slides-item>
@@ -25,25 +25,25 @@
         },
         data() {
             return {
-                selected: undefined
+                selected: '3'
             }
         },
         created() {
-            let n = 1
-            setInterval(() => {
-                if(n===4){n=1}
-                this.selected = n.toString()
-                n++
-            },800)
+
         }
     }
 </script>
 
 <style lang="scss">
     *{margin:0;padding:0;box-sizing: border-box}
+
+    .wrapper{
+        margin:40px;
+    }
     .box {
-        width: 100px;
-        height: 100px;
+
+        width: 100%;
+        height: 300px;
         background: #ddd;
         border: 1px solid red;
     }
