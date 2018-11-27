@@ -6,12 +6,12 @@
                 <slot></slot>
             </div>
         </div>
-        <div class="y-slides-dots">
+        <div class="y-slides-dots" @mouseenter="onMouseEnter"
+             @mouseleave="onMouseLeave">
             <span v-for="n in childrenLength" :class="{active:selectedIndex === n-1}" @click="select(n-1)">
                 {{n}}
             </span>
         </div>
-
     </div>
 </template>
 
@@ -70,7 +70,7 @@
                 }
                 let run = () => {
                     let index = this.names.indexOf(this.getSelected())
-                    let newIndex = index - 1
+                    let newIndex = index + 1
                     if (newIndex === -1) {
                         newIndex = this.names.length - 1
                     }
@@ -94,11 +94,13 @@
 
                     // S 用来传递是否为逆向
                     let reverse = this.selectedIndex <= this.lastSelectedIndex
-                    if(this.lastSelectedIndex===this.$children.length-1&&this.selectedIndex===0){
-                        reverse=false
-                    }
-                    if(this.lastSelectedIndex===0 && this.selectedIndex === this.$children.length-1){
-                        reverse=true
+                    if(this.timerId){
+                        if(this.lastSelectedIndex===this.$children.length-1&&this.selectedIndex===0){
+                            reverse=false
+                        }
+                        if(this.lastSelectedIndex===0 && this.selectedIndex === this.$children.length-1){
+                            reverse=true
+                        }
                     }
                     vm.reverse=reverse
                     // E 用来传递是否为逆向
@@ -126,8 +128,31 @@
 
         }
         &-dots {
-            > span.active {
-                background: red;
+            padding:8px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > span {
+                width:20px;
+                height:20px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background:#ddd;
+                margin:0 8px;
+                font-size: 12px;
+                &:hover{
+                    cursor: pointer;
+                }
+                &.active{
+                    background:black;
+                    color:white;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
             }
         }
 
