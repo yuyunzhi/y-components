@@ -1,5 +1,6 @@
 <template>
-    <div class="y-slides">
+    <div class="y-slides" @mouseenter="onMouseEnter"
+    @mouseleave="onMouseLeave">
         <div class="y-slides-window" ref="window">
             <div class="y-slides-wrapper">
                 <slot></slot>
@@ -28,7 +29,8 @@
         data() {
             return {
                 childrenLength: 0,
-                lastSelectedIndex:undefined,
+                lastSelectedIndex: undefined,
+                timerId: undefined,
             }
         },
         computed: {
@@ -41,21 +43,33 @@
         },
         mounted() {
             this.updateChildren()
-           // this.playAutomatically()
+            this.playAutomatically()
             this.childrenLength = this.$children.length
         },
         updated() {
             this.updateChildren()
         },
         methods: {
-            select(index){
-                this.lastSelectedIndex=this.selectedIndex
+            onMouseEnter(){
+                this.pause()
+            },
+            onMouseLeave(){
+                this.playAutomatically()
+            },
+            select(index) {
+                this.lastSelectedIndex = this.selectedIndex
                 this.$emit('update:selected', this.names[index])
             },
+            pause(){
+              window.clearTimeout(this.timerId)
+                this.timerId=undefined
+            },
             playAutomatically() {
-
-                let index = this.names.indexOf(this.getSelected())
+                if(this.timerId){
+                    return
+                }
                 let run = () => {
+                    let index = this.names.indexOf(this.getSelected())
                     let newIndex = index - 1
                     if (newIndex === -1) {
                         newIndex = this.names.length - 1
@@ -64,9 +78,9 @@
                         newIndex = 0
                     }
                     this.select(newIndex)
-                    setTimeout(run, 3000)
+                    this.timerId = setTimeout(run, 2000)
                 }
-                setTimeout(run, 3000)
+                setTimeout(run, 2000)
 
 
             },
@@ -79,11 +93,18 @@
                 this.$children.forEach((vm) => {
 
                     // S 用来传递是否为逆向
-                    vm.reverse = this.selectedIndex <= this.lastSelectedIndex
+                    let reverse = this.selectedIndex <= this.lastSelectedIndex
+                    if(this.lastSelectedIndex===this.$children.length-1&&this.selectedIndex===0){
+                        reverse=false
+                    }
+                    if(this.lastSelectedIndex===0 && this.selectedIndex === this.$children.length-1){
+                        reverse=true
+                    }
+                    vm.reverse=reverse
                     // E 用来传递是否为逆向
 
                     //添加$nextTick 解决动画方向bug
-                    this.$nextTick(()=>{
+                    this.$nextTick(() => {
                         vm.selected = this.getSelected()
                     })
 
@@ -95,7 +116,7 @@
 
 <style scoped lang="scss">
     .y-slides {
-        border: 1px solid green;
+
         width: 100%;
         &-window {
             overflow: hidden;
