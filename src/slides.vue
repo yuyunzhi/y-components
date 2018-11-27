@@ -41,7 +41,7 @@
         },
         mounted() {
             this.updateChildren()
-            this.playAutomatically()
+           // this.playAutomatically()
             this.childrenLength = this.$children.length
         },
         updated() {
@@ -49,6 +49,7 @@
         },
         methods: {
             select(index){
+                this.lastSelectedIndex=this.selectedIndex
                 this.$emit('update:selected', this.names[index])
             },
             playAutomatically() {
@@ -74,13 +75,18 @@
                 return this.selected || first.name;
             },
             updateChildren() {
+
                 this.$children.forEach((vm) => {
-                    vm.selected = this.getSelected()
+
                     // S 用来传递是否为逆向
-                    let newIndex = this.names.indexOf(this.selected)
-                    let oldIndex = this.names.indexOf(vm.name)
-                    vm.reverse = newIndex <= oldIndex
+                    vm.reverse = this.selectedIndex <= this.lastSelectedIndex
                     // E 用来传递是否为逆向
+
+                    //添加$nextTick 解决动画方向bug
+                    this.$nextTick(()=>{
+                        vm.selected = this.getSelected()
+                    })
+
                 })
             }
         }
