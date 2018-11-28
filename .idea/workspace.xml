@@ -2,60 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/slides/slides-item.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/slides/slides.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/button.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/popover.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit/slides.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/button-demo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/button-demo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo1.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo1.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/grid-demo3.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo1.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/layout-demo3.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/tabs-demo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/tabs-demo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/toast-demo1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/toast-demo1.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/components/toast-demo2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/components/toast-demo2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/button-group.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button/button-group.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cascader-items.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/cascader/cascader-items.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cascader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/cascader/cascader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cascaderDemo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/cascader/cascaderDemo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/col.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/col.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collapse-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/collapse/collapse-item.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collapse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/collapse/collapse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/content.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/layout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/row.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid/row.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/sider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/slides-item.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/slides.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/svg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs-body.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs-body.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs-head.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs-head.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs-item.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs-pane.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/button.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/col.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/input.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/popover.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/row.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tabs-body.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tabs-head.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tabs-item.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tabs-pane.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tabs.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/toast.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/example.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slides/slides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/slides/slides.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/popover.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/popover.spec.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -159,24 +109,26 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="261" />
-          <entry key="js" value="883" />
+          <entry key="js" value="1511" />
           <entry key="json" value="8" />
           <entry key="md" value="1262" />
           <entry key="scss" value="11" />
           <entry key="sh" value="20" />
-          <entry key="txt" value="160" />
-          <entry key="vue" value="10328" />
+          <entry key="txt" value="191" />
+          <entry key="vue" value="10332" />
+          <entry key="yml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="281" />
+          <entry key="HTML" value="284" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="883" />
+          <entry key="JavaScript" value="1508" />
           <entry key="Markdown" value="1254" />
-          <entry key="PLAIN_TEXT" value="180" />
+          <entry key="PLAIN_TEXT" value="211" />
           <entry key="SCSS" value="11" />
-          <entry key="Vue.js" value="10316" />
+          <entry key="Vue.js" value="10320" />
+          <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -185,14 +137,15 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="10" />
           <entry key="ico" value="1" />
-          <entry key="js" value="43" />
+          <entry key="js" value="48" />
           <entry key="json" value="11" />
           <entry key="md" value="39" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="5" />
           <entry key="sh" value="4" />
           <entry key="ts" value="2" />
-          <entry key="vue" value="105" />
+          <entry key="vue" value="110" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -201,13 +154,14 @@
           <entry key="HTML" value="10" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="43" />
+          <entry key="JavaScript" value="48" />
           <entry key="Markdown" value="39" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="5" />
           <entry key="TypeScript" value="2" />
-          <entry key="Vue.js" value="105" />
+          <entry key="Vue.js" value="110" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -220,11 +174,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/slides/slides.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1854">
+              <caret line="127" column="45" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/unit/slides.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#2077#2929#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/unit/popover.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+            <state relative-caret-position="23">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="63" selection-start-line="63" selection-end-line="66" selection-end-column="22" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -233,13 +218,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/popover.vue">
+        <entry file="file://$PROJECT_DIR$/src/slides/slides-item.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="2" selection-start-line="2" selection-end-line="5" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -268,9 +250,9 @@
       <find>sourceitem</find>
       <find>timerFn</find>
       <find>GS</find>
-      <find>g-</find>
       <find>GSl</find>
       <find>getAttribute</find>
+      <find>g-</find>
     </findStrings>
     <replaceStrings>
       <replace>$</replace>
@@ -292,9 +274,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docs/.vuepress/components/grid-demo.vue" />
-        <option value="$PROJECT_DIR$/docs/.vuepress/components/grid-demo1.vue" />
-        <option value="$PROJECT_DIR$/docs/.vuepress/components/grid-demo2.vue" />
         <option value="$PROJECT_DIR$/docs/.vuepress/components/grid-demo3.vue" />
         <option value="$PROJECT_DIR$/docs/.vuepress/components/layout-demo.vue" />
         <option value="$PROJECT_DIR$/docs/components/grid.md" />
@@ -342,7 +321,10 @@
         <option value="$PROJECT_DIR$/src/svg.js" />
         <option value="$PROJECT_DIR$/tests/unit/button.spec.js" />
         <option value="$PROJECT_DIR$/src/popover.vue" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/src/slides/slides.vue" />
         <option value="$PROJECT_DIR$/tests/unit/popover.spec.js" />
+        <option value="$PROJECT_DIR$/tests/unit/slides.spec.js" />
       </list>
     </option>
   </component>
@@ -363,10 +345,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="470" />
-    <option name="y" value="65" />
+    <option name="x" value="-163" />
+    <option name="y" value="16" />
     <option name="width" value="1410" />
-    <option name="height" value="1035" />
+    <option name="height" value="1005" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -388,6 +370,12 @@
               <item name="y-components" type="b2602c69:ProjectViewProjectNode" />
               <item name="y-components" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="y-components" type="b2602c69:ProjectViewProjectNode" />
+              <item name="y-components" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="slides" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="y-components" type="b2602c69:ProjectViewProjectNode" />
@@ -522,21 +510,7 @@
       <workItem from="1543283421546" duration="17222000" />
       <workItem from="1543317318023" duration="1055000" />
       <workItem from="1543321092540" duration="4391000" />
-      <workItem from="1543370123899" duration="16564000" />
-    </task>
-    <task id="LOCAL-00013" summary="安装chai chai-spies">
-      <created>1538462728511</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1538462728511</updated>
-    </task>
-    <task id="LOCAL-00014" summary="完成单元测试">
-      <created>1538462856557</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1538462856557</updated>
+      <workItem from="1543370123899" duration="30650000" />
     </task>
     <task id="LOCAL-00015" summary="使用npm test 和 npm dev-test做测试">
       <created>1538553437030</created>
@@ -867,11 +841,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543380660953</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="新增两个单元测试">
+      <created>1543391047029</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1543391047029</updated>
+    </task>
+    <task id="LOCAL-00063" summary="node 9 node 10 测试">
+      <created>1543391926747</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1543391926747</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355126000" />
+    <option name="totallyTimeSpent" value="369212000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -883,10 +871,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="376" y="52" width="1128" height="828" extended-state="0" />
-    <editor active="true" />
+    <frame x="-130" y="13" width="1128" height="804" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921012" visible="true" weight="0.31107044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921012" visible="true" weight="0.19030192" />
       <window_info id="Structure" order="1" sideWeight="0.5007899" side_tool="true" weight="0.22911878" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -925,8 +912,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tab 切换动画完成" />
-    <MESSAGE value="tab 切换动画完成 改bug" />
     <MESSAGE value="支持disabled功能" />
     <MESSAGE value="添加tabs部分测试代码" />
     <MESSAGE value="collapse 基本样式和基本功能完成" />
@@ -950,7 +935,9 @@
     <MESSAGE value="回到无缝状态" />
     <MESSAGE value="添加点击鼠标浮在图片上，停止，离开继续自动播放" />
     <MESSAGE value="支持手机左右滑动" />
-    <option name="LAST_COMMIT_MESSAGE" value="支持手机左右滑动" />
+    <MESSAGE value="新增两个单元测试" />
+    <MESSAGE value="node 9 node 10 测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="node 9 node 10 测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -995,27 +982,22 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/unit/slides.spec.js</url>
+          <line>193</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/unit/slides.spec.js</url>
+          <line>172</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/.vuepress/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/components/collapse.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="519">
-            <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1228,23 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/slides/slides-item.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1114">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding>
-            <element signature="e#461#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/sinon/pkg/sinon-esm.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1274,13 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/slides/slides.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/svg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1295,16 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1128">
-          <caret selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/popover.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-184">
@@ -1315,12 +1263,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/popover.spec.js">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="230">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/slides/slides-item.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/slides/slides.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1854">
+          <caret line="127" column="45" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="63" selection-start-line="63" selection-end-line="66" selection-end-column="22" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/popover.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/slides.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#2077#2929#0" />
           </folding>
         </state>
       </provider>

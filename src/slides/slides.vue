@@ -9,6 +9,7 @@
                 <slot></slot>
             </div>
         </div>
+
         <div class="y-slides-dots">
       <span @click="onClickPrev" data-action="prev">
         <y-icon name="left"></y-icon>
@@ -27,6 +28,7 @@
 
 <script>
     import YIcon from '../icon'
+
     export default {
         components: {YIcon},
         props: {
@@ -37,58 +39,60 @@
                 type: Boolean,
                 default: true
             },
-            autoPlayDelay:{
+            autoPlayDelay: {
                 type: Number,
-                default: 3000
+                default: 10
             }
         },
-        data () {
+        data() {
             return {
                 childrenLength: 0,
                 lastSelectedIndex: undefined,
                 timerId: undefined,
                 startTouch: undefined,
-                timer:null,
+                timer: null,
             }
         },
-        mounted () {
+        mounted() {
             this.updateChildren()
             if (this.autoPlay) {
                 this.playAutomatically()
             }
             this.childrenLength = this.items.length
         },
-        updated () {
+        updated() {
             this.updateChildren()
         },
-        beforeDestroy () {
+        beforeDestroy() {
             this.pause()
         },
         computed: {
-            selectedIndex () {
+            selectedIndex() {
                 let index = this.names.indexOf(this.selected)
                 return index === -1 ? 0 : index
             },
-            names () {
+            names() {
                 return this.items.map(vm => vm.name)
             },
-            items () {
+            items() {
                 return this.$children.filter(vm => vm.$options.name === 'YSlidesItem')
             }
         },
         methods: {
-            onMouseEnter () {
+            onMouseEnter() {
                 this.pause()
             },
-            onMouseLeave () {
+            onMouseLeave() {
                 this.playAutomatically()
             },
-            onTouchStart (e) {
+            onTouchStart(e) {
                 this.pause()
-                if (e.touches.length > 1) {return}
+                if (e.touches.length > 1) {
+                    return
+                }
                 this.startTouch = e.touches[0]
             },
-            onTouchEnd (e) {
+            onTouchEnd(e) {
                 let endTouch = e.changedTouches[0]
                 let {clientX: x1, clientY: y1} = this.startTouch
                 let {clientX: x2, clientY: y2} = endTouch
@@ -106,26 +110,17 @@
                     this.playAutomatically()
                 })
             },
-            onClickPrev () {
-                if(this.timer){
-                    clearTimeout(this.timer)
-                }
-                this.timer=setTimeout(()=>{
+            onClickPrev() {
                     this.select(this.selectedIndex - 1)
-                    console.log('向左')
-                },100)
+            },
+            onClickNext() {
+                    this.select(this.selectedIndex + 1)
 
             },
-            onClickNext () {
-                if(this.timer){
-                    clearTimeout(this.timer)
+            playAutomatically() {
+                if (this.timerId) {
+                    return
                 }
-                this.timer=setTimeout(()=>{
-                    this.select(this.selectedIndex + 1)
-                },100)
-            },
-            playAutomatically () {
-                if (this.timerId) { return }
                 let run = () => {
                     let index = this.names.indexOf(this.getSelected())
                     let newIndex = index + 1
@@ -134,27 +129,31 @@
                 }
                 this.timerId = setTimeout(run, this.autoPlayDelay)
             },
-            pause () {
+            pause() {
                 window.clearTimeout(this.timerId)
                 this.timerId = undefined
             },
-            select (newIndex) {
-                if(this.timer){
+            select(newIndex) {
+                if (this.timer) {
                     clearTimeout(this.timer)
                 }
-                this.timer=setTimeout(()=>{
+                this.timer = setTimeout(() => {
                     this.lastSelectedIndex = this.selectedIndex
-                    if (newIndex === -1) {newIndex = this.names.length - 1}
-                    if (newIndex === this.names.length) { newIndex = 0 }
+                    if (newIndex === -1) {
+                        newIndex = this.names.length - 1
+                    }
+                    if (newIndex === this.names.length) {
+                        newIndex = 0
+                    }
                     this.$emit('update:selected', this.names[newIndex])
-                },250)
+                }, 200)
 
             },
-            getSelected () {
+            getSelected() {
                 let first = this.items[0]
                 return this.selected || first.name
             },
-            updateChildren () {
+            updateChildren() {
                 let selected = this.getSelected()
                 this.items.forEach((vm) => {
                     let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true
@@ -178,7 +177,9 @@
 
 <style lang="scss" scoped>
     .y-slides {
-        &-window {overflow: hidden;}
+        &-window {
+            overflow: hidden;
+        }
         &-wrapper {
             position: relative;
         }
