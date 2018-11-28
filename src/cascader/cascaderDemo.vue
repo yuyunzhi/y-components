@@ -16,10 +16,10 @@
   </div>
 </template>
 <script>
-    import Button from "./button";
+    import Button from "../button/button";
     import Cascader from "./cascader";
-    import db from './db'
-    import Popover from './popover'
+    import db from '../db'
+    import Popover from '../popover'
     function ajax (parentId = 0) {
         return new Promise((success, fail) => {
             setTimeout(() => {

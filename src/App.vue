@@ -15,8 +15,8 @@
 </template>
 
 <script>
-    import Slides from './slides'
-    import SlidesItem from './slides-item'
+    import Slides from './slides/slides'
+    import SlidesItem from './slides/slides-item'
 
     export default {
         components: {

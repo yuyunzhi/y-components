@@ -6,11 +6,11 @@
 </template>
 
 <script>
-    import Layout from '../../../src/layout'
-    import Header from  '../../../src/header'
-    import Content from '../../../src/content'
-    import Footer from '../../../src/footer'
-    import Sider from '../../../src/sider'
+    import Layout from '../../../src/layout/layout'
+    import Header from '../../../src/layout/header'
+    import Content from '../../../src/layout/content'
+    import Footer from '../../../src/layout/footer'
+    import Sider from '../../../src/layout/sider'
     export default {
 
         data(){

@@ -21,11 +21,11 @@
 </template>
 
 <script>
-    import Tabs from '../../../src/tabs'
-    import tabsHead from '../../../src/tabs-head'
-    import tabsBody from '../../../src/tabs-body'
-    import tabsItem from '../../../src/tabs-item'
-    import tabsPane from '../../../src/tabs-pane'
+    import Tabs from '../../../src/tabs/tabs'
+    import tabsHead from '../../../src/tabs/tabs-head'
+    import tabsBody from '../../../src/tabs/tabs-body'
+    import tabsItem from '../../../src/tabs/tabs-item'
+    import tabsPane from '../../../src/tabs/tabs-pane'
 
     export default {
         name: "tabs-demo",

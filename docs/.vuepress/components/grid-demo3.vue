@@ -22,8 +22,8 @@
 </template>
 
 <script>
-    import Row from '../../../src/row'
-    import Col from '../../../src/col'
+    import Row from '../../../src/grid/row'
+    import Col from '../../../src/grid/col'
     export default {
         name: "grid-demo3",
         data(){

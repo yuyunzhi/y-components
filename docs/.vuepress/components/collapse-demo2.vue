@@ -10,8 +10,8 @@
 </template>
 
 <script>
-    import Collapse from '../../../src/collapse'
-    import collapseItem from '../../../src/collapse-item'
+    import Collapse from '../../../src/collapse/collapse'
+    import collapseItem from '../../../src/collapse/collapse-item'
 
     export default {
         name: "collapse-demo2",
