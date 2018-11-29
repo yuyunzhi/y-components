@@ -18,7 +18,7 @@
 <script>
     import Button from "../button/button";
     import Cascader from "./cascader";
-    import db from '../db'
+    import db from '../../tests/fixtures/db'
     import Popover from '../popover'
     function ajax (parentId = 0) {
         return new Promise((success, fail) => {

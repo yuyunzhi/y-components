@@ -41,7 +41,6 @@
         margin:40px;
     }
     .box {
-
         width: 100%;
         height: 300px;
         background: #ddd;
@@ -49,6 +48,5 @@
         justify-content: center;
         align-items: center;
         font-size:40px;
-
     }
 </style>
