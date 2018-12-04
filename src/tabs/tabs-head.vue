@@ -15,6 +15,7 @@
         mounted(){
             this.eventBus.$on("update:selected",(item,vm)=>{
                 let {width,height,top,left}=vm.$el.getBoundingClientRect();
+                this.$refs.line.style.width=`${width}px`;
                 let array=[];
                 vm.$parent.$children.forEach((component,index)=>{
                     array.push(component.$el.getBoundingClientRect().width)
@@ -33,7 +34,7 @@
 
                     }
                 });
-                this.$refs.line.style.width=`${width}px`;
+
 
             })
         },

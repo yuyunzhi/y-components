@@ -39,9 +39,9 @@
                 type: Boolean,
                 default: true
             },
-            autoPlayDelay: {
+            autoPlayDelay:{
                 type: Number,
-                default: 10
+                default: 1000
             }
         },
         data() {
@@ -96,6 +96,7 @@
                 let endTouch = e.changedTouches[0]
                 let {clientX: x1, clientY: y1} = this.startTouch
                 let {clientX: x2, clientY: y2} = endTouch
+
                 let distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2))
                 let deltaY = Math.abs(y2 - y1)
                 let rate = distance / deltaY
@@ -146,7 +147,7 @@
                         newIndex = 0
                     }
                     this.$emit('update:selected', this.names[newIndex])
-                }, 200)
+                }, 300)
 
             },
             getSelected() {
@@ -156,7 +157,7 @@
             updateChildren() {
                 let selected = this.getSelected()
                 this.items.forEach((vm) => {
-                    let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true
+                    let reverse = this.selectedIndex <= this.lastSelectedIndex
                     if (this.timerId) {
                         if (this.lastSelectedIndex === this.items.length - 1 && this.selectedIndex === 0) {
                             reverse = false
