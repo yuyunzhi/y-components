@@ -32,10 +32,34 @@
 </script>
 
 <style scoped lang="scss">
+    @import "var";
     .y-nav-item {
         padding: 10px 20px;
+        position: relative;
         &.active {
-            background: red;
+            &::after{
+                content:'';
+                position: absolute;
+                bottom:0;
+                left:0;
+                border-bottom:1.5px solid $blue;
+                width:100%;
+                height:1px;
+
+            }
         }
+    }
+    .y-sub-nav .y-nav-item{
+        color:$light-color;
+
+        &.active{
+            border-radius: $border-radius;
+            background:$grey;
+            color:$black;
+            &::after{
+                display: none;
+            }
+        }
+
     }
 </style>

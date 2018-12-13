@@ -75,7 +75,11 @@
 </script>
 
 <style scoped lang="scss">
+    @import "var";
     .y-nav {
         display: flex;
+        border-bottom:1px solid $light-grey;
+        color:$black;
+        cursor: pointer;
     }
 </style>
