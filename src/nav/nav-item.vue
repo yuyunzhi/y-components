@@ -25,6 +25,7 @@
         methods: {
             onClick() {
                 this.$emit('add:selected', this.name)
+                this.$parent.x()
             }
         },
 

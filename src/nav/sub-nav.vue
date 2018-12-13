@@ -13,6 +13,12 @@
 <script>
     export default {
         name: "YSubNav",
+        props:{
+          name:{
+              type:String,
+              required:true,
+          }
+        },
         data(){
             return{
                 open: false
@@ -21,6 +27,9 @@
         methods:{
             onClick(){
                 this.open=!this.open
+            },
+            x(){
+                console.log('x')
             }
         }
     }
