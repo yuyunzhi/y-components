@@ -10,7 +10,7 @@
         <button>点我</button>
       </template>
       <template slot="content">
-        弹出内容
+        弹出内容3
       </template>
     </y-popover>
   </div>

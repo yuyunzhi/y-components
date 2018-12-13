@@ -36,9 +36,6 @@
         updated() {
             this.updateChildren()
         },
-        computed: {
-
-        },
         methods: {
             addItem(vm) {
 
@@ -80,7 +77,5 @@
 <style scoped lang="scss">
     .y-nav {
         display: flex;
-        border: 1px solid red;
-
     }
 </style>
