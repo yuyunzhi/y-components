@@ -82,5 +82,6 @@
         border-bottom:1px solid $light-grey;
         color:$black;
         cursor: pointer;
+        user-select: none;
     }
 </style>

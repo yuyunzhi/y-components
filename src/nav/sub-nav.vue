@@ -1,7 +1,10 @@
 <template>
     <div class="y-sub-nav" :class="{active}" v-click-outside="close">
-        <span @click="onClick">
+        <span @click="onClick" class="y-sub-nav-label">
             <slot name="title"></slot>
+            <span class="y-sub-nav-icon" :class="{open}">
+                <y-icon name="right"></y-icon>
+            </span>
         </span>
         <div class="y-sub-nav-popover" v-show="open">
             <slot></slot>
@@ -12,10 +15,15 @@
 
 <script>
     import ClickOutside from '../click-outside'
+    import YIcon from '../icon'
+
     export default {
         name: "YSubNav",
-        inject:['root'],
-        directives:{ClickOutside},
+        components:{
+          'y-icon':  YIcon
+        },
+        inject: ['root'],
+        directives: {ClickOutside},
         props: {
             name: {
                 type: String,
@@ -27,23 +35,23 @@
                 open: false,
             }
         },
-        computed:{
-          active(){
-              return this.root.namePath.indexOf(this.name) >= 0
-          }
+        computed: {
+            active() {
+                return this.root.namePath.indexOf(this.name) >= 0
+            }
         },
         methods: {
-            close(){
-                this.open=false
+            close() {
+                this.open = false
             },
             onClick() {
                 this.open = !this.open
             },
             updateNamePath() {
                 this.root.namePath.unshift(this.name)
-                if(this.$parent.updateNamePath){
+                if (this.$parent.updateNamePath) {
                     this.$parent.updateNamePath()
-                }else{
+                } else {
 
                 }
 
@@ -71,12 +79,13 @@
             }
 
         }
-        > span {
+        > .y-sub-nav-label {
             padding: 10px 20px;
             display: block;
         }
+        .y-sub-nav-icon{display: none}
         &-popover {
-            min-width: 6em;
+            min-width: 8em;
             position: absolute;
             top: 100%;
             left: 0;
@@ -88,11 +97,31 @@
             font-size: $font-size;
         }
     }
-
-    .y-sub-nav .y-sub-nav .y-sub-nav-popover {
-        top: 0;
-        left: 100%;
-        margin-left: 8px;
+//第二层
+    .y-sub-nav .y-sub-nav {
+        &.active{
+            &::after{
+                display: none;
+            }
+        }
+        .y-sub-nav-popover {
+            top: 0;
+            left: 100%;
+            margin-left: 8px;
+        }
+        .y-sub-nav-label{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .y-sub-nav-icon{
+            display: inline-flex;
+            margin-left:1em;
+            transition: transform 250ms;
+            &.open{
+                transform: rotate(180deg);
+            }
+        }
     }
 
 
