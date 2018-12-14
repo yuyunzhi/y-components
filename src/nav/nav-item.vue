@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
     export default {
         name: "YNavItem",
         inject:['root'],
@@ -24,8 +25,9 @@
         },
         methods: {
             onClick() {
+                this.root.namePath=[]  //点击后清空高亮部分
+                this.$parent.updateNamePath && this.$parent.updateNamePath()
                 this.$emit('add:selected', this.name)
-                this.$parent.x()
             }
         },
 

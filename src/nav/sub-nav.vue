@@ -1,5 +1,5 @@
 <template>
-    <div class="y-sub-nav">
+    <div class="y-sub-nav" :class="{active}" v-click-outside="close">
         <span @click="onClick">
             <slot name="title"></slot>
         </span>
@@ -11,25 +11,42 @@
 </template>
 
 <script>
+    import ClickOutside from '../click-outside'
     export default {
         name: "YSubNav",
-        props:{
-          name:{
-              type:String,
-              required:true,
-          }
-        },
-        data(){
-            return{
-                open: false
+        inject:['root'],
+        directives:{ClickOutside},
+        props: {
+            name: {
+                type: String,
+                required: true,
             }
         },
-        methods:{
-            onClick(){
-                this.open=!this.open
+        data() {
+            return {
+                open: false,
+            }
+        },
+        computed:{
+          active(){
+              return this.root.namePath.indexOf(this.name) >= 0
+          }
+        },
+        methods: {
+            close(){
+                this.open=false
             },
-            x(){
-                console.log('x')
+            onClick() {
+                this.open = !this.open
+            },
+            updateNamePath() {
+                this.root.namePath.unshift(this.name)
+                if(this.$parent.updateNamePath){
+                    this.$parent.updateNamePath()
+                }else{
+
+                }
+
             }
         }
     }
@@ -37,29 +54,45 @@
 
 <style scoped lang="scss">
     @import "var";
+
     .y-sub-nav {
-        position:relative;
-        >span{
-            padding:10px 20px;
+        position: relative;
+        &.active {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-bottom: 1.5px solid $blue;
+                width: 100%;
+                height: 1px;
+
+            }
+
+        }
+        > span {
+            padding: 10px 20px;
             display: block;
         }
-        &-popover{
-            min-width:6em;
-            position:absolute;
-            top:100%;
-            left:0;
-            border:1px solid black;
-            white-space:nowrap;
-            margin-top:2px;
-            box-shadow:0 0 3px fade_out(black,0.9);
+        &-popover {
+            min-width: 6em;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border: 1px solid black;
+            white-space: nowrap;
+            margin-top: 2px;
+            box-shadow: 0 0 3px fade_out(black, 0.9);
             border-radius: $border-radius;
-            font-size:$font-size;
+            font-size: $font-size;
         }
     }
-    .y-sub-nav .y-sub-nav .y-sub-nav-popover{
-        top:0;
-        left:100%;
-        margin-left:8px;
+
+    .y-sub-nav .y-sub-nav .y-sub-nav-popover {
+        top: 0;
+        left: 100%;
+        margin-left: 8px;
     }
 
 

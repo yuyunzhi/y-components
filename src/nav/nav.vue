@@ -26,7 +26,8 @@
         },
         data() {
             return {
-                items:[]
+                items:[],
+                namePath:[],
             }
         },
         mounted() {

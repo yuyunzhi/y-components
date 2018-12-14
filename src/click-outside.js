@@ -2,7 +2,6 @@ let onClickDocument = (e) => {
     let {target} = e;
     callbacks.forEach((item) => {
         if (target === item.el || item.el.contains(target)) {
-
         } else {
             item.callback()
         }
