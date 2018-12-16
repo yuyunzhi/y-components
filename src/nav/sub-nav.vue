@@ -6,7 +6,7 @@
                 <y-icon name="right"></y-icon>
             </span>
         </span>
-        <div class="y-sub-nav-popover" v-show="open">
+        <div class="y-sub-nav-popover" v-show="open" :class="{vertical}">
             <slot></slot>
         </div>
 
@@ -22,7 +22,7 @@
         components:{
           'y-icon':  YIcon
         },
-        inject: ['root'],
+        inject: ['root','vertical'],
         directives: {ClickOutside},
         props: {
             name: {
@@ -95,6 +95,13 @@
             box-shadow: 0 0 3px fade_out(black, 0.9);
             border-radius: $border-radius;
             font-size: $font-size;
+            &.vertical{
+                position: static;
+                border-radius: 0;
+                box-shadow:none;
+                border:none;
+
+            }
         }
     }
 //第二层

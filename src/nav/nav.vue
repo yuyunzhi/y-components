@@ -1,5 +1,5 @@
 <template>
-    <div class="y-nav">
+    <div class="y-nav" :class="{vertical}">
         <slot></slot>
     </div>
 </template>
@@ -9,7 +9,8 @@
         name: "YNav",
         provide() {
             return {
-                root: this
+                root: this,
+                vertical:this.vertical
             }
         },
         props: {
@@ -22,6 +23,10 @@
                 default: () => {
                     return []
                 }
+            },
+            vertical:{
+                type:Boolean,
+                default:false,
             }
         },
         data() {
@@ -83,5 +88,10 @@
         color:$black;
         cursor: pointer;
         user-select: none;
+        &.vertical{
+            display:flex;
+            flex-direction:column;
+            border:1px solid $light-grey;
+        }
     }
 </style>
