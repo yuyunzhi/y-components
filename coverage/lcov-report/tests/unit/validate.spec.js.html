@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for tests\unit\popover.spec.js</title>
+    <title>Code coverage report for tests\unit\validate.spec.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">tests/unit/</a> popover.spec.js
+      <a href="../../index.html">all files</a> / <a href="index.html">tests/unit/</a> validate.spec.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -77,19 +77,8 @@
 32
 33
 34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,83 +94,58 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chai, {expect} from 'chai'
-&nbsp;
+import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
 import {shallowMount, mount} from '@vue/test-utils'
-import Popover from '../../src/popover'
+import validate from '../../src/validate.js'
+&nbsp;
 chai.use(sinonChai)
 &nbsp;
-describe('Popover', () =&gt; {
+describe('validate.js', () =&gt; {
     it('存在.', () =&gt; {
-        expect(Popover).to.exist
-    });
-&nbsp;
-    it('可以设置position.', () =&gt; {
-        const wrapper = mount(Popover, {
-            slots: {
-                default: {template: `&lt;button&gt;点我&lt;/button&gt;`},
-                content: '&lt;div&gt;弹出内容&lt;/div&gt;'
-            },
-            propsData: {
-                position: 'bottom'
-            }
-        })
-        wrapper.find('button').trigger('click')
-        let classes = wrapper.find('.content-wrapper').classes()
-        expect(classes).to.include('position-bottom')
+        expect(validate).to.exist
     })
 &nbsp;
-    it('可以设置 trigger方式', () =&gt; {
-        const wrapper = mount(Popover, {
-            slots: {
-                default: {template: `&lt;button&gt;点我&lt;/button&gt;`},
-                content: '&lt;div&gt;弹出内容&lt;/div&gt;'
-            },
-            propsData: {
-                trigger: 'hover',
-                position:'bottom',
-            }
-        })
-        //点击前，断言不存在
-        expect(wrapper.find('.content-wrapper').element).to.not.exist
-        wrapper.find('.popover').trigger('mouseenter')
-        //点击后，断言存在
-        expect(wrapper.find('.content-wrapper').element).to.exist
-&nbsp;
+    it('test1',()=&gt;{
+        let data={
+            email:''
+        }
+        let rules = [
+            {key:'email',required:true}
+        ]
+        let errors = validate(data,rules)
+        expect(errors.email.required).to.eq('必填')
+    })
+    it('test emil is number 0',()=&gt;{
+        let data={
+            email:0
+        }
+        let rules = [
+            {key:'email',required:true}
+        ]
+        let errors = validate(data,rules)
+        expect(errors.email).to.not.exist
     })
 &nbsp;
-});</pre></td></tr>
+})</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

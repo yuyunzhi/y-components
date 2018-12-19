@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\button\button.vue</title>
+    <title>Code coverage report for src\pager\pager.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">src/button/</a> button.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">src/pager/</a> pager.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">84.62% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>11/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">55.56% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>5/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>7/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>10/12</span>
       </div>
     </div>
   </div>
@@ -148,7 +148,39 @@
 103
 104
 105
-106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,18 +211,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -254,110 +318,142 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;button class="y-button" :class="classes"
-    @click="$emit('click')"&gt;
-    &lt;y-icon class="icon" v-if="icon &amp;&amp; !loading" :name="icon"&gt;&lt;/y-icon&gt;
-    &lt;y-icon class="loading icon" v-if="loading" name="loading"&gt;&lt;/y-icon&gt;
-    &lt;div class="content"&gt;
-      &lt;slot&gt;&lt;/slot&gt;
+    &lt;div class="y-pager" :class="{hide: hideIfOnePage === true &amp;&amp; totalPage &lt;= 1}"&gt;
+    &lt;span class="y-pager-nav prev" :class="{disabled:currentPage===1}"
+          @click="onClickPage(currentPage-1)"&gt;
+      &lt;y-icon name="left"&gt;&lt;/y-icon&gt;
+    &lt;/span&gt;
+        &lt;template v-for="page in pages"&gt;
+            &lt;template v-if="page === currentPage"&gt;
+                &lt;span class="y-pager-item current" :data-number="currentPage"&gt;{{page}}&lt;/span&gt;
+            &lt;/template&gt;
+            &lt;template v-else-if="page === '...'"&gt;
+                &lt;y-icon class="y-pager-separator" name="dots"&gt;&lt;/y-icon&gt;
+            &lt;/template&gt;
+            &lt;template v-else&gt;
+                &lt;span class="y-pager-item other" @click="onClickPage(page)"&gt;{{page}}&lt;/span&gt;
+            &lt;/template&gt;
+        &lt;/template&gt;
+        &lt;span class="y-pager-nav next" :class="{disabled: currentPage===totalPage}"
+              @click="onClickPage(currentPage+1)"&gt;
+      &lt;y-icon name="right"&gt;&lt;/y-icon&gt;
+    &lt;/span&gt;
     &lt;/div&gt;
-  &lt;/button&gt;
 &lt;/template&gt;
 &lt;script&gt;
-  import Icon from '../icon'
-  export default {
-    name: 'YButton',
-    components: {
-      'y-icon': Icon
-    },
-    props: {
-      icon: {},
-      loading: {
-        type: Boolean,
-        default: false
-      },
-      disabled:{
-        type:Boolean,
-        default:false
-      },
-      iconPosition: {
-        type: String,
-        default: 'left',
-        validator (value) {
-          return value === 'left' || value === 'right'
-        }
-      }
-    },
-      computed:{
-        classes(){
-            return{
-                [`icon-${this.iconPosition}`]: true,
-                disabled:this.disabled
+    import YIcon from '../icon'
+&nbsp;
+    export default {
+        name: "YPager",
+        components: {YIcon},
+        props: {
+            totalPage: {
+                type: Number,
+                required: true
+            },
+            currentPage: {
+                type: Number,
+                required: true
+            },
+            hideIfOnePage: {
+                type: Boolean,
+                default: true
+            }
+        },
+        computed: {
+            pages() { // 依赖了 totalPage 和 currentPage
+                return unique([1, this.totalPage,
+                    this.currentPage,
+                    this.currentPage - 1, this.currentPage - 2,
+                    this.currentPage + 1, this.currentPage + 2]
+                    .filter((n) =&gt; n &gt;= 1 &amp;&amp; n &lt;= this.totalPage)
+                    .sort((a, b) =&gt; a - b))
+                    .reduce((prev, current, index, array) =&gt; {
+                        prev.push(current)
+                        array[index + 1] !== undefined &amp;&amp; array[index + 1] - array[index] &gt; 1 &amp;&amp; prev.push('...')
+                        return prev
+                    }, [])
+            }
+        },
+        methods: {
+            onClickPage<span class="fstat-no" title="function not covered" >(n) {</span>
+<span class="cstat-no" title="statement not covered" >                if (n &gt;= 1 &amp;&amp; n &lt;= this.totalPage) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.$emit('update:currentPage',</span> n)
+                }
             }
         }
-      }
-  }
-&lt;/script&gt;
-&lt;style lang="scss" scoped&gt;
-@import 'var.scss';
-/*     $button-height: 32px;
-     $font-size: 14px;
-     $button-bg: #40a9ff;
-     $button-active-bg:  #096dd9;//#40a9ff
-     $border-radius: 4px;
-     $color: white;
-      $border-color: white;
-     $border-color-hover: #1890ff;  //#096dd9
-     $disabled-color:rgb(153,153,153);
-     $disabled-bg:white;*/
+    }
 &nbsp;
-     @keyframes spin {
-         0%{transform: rotate(0)}
-         100%{transform: rotate(360deg)}
-     }
-     .loading{
-         animation: spin 2s linear infinite;
-     }
-     .y-button {
-         font-size: $font-size;
-         height: $button-height;
-         padding: 0 1em;
-         border-radius: $border-radius;
-         border: 1px solid $border-color;
-         background: $button-bg;
-         display:inline-flex;
-         justify-content: center;
-         align-items: center;
-         vertical-align: middle;
-         color:$color;
-         .icon{
-             fill:white;
-         }
-         .content{
-             padding: 0;
-         }
-         &amp;:hover {
-             border-color: $border-color-hover;
-             cursor: pointer;
-         }
-         &amp;:active {background-color: $button-active-bg;}
-         &amp;:focus {outline: none;}
-         &gt; .content{order:2;}
-         &gt; .icon{order:1;margin-right:.3em;}
-         &amp;.icon-right{
-             &gt; .content{order:1;}
-             &gt; .icon{order:2;margin-right:0;margin-left:.3em;}
-         }
-         &amp;.disabled{
-             border:1px solid $disabled-color;
-             color:$disabled-color;
-             background:$disabled-bg;
-             cursor: not-allowed;
-         }
-     }
+    function unique(array) {
+        // return [...new Set(array)]
+        // array = [1 1 2 3 4 5 20]
+        const object = {}
+        array.map((number) =&gt; {
+            object[number] = true
+        })
+        return Object.keys(object).map((s) =&gt; parseInt(s, 10))
+    }
+&lt;/script&gt;
+&lt;style scoped lang="scss"&gt;
+    @import "var";
+&nbsp;
+    .y-pager {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        user-select: none;
+        $width: 20px;
+        $height: 20px;
+        $font-size: 12px;
+        &amp;.hide {
+            display: none;
+        }
+        &amp;-separator {
+            width: $width;
+            font-size: $font-size;
+        }
+        &amp;-item {
+            min-width: $width;
+            height: $height;
+            font-size: $font-size;
+            border: 1px solid #e1e1e1;
+            border-radius: $border-radius;
+            padding: 0 4px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 4px;
+            cursor: pointer;
+            &amp;.current, &amp;:hover {
+                border-color: $blue;
+            }
+            &amp;.current {
+                cursor: default;
+            }
+        }
+        &amp;-nav {
+            margin: 0 4px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: $grey;
+            height: $height;
+            width: $width;
+            border-radius: $border-radius;
+            font-size: $font-size;
+            cursor: pointer;
+            &amp;.disabled {
+                cursor: default;
+                svg {
+                    fill: darken($grey, 30%);
+                }
+            }
+        }
+    }
 &lt;/style&gt;
 &nbsp;
-    
+&nbsp;
+&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

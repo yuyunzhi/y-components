@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/nav/demo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pager/pager.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/pager.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pager/demo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit/validate.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" afterDir="false" />
@@ -28,7 +28,6 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/svg.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,10 +112,10 @@
     <session id="1085007978">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="52" />
+          <entry key="project.closed" value="55" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="12" />
-          <entry key="project.open.time.11" value="6" />
+          <entry key="project.open.time.11" value="8" />
           <entry key="project.open.time.12" value="14" />
           <entry key="project.open.time.13" value="5" />
           <entry key="project.open.time.14" value="3" />
@@ -130,18 +129,18 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="58" />
+          <entry key="project.opened" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="261" />
-          <entry key="js" value="2000" />
+          <entry key="js" value="2413" />
           <entry key="json" value="8" />
           <entry key="md" value="1262" />
           <entry key="scss" value="105" />
           <entry key="sh" value="20" />
-          <entry key="txt" value="371" />
+          <entry key="txt" value="397" />
           <entry key="vue" value="16355" />
           <entry key="yml" value="15" />
         </counts>
@@ -150,9 +149,9 @@
         <counts>
           <entry key="HTML" value="284" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="1997" />
+          <entry key="JavaScript" value="2410" />
           <entry key="Markdown" value="1254" />
-          <entry key="PLAIN_TEXT" value="391" />
+          <entry key="PLAIN_TEXT" value="417" />
           <entry key="SCSS" value="105" />
           <entry key="Vue.js" value="16343" />
           <entry key="YAML" value="15" />
@@ -164,14 +163,14 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="11" />
           <entry key="ico" value="1" />
-          <entry key="js" value="73" />
+          <entry key="js" value="77" />
           <entry key="json" value="16" />
           <entry key="md" value="39" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="6" />
           <entry key="sh" value="4" />
           <entry key="ts" value="2" />
-          <entry key="vue" value="144" />
+          <entry key="vue" value="145" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
@@ -181,13 +180,13 @@
           <entry key="HTML" value="11" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="15" />
-          <entry key="JavaScript" value="73" />
+          <entry key="JavaScript" value="77" />
           <entry key="Markdown" value="39" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="6" />
           <entry key="TypeScript" value="2" />
-          <entry key="Vue.js" value="144" />
+          <entry key="Vue.js" value="145" />
           <entry key="YAML" value="3" />
           <entry key="tsconfig" value="1" />
         </counts>
@@ -202,32 +201,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pager/pager.vue">
+        <entry file="file://$PROJECT_DIR$/tests/unit/validate.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/unit/pager.spec.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="293">
+              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" selection-start-line="8" selection-end-line="71" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#243#2062#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/validate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -286,10 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo2.vue" />
-        <option value="$PROJECT_DIR$/docs/.vuepress/components/collapse-demo1.vue" />
-        <option value="$PROJECT_DIR$/docs/components/collapse.md" />
-        <option value="$PROJECT_DIR$/docs/components/layout.md" />
         <option value="$PROJECT_DIR$/docs/.vuepress/dist/get-started/index.html" />
         <option value="$PROJECT_DIR$/docs/.vuepress/config.js" />
         <option value="$PROJECT_DIR$/test/popover.test.js" />
@@ -336,7 +335,11 @@
         <option value="$PROJECT_DIR$/src/pager/pager.vue" />
         <option value="$PROJECT_DIR$/tests/unit/slides.spec.js" />
         <option value="$PROJECT_DIR$/tests/unit/pager.spec.js" />
+        <option value="$PROJECT_DIR$/src/pager/demo.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/validator.js" />
+        <option value="$PROJECT_DIR$/src/validate.js" />
+        <option value="$PROJECT_DIR$/tests/unit/validate.spec.js" />
       </list>
     </option>
   </component>
@@ -357,9 +360,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="493" />
-    <option name="y" value="1" />
-    <option name="width" value="1414" />
+    <option name="x" value="497" />
+    <option name="y" value="15" />
+    <option name="width" value="1432" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -370,6 +373,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -397,7 +401,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -537,14 +540,9 @@
       <workItem from="1544780379143" duration="3000" />
       <workItem from="1544921271010" duration="2960000" />
       <workItem from="1545112365468" duration="9000" />
-      <workItem from="1545112929460" duration="14097000" />
-    </task>
-    <task id="LOCAL-00025" summary="添加row 和 col 的测试用例，并通过测试">
-      <created>1539152191011</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1539152191011</updated>
+      <workItem from="1545112929460" duration="14341000" />
+      <workItem from="1545206713336" duration="88000" />
+      <workItem from="1545207157655" duration="6776000" />
     </task>
     <task id="LOCAL-00026" summary="默认四种布局组件">
       <created>1539161410903</created>
@@ -882,11 +880,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545198476810</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="完成pager组件，及单元测试完成">
+      <created>1545205359377</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1545205359377</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437798000" />
+    <option name="totallyTimeSpent" value="444906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -898,10 +903,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="395" y="1" width="1131" height="800" extended-state="0" />
+    <frame x="398" y="12" width="1145" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921012" visible="true" weight="0.23813869" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921012" visible="true" weight="0.23783784" />
       <window_info id="Structure" order="1" sideWeight="0.5007899" side_tool="true" weight="0.22911878" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -940,7 +945,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改README" />
     <MESSAGE value="添加svg.js" />
     <MESSAGE value="popover组件" />
     <MESSAGE value="将变量提升到var.scss" />
@@ -965,7 +969,8 @@
     <MESSAGE value="让nav 垂直与水平样式不冲突" />
     <MESSAGE value="完善nav css" />
     <MESSAGE value="把selected 数组改为字符串" />
-    <option name="LAST_COMMIT_MESSAGE" value="把selected 数组改为字符串" />
+    <MESSAGE value="完成pager组件，及单元测试完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成pager组件，及单元测试完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1001,7 +1006,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>22</line>
+          <line>16</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1023,19 +1028,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/layout/header.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/input.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="40" selection-start-line="40" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/layout.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1249,18 +1241,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nav/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/nav/tsconfig.json" />
     <entry file="file://$PROJECT_DIR$/src/nav/demo.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1466">
           <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#y-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#y-nav#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#2197#2229#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,30 +1263,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/pager.spec.js.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/pager.spec.js.vue" />
     <entry file="file://$PROJECT_DIR$/tests/unit/nav.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1309,43 +1275,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/slides.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="4347">
+          <caret line="195" column="14" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="14" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/pager.spec.js">
+    <entry file="file://$PROJECT_DIR$/src/pager/demo.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="598">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pager/pager.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/pager.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/button.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="71" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#243#2062#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/validate.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
