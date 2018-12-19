@@ -1,6 +1,6 @@
 <template>
-    <div class="y-nav-item" :class="{'active':selected}" @click="onClick">
-            <slot></slot>
+    <div class="y-nav-item" :class="{'active':selected,vertical}" @click="onClick">
+        <slot></slot>
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 
     export default {
         name: "YNavItem",
-        inject:['root'],
+        inject: ['root', 'vertical'],
         props: {
             name: {
                 type: String,
@@ -20,12 +20,12 @@
                 selected: false
             }
         },
-        created(){
+        created() {
             this.root.addItem(this)
         },
         methods: {
             onClick() {
-                this.root.namePath=[]  //点击后清空高亮部分
+                this.root.namePath = []  //点击后清空高亮部分
                 this.$parent.updateNamePath && this.$parent.updateNamePath()
                 this.$emit('add:selected', this.name)
             }
@@ -36,30 +36,44 @@
 
 <style scoped lang="scss">
     @import "var";
+
     .y-nav-item {
         padding: 10px 20px;
         position: relative;
-        &.active {
-            &::after{
-                content:'';
-                position: absolute;
-                bottom:0;
-                left:0;
-                border-bottom:1.5px solid $blue;
-                width:100%;
-                height:1px;
+        &:not(.vertical) {
+            &.active {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 1.5px solid $blue;
+                    width: 100%;
+                    height: 1px;
 
+                }
             }
         }
-    }
-    .y-sub-nav .y-nav-item{
-        color:$light-color;
+        &.vertical {
+            &.active {
+                color: $blue;
+            }
+        }
 
-        &.active{
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .y-sub-nav .y-nav-item:not(.vertical) {
+        color: $light-color;
+        &.active {
             border-radius: $border-radius;
-            background:$grey;
-            color:$black;
-            &::after{
+            background: $grey;
+            color: $black;
+            &::after {
                 display: none;
             }
         }

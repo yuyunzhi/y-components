@@ -1,8 +1,8 @@
 <template>
-    <div class="y-sub-nav" :class="{active}" v-click-outside="close">
+    <div class="y-sub-nav" :class="{active,vertical}" v-click-outside="close">
         <span @click="onClick" class="y-sub-nav-label">
             <slot name="title"></slot>
-            <span class="y-sub-nav-icon" :class="{open}">
+            <span class="y-sub-nav-icon" :class="{open,vertical}">
                 <y-icon name="right"></y-icon>
             </span>
         </span>
@@ -77,6 +77,9 @@
               el.style.height='auto'
             },
             close() {
+                if(this.vertical){
+                    return
+                }
                 this.open = false
             },
             onClick() {
@@ -100,20 +103,21 @@
 
     .y-sub-nav {
         position: relative;
-        &.active {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                border-bottom: 1.5px solid $blue;
-                width: 100%;
-                height: 1px;
-
+        &:not(.vertical){
+            &.active {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 1.5px solid $blue;
+                    width: 100%;
+                    height: 1px;
+                }
             }
-
         }
+
         > .y-sub-nav-label {
             padding: 10px 20px;
             display: block;
@@ -163,6 +167,12 @@
             display: inline-flex;
             margin-left:1em;
             transition: transform 250ms;
+            &.vertical{
+            transform: rotate(90deg);
+                &.open{
+                    transform: rotate(270deg);
+                }
+        }
             &.open{
                 transform: rotate(180deg);
             }

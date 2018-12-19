@@ -4,6 +4,7 @@
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nav/nav-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/nav/nav-item.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/nav/sub-nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/nav/sub-nav.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -117,8 +118,8 @@
           <entry key="md" value="1262" />
           <entry key="scss" value="105" />
           <entry key="sh" value="20" />
-          <entry key="txt" value="320" />
-          <entry key="vue" value="15833" />
+          <entry key="txt" value="342" />
+          <entry key="vue" value="16048" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -128,9 +129,9 @@
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="1587" />
           <entry key="Markdown" value="1254" />
-          <entry key="PLAIN_TEXT" value="340" />
+          <entry key="PLAIN_TEXT" value="362" />
           <entry key="SCSS" value="105" />
-          <entry key="Vue.js" value="15821" />
+          <entry key="Vue.js" value="16036" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -177,13 +178,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="-1133">
+              <caret line="5" column="60" lean-forward="true" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#y-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#y-nav#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#2074#2106#0" expanded="true" />
               </folding>
             </state>
@@ -202,8 +204,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/nav/sub-nav.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
+            <state relative-caret-position="59">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="e#556#599#0" expanded="true" />
               </folding>
@@ -211,11 +213,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/nav/nav-item.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="-167">
+              <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -247,6 +249,7 @@
       <find>GSl</find>
       <find>getAttribute</find>
       <find>g-</find>
+      <find>default</find>
     </findStrings>
     <replaceStrings>
       <replace>$</replace>
@@ -315,10 +318,10 @@
         <option value="$PROJECT_DIR$/src/cascader/cascaderDemo.vue" />
         <option value="$PROJECT_DIR$/styles/var.scss" />
         <option value="$PROJECT_DIR$/src/click-outside.js" />
-        <option value="$PROJECT_DIR$/src/nav/nav-item.vue" />
         <option value="$PROJECT_DIR$/src/nav/nav.vue" />
-        <option value="$PROJECT_DIR$/src/nav/sub-nav.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/nav/sub-nav.vue" />
+        <option value="$PROJECT_DIR$/src/nav/nav-item.vue" />
       </list>
     </option>
   </component>
@@ -493,14 +496,7 @@
       <workItem from="1544780379143" duration="3000" />
       <workItem from="1544921271010" duration="2960000" />
       <workItem from="1545112365468" duration="9000" />
-      <workItem from="1545112929460" duration="4032000" />
-    </task>
-    <task id="LOCAL-00022" summary="添加input.vue 及其样式">
-      <created>1538651376715</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1538651376715</updated>
+      <workItem from="1545112929460" duration="5928000" />
     </task>
     <task id="LOCAL-00023" summary="完成input测试驱动，并且让input可以双向绑定">
       <created>1538694916253</created>
@@ -838,11 +834,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544944471258</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="让nav 垂直与水平样式不冲突">
+      <created>1545193445741</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1545193445741</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="427733000" />
+    <option name="totallyTimeSpent" value="429629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -918,7 +921,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新test  bug" />
     <MESSAGE value="解决grid  bug" />
     <MESSAGE value="解决grid  test bug" />
     <MESSAGE value="修改README" />
@@ -943,7 +945,8 @@
     <MESSAGE value="更新选中逻辑" />
     <MESSAGE value="添加icon" />
     <MESSAGE value="添加nav垂直样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加nav垂直样式" />
+    <MESSAGE value="让nav 垂直与水平样式不冲突" />
+    <option name="LAST_COMMIT_MESSAGE" value="让nav 垂直与水平样式不冲突" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -979,7 +982,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>68</line>
+          <line>70</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1273,10 +1276,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/nav/nav-item.vue">
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="-1133">
+          <caret line="5" column="60" lean-forward="true" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#y-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#y-nav#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#2074#2106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1289,22 +1297,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/nav/sub-nav.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
+        <state relative-caret-position="59">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="e#556#599#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
+    <entry file="file://$PROJECT_DIR$/src/nav/nav-item.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="n#style#0;n#y-nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#2074#2106#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-167">
+          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
         </state>
       </provider>
     </entry>
