@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
 
-        <y-nav :selected.sync="selected" vertical style="width:200px;">
+        <y-nav :selected.sync="selected" vertical style="width:200px;" @update:selected="onChange">
             <y-nav-item name="home">
                 <a href="//www.baidu.com" target="_blank">首页</a>
             </y-nav-item>
@@ -23,9 +23,6 @@
             </y-sub-nav>
             <y-nav-item name="hire">招聘</y-nav-item>
         </y-nav>
-
-
-
 
    <y-nav :selected.sync="selected"   style="margin-top:200px;">
             <y-nav-item name="home">首页</y-nav-item>
@@ -64,8 +61,10 @@
                 selected:'home',
             }
         },
-        created() {
-
+        methods:{
+            onChange(selected){
+                console.log('点击监听',selected);
+            }
         }
     }
 </script>
