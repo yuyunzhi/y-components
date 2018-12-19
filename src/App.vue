@@ -61,7 +61,7 @@
         },
         data() {
             return {
-                selected:['home']
+                selected:'home',
             }
         },
         created() {
