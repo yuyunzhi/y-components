@@ -6,9 +6,20 @@
                 <y-icon name="right"></y-icon>
             </span>
         </span>
-        <div class="y-sub-nav-popover" v-show="open" :class="{vertical}">
-            <slot></slot>
-        </div>
+        <template v-if="vertical">
+            <transition @enter="enter" @after-enter="afterEnter" @leave="leave" @after-leave="afterLeave">
+                <div class="y-sub-nav-popover" v-show="open" :class="{vertical}">
+                    <slot></slot>
+                </div>
+            </transition>
+        </template>
+        <template v-else>
+            <div class="y-sub-nav-popover" v-show="open" >
+                <slot></slot>
+            </div>
+        </template>
+
+
 
     </div>
 </template>
@@ -41,6 +52,30 @@
             }
         },
         methods: {
+
+            enter(el,done){
+                el.style.height=`auto`
+                let {height}=el.getBoundingClientRect()
+                el.style.height=`0`
+                el.getBoundingClientRect()
+                el.style.height=`${height}px`
+                el.addEventListener('transitionend',()=>{
+                    done()
+                })
+            },
+            afterEnter(el){
+                el.style.height='auto'
+            },
+            leave(el,done){
+                let {height}=el.getBoundingClientRect()
+                el.style.height=`${height}px`
+                el.getBoundingClientRect()
+                el.style.height=`0px`
+
+            },
+            afterLeave(el){
+              el.style.height='auto'
+            },
             close() {
                 this.open = false
             },
@@ -85,6 +120,7 @@
         }
         .y-sub-nav-icon{display: none}
         &-popover {
+            transition: height 1s;
             min-width: 8em;
             position: absolute;
             top: 100%;
@@ -95,12 +131,13 @@
             box-shadow: 0 0 3px fade_out(black, 0.9);
             border-radius: $border-radius;
             font-size: $font-size;
+            //overflow: hidden;
             &.vertical{
                 position: static;
                 border-radius: 0;
                 box-shadow:none;
                 border:none;
-
+                overflow: hidden;
             }
         }
     }
@@ -111,6 +148,7 @@
                 display: none;
             }
         }
+
         .y-sub-nav-popover {
             top: 0;
             left: 100%;
