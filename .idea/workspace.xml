@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/upload.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/button/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/button/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/click-outside.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/click-outside.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/icon.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/icon.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/nav/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/nav/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/nav/nav-item.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/nav/nav-item.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/nav/nav.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/nav/nav.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/nav/sub-nav.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/nav/sub-nav.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/pager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/pager/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/pager/pager.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/pager/pager.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/popover.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/popover.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/slides/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/slides/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides-item.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides-item.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides.vue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/svg.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/svg.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/validate.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/validate.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/button.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/button.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/nav.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/nav.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/pager.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/pager.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/popover.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/popover.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/validate.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/validate.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/upload.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -120,8 +89,8 @@
     <session id="1085007978">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="69" />
-          <entry key="project.open.time.1" value="4" />
+          <entry key="project.closed" value="70" />
+          <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="14" />
           <entry key="project.open.time.11" value="9" />
           <entry key="project.open.time.12" value="16" />
@@ -138,7 +107,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="76" />
+          <entry key="project.opened" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -150,7 +119,7 @@
           <entry key="scss" value="105" />
           <entry key="sh" value="20" />
           <entry key="txt" value="397" />
-          <entry key="vue" value="17422" />
+          <entry key="vue" value="19365" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -162,7 +131,7 @@
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="417" />
           <entry key="SCSS" value="105" />
-          <entry key="Vue.js" value="17410" />
+          <entry key="Vue.js" value="19353" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -210,22 +179,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+            <state relative-caret-position="-230">
+              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/upload.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="39" column="49" lean-forward="true" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+            <state relative-caret-position="92">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -356,10 +326,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="10" />
-    <option name="y" value="32" />
+    <option name="x" value="912" />
+    <option name="y" value="75" />
     <option name="width" value="1435" />
-    <option name="height" value="979" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -392,7 +362,7 @@
     <property name="SearchEverywhereHistoryKey" value="sort lines&#9;ACTION&#9;linessorter.sort&#10;sort line&#9;ACTION&#9;linessorter.sort&#10;sort&#9;null&#9;null&#10;vcs&#9;ACTION&#9;Vcs.QuickListPopupAction&#10;reformat&#9;ACTION&#9;ReformatCode" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node-serve" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -542,7 +512,8 @@
       <workItem from="1545968176785" duration="1502000" />
       <workItem from="1545984797733" duration="1031000" />
       <workItem from="1546609486791" duration="24000" />
-      <workItem from="1546827877576" duration="11331000" />
+      <workItem from="1546827877576" duration="11399000" />
+      <workItem from="1546862088486" duration="9446000" />
     </task>
     <task id="LOCAL-00026" summary="默认四种布局组件">
       <created>1539161410903</created>
@@ -891,7 +862,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="465667000" />
+    <option name="totallyTimeSpent" value="475181000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -903,11 +874,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="26" width="1148" height="783" extended-state="0" />
+    <frame x="730" y="60" width="1148" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921012" visible="true" weight="0.23719676" />
-      <window_info id="Structure" order="1" sideWeight="0.5007899" side_tool="true" weight="0.22911878" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976599" weight="0.23719676" />
+      <window_info id="Structure" order="1" sideWeight="0.5023401" side_tool="true" weight="0.23719676" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -927,6 +898,28 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.23719676" />
+      <window_info id="Structure" order="1" sideWeight="0.5023401" side_tool="true" weight="0.23719676" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2877698" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289256" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32986626" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.33381295" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289256" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1006,7 +999,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>35</line>
+          <line>42</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1278,9 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2001">
           <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,20 +1319,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/upload.vue">
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="39" column="49" lean-forward="true" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-230">
+          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
+    <entry file="file://$PROJECT_DIR$/src/upload.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state relative-caret-position="92">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

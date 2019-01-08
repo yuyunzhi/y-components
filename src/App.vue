@@ -4,7 +4,8 @@
                   action="http://127.0.0.1:3000/upload"
                   name="file"
                   methods="0"
-                  :fileList="fileList" @update:fileList="fileList"
+                  :fileList.sync="fileList"
+                  :parseResponse="parseResponse"
         >
             <button>上传</button>
             <template slot="tips">
@@ -30,7 +31,13 @@
         },
 
         methods: {
-
+            //拿到后端的数据，进行处理组成url，并返回url
+            parseResponse(res){
+                console.log('res',res)
+                let obj = JSON.parse(res)
+                let url=`http://127.0.0.1:3000/upload/${obj.id}`
+                return url
+            }
         }
     }
 </script>
