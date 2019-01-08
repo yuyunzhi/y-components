@@ -6,6 +6,7 @@
                   methods="0"
                   :fileList.sync="fileList"
                   :parseResponse="parseResponse"
+                  @update:fileList="yyy"
         >
             <button>上传</button>
             <template slot="tips">
@@ -37,6 +38,9 @@
                 let obj = JSON.parse(res)
                 let url=`http://127.0.0.1:3000/upload/${obj.id}`
                 return url
+            },
+            yyy(){
+                console.log(1111111111);
             }
         }
     }

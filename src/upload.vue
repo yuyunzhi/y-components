@@ -75,14 +75,13 @@
                 this.$emit('update:fileList', [...this.fileList, {name, type, size,status:'uploading'}])
             },
             afterUploadFile(rawFile,newName,url){
+                //改url 和 status
                 let file = this.fileList.filter(f=>f.name===newName)
-                console.log('file')
-                console.log(file)
-
                 let copy = JSON.parse(JSON.stringify(file))
                 copy.url=url
                 copy.status='success'
 
+                //删除多余的一项,并用新的代替
                 let index=this.fileList.indexOf(file)
                 let fileListCopy=[...this.fileList]
                 fileListCopy.splice(index,1,copy)
@@ -91,7 +90,9 @@
             },
             uploadFile(rawFile) {
                 let {name, type, size} = rawFile
+                //检测名字是否重复，并做处理
                 let newName= this.generateName(name)
+                //添加加载状态
                 this.beforeUploadFile(rawFile,newName)
                 //'avatarFile'要和后端指定好相同的名字
                 let formData = new FormData()
@@ -100,8 +101,22 @@
                 this.doUploadFile(formData, (response) => {
                     let url = this.parseResponse(response)
                     this.url = url
+                    //删除加载状态
                     this.afterUploadFile(rawFile,newName,url)
+                },()=>{
+                    this.uploadError(newName)
                 })
+            },
+            uploadError(newName){
+               let file =  this.fileList.filter(f => f.name === newName)
+                let fileCopy=JSON.parse(JSON.stringify(file))
+
+                fileCopy.status='fail'
+
+                let index=this.fileList.indexOf(file)
+                let fileListCopy=[...this.fileList]
+                fileListCopy.splice(index,1,fileCopy)
+                this.$emit('update:fileList', fileListCopy)
             },
             generateName(name){
                 while (this.fileList.filter(f => f.name === name).length > 0) {
@@ -112,7 +127,9 @@
                 }
                 return name
             },
-            doUploadFile(formData, success) {
+            doUploadFile(formData, success,fail) {
+                fail()
+                return
                 var xhr = new XMLHttpRequest()
                 xhr.open('post', this.action)
                 xhr.onload = function () {

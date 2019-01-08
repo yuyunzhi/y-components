@@ -119,7 +119,7 @@
           <entry key="scss" value="105" />
           <entry key="sh" value="20" />
           <entry key="txt" value="397" />
-          <entry key="vue" value="19365" />
+          <entry key="vue" value="19685" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -131,7 +131,7 @@
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="417" />
           <entry key="SCSS" value="105" />
-          <entry key="Vue.js" value="19353" />
+          <entry key="Vue.js" value="19673" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -179,20 +179,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-230">
-              <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+            <state relative-caret-position="115">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/upload.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="139">
+              <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -304,8 +304,8 @@
         <option value="$PROJECT_DIR$/src/validate.js" />
         <option value="$PROJECT_DIR$/tests/unit/validate.spec.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/upload.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
       </list>
     </option>
   </component>
@@ -326,8 +326,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="912" />
-    <option name="y" value="75" />
+    <option name="x" value="930" />
+    <option name="y" value="126" />
     <option name="width" value="1435" />
     <option name="height" value="980" />
   </component>
@@ -513,7 +513,7 @@
       <workItem from="1545984797733" duration="1031000" />
       <workItem from="1546609486791" duration="24000" />
       <workItem from="1546827877576" duration="11399000" />
-      <workItem from="1546862088486" duration="9446000" />
+      <workItem from="1546862088486" duration="12446000" />
     </task>
     <task id="LOCAL-00026" summary="默认四种布局组件">
       <created>1539161410903</created>
@@ -862,7 +862,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475181000" />
+    <option name="totallyTimeSpent" value="478181000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -874,7 +874,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="730" y="60" width="1148" height="784" extended-state="0" />
+    <frame x="744" y="101" width="1148" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976599" weight="0.23719676" />
@@ -999,7 +999,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>42</line>
+          <line>46</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1319,21 +1319,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/upload.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="139">
+          <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#li#0;n#ol#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
