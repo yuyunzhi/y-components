@@ -1,28 +1,40 @@
 <template>
-    <div class="y-upload">
+    <div class="y-uploader">
         <div @click="onClickUpload">
             <slot></slot>
         </div>
-        <slot name="tips"></slot>
+
         <div ref="temp" style="width:0;height:0;overflow: hidden"></div>
 
-        <ol>
+        <ol class="y-uploader-fileList">
             <li v-for="(file,index) in fileList" :key="index">
                 <template v-if="file.status==='uploading'">
-                    菊花
+                          <span class="y-uploader-spin-wrapper">
+                    <y-icon name="loading" class="y-uploader-spin"></y-icon>
+                                </span>
                 </template>
-                <img :src="file.url" style="width:30px;height:30px">
-                {{file.name}}
-                <button @click="onRemoveFile(file)">x</button>
-                {{file.status}}
+                <template v-else-if="file.status ==='success'">
+                    <img class="y-uploader-image" :src="file.url" width="32" height="32" alt="">
+                </template>
+                <template v-else-if="file.status ==='fail'">
+                    <img src="https://i.loli.net/2019/01/09/5c35d9915d5ed.jpg"  class="y-uploader-defaultImage"/>
+                </template>
+                <span @click="onRemoveFile(file)">
+                       <y-icon name="searchclose" class="y-uploader-delete"></y-icon>
+                </span>
+
+
             </li>
         </ol>
     </div>
 </template>
 
 <script>
+    import YIcon from './icon'
+
     export default {
         name: 'YUpload',
+        components: {YIcon},
         props: {
             action: {
                 type: String,
@@ -43,6 +55,10 @@
             fileList: {
                 type: Array,
                 default: () => []
+            },
+            size:{
+                type:Number,
+                default:2*1024*1024
             }
         },
         data() {
@@ -70,30 +86,39 @@
                     this.$emit('update:fileList', copy)
                 }
             },
-            beforeUploadFile(rawfile,newName,url){
-                let { type, size} = rawfile
-                this.$emit('update:fileList', [...this.fileList, {name, type, size,status:'uploading'}])
+            beforeUploadFile(rawfile, newName, url) {
+                let {type, size} = rawfile
+                console.log(size);
+                if(size>this.size){
+                    this.$emit('error','文字大于2MB')
+                    return false
+                }else{
+                    this.$emit('update:fileList', [...this.fileList, {name, type, size, status: 'uploading'}])
+
+                    return true
+                }
+
             },
-            afterUploadFile(rawFile,newName,url){
+            afterUploadFile(rawFile, newName, url) {
                 //改url 和 status
-                let file = this.fileList.filter(f=>f.name===newName)
+                let file = this.fileList.filter(f => f.name === newName)
                 let copy = JSON.parse(JSON.stringify(file))
-                copy.url=url
-                copy.status='success'
+                copy.url = url
+                copy.status = 'success'
 
                 //删除多余的一项,并用新的代替
-                let index=this.fileList.indexOf(file)
-                let fileListCopy=[...this.fileList]
-                fileListCopy.splice(index,1,copy)
+                let index = this.fileList.indexOf(file)
+                let fileListCopy = [...this.fileList]
+                fileListCopy.splice(index, 1, copy)
 
                 this.$emit('update:fileList', fileListCopy)
             },
             uploadFile(rawFile) {
                 let {name, type, size} = rawFile
                 //检测名字是否重复，并做处理
-                let newName= this.generateName(name)
+                let newName = this.generateName(name)
                 //添加加载状态
-                this.beforeUploadFile(rawFile,newName)
+                if(!this.beforeUploadFile(rawFile, newName)){return}
                 //'avatarFile'要和后端指定好相同的名字
                 let formData = new FormData()
 
@@ -102,23 +127,30 @@
                     let url = this.parseResponse(response)
                     this.url = url
                     //删除加载状态
-                    this.afterUploadFile(rawFile,newName,url)
-                },()=>{
-                    this.uploadError(newName)
+                    this.afterUploadFile(rawFile, newName, url)
+                }, (xhr) => {
+                    this.uploadError(xhr,newName)
                 })
             },
-            uploadError(newName){
-               let file =  this.fileList.filter(f => f.name === newName)
-                let fileCopy=JSON.parse(JSON.stringify(file))
+            uploadError(xhr, newName) {
+                let file = this.fileList.filter(f => f.name === newName)
+                let fileCopy = JSON.parse(JSON.stringify(file))
 
-                fileCopy.status='fail'
+                fileCopy.status = 'fail'
 
-                let index=this.fileList.indexOf(file)
-                let fileListCopy=[...this.fileList]
-                fileListCopy.splice(index,1,fileCopy)
+                let index = this.fileList.indexOf(file)
+                let fileListCopy = [...this.fileList]
+                fileListCopy.splice(index, 1, fileCopy)
+                console.log('失败',fileListCopy);
                 this.$emit('update:fileList', fileListCopy)
+
+                let error = ''
+                if (xhr.status === 0) {
+                    error = '网络无法连接'
+                }
+                this.$emit('error', error)
             },
-            generateName(name){
+            generateName(name) {
                 while (this.fileList.filter(f => f.name === name).length > 0) {
                     let dotIndex = name.lastIndexOf('.')
                     let nameWithoutExtension = name.substring(0, dotIndex)
@@ -127,13 +159,14 @@
                 }
                 return name
             },
-            doUploadFile(formData, success,fail) {
-                fail()
-                return
+            doUploadFile(formData, success, fail) {
                 var xhr = new XMLHttpRequest()
                 xhr.open('post', this.action)
                 xhr.onload = function () {
                     success(xhr.response)
+                }.bind(this)
+                xhr.onerror=function(){
+                    fail(xhr,xhr.response)
                 }.bind(this)
                 xhr.send(formData)
             },
@@ -149,7 +182,91 @@
 </script>
 
 <style scoped lang="scss">
-    .y-upload {
+    @import "var";
+
+    .y-uploader {
+
+        &-fileList {
+
+            list-style: none;
+            padding-left: 0;
+            > li {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                z-index: 0;
+                background-color: #fff;
+                border: 1px solid #c0ccda;
+                border-radius: 6px;
+                box-sizing: border-box;
+                margin-top: 10px;
+                padding: 10px 10px 10px 90px;
+                height: 92px;
+                position: relative;
+                .y-uploader-delete {
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+
+                }
+            }
+
+        }
+        &-image{
+            vertical-align: middle;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            float: left;
+            position: relative;
+            z-index: 1;
+            margin-left: -80px;
+        }
+        &-defaultImage {
+            vertical-align: middle;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            float: left;
+            position: relative;
+            z-index: 1;
+            margin-left: -80px;
+
+        }
+        &-name {
+            margin-right: auto;
+            &.success {
+                color: green;
+            }
+            &.fail {
+                color: red;
+            }
+        }
+        &-remove {
+            width: 32px;
+            height: 32px;
+        }
+        &-spin-wrapper {
+            vertical-align: middle;
+            display: inline-flex;
+            width: 70px;
+            height: 70px;
+            float: left;
+            position: relative;
+            z-index: 1;
+            margin-left: -80px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        &-spin {
+            width: 35px;
+            height: 35px;
+            @include spin;
+        }
 
     }
 </style>

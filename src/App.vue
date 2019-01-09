@@ -1,5 +1,6 @@
 <template>
     <div class="wrapper">
+        <div>只能上传2MB以内png、jpeg文件</div>
         <y-upload accept="image/*"
                   action="http://127.0.0.1:3000/upload"
                   name="file"
@@ -7,21 +8,23 @@
                   :fileList.sync="fileList"
                   :parseResponse="parseResponse"
                   @update:fileList="yyy"
+                  class="uploader"
+                  @error="error"
+                  :size="2*1024*1024"
         >
-            <button>上传</button>
-            <template slot="tips">
-                <div>只能上传300kb以内png、jpeg文件</div>
-            </template>
+            <y-button icon="upload">上传</y-button>
         </y-upload>
     </div>
 </template>
 
 <script>
     import YUpload from './upload'
+    import YButton from './button/button'
 
     export default {
         components: {
-            YUpload: YUpload
+            YUpload: YUpload,
+            YButton,
         },
 
         data() {
@@ -39,39 +42,21 @@
                 let url=`http://127.0.0.1:3000/upload/${obj.id}`
                 return url
             },
-            yyy(){
-                console.log(1111111111);
+            yyy(e){
+                console.log('e',e);
+            },
+            error(error){
+                alert(error)
             }
         }
     }
 </script>
 
 <style lang="scss">
-    @mixin userInformationPosition {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        height: 3em;
-    }
+.uploader{
+    width:300px;
+}
 
-    .avatarTab {
-        @include userInformationPosition;
-        img {
-            margin-left: 2em;
-            width: 2.5em;
-            height: 2.5em;
-            border-radius: 50%;
-            border: 1px solid grey;
-        }
-        .upload {
-            margin-left: 1.5em;
-            margin-right: 1.5em;
-            color: blue;
-            cursor: pointer;
-        }
-        .note {
-            font-size: 12px;
-        }
-    }
+
 
 </style>
