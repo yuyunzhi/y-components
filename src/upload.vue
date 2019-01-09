@@ -70,8 +70,10 @@
             onClickUpload() {
                 let input = this.createInput()
                 input.addEventListener('change', () => {
+                    console.log('input.files');
+                    console.log(input.files);
 
-                    this.uploadFile(input.files[0])
+                    this.uploadFiles(input.files)
                     input.remove()
                 })
                 //点击触发
@@ -86,51 +88,57 @@
                     this.$emit('update:fileList', copy)
                 }
             },
-            beforeUploadFile(rawfile, newName, url) {
-                let {type, size} = rawfile
-                console.log(size);
+            beforeUploadFiles(rawFile, newName) {
+                let {type, size} = rawFile
                 if(size>this.size){
                     this.$emit('error','文字大于2MB')
                     return false
                 }else{
-                    this.$emit('update:fileList', [...this.fileList, {name, type, size, status: 'uploading'}])
-
+                    //this.$emit('update:fileList', [...this.fileList, {name, type, size, status: 'uploading'}])
+                    this.$emit('addFile',  {name:newName, type, size, status: 'uploading'})
                     return true
                 }
 
             },
-            afterUploadFile(rawFile, newName, url) {
-                //改url 和 status
-                let file = this.fileList.filter(f => f.name === newName)
-                let copy = JSON.parse(JSON.stringify(file))
-                copy.url = url
-                copy.status = 'success'
+            //上传成功的一次只有一个，所以不需要遍历
+            //找到修改替换上传成功的url status
+            //通知外部，传入fileList
+            afterUploadFiles(newName, url) {
 
-                //删除多余的一项,并用新的代替
+                let file = this.fileList.filter(f => f.name === newName)[0]
                 let index = this.fileList.indexOf(file)
+                let fileCopy  = JSON.parse(JSON.stringify(file))
+                fileCopy.url = url
+                fileCopy.status = 'success'
                 let fileListCopy = [...this.fileList]
-                fileListCopy.splice(index, 1, copy)
+               fileListCopy.splice(index, 1, fileCopy)
 
                 this.$emit('update:fileList', fileListCopy)
+                this.$emit('uploaded')
             },
-            uploadFile(rawFile) {
-                let {name, type, size} = rawFile
-                //检测名字是否重复，并做处理
-                let newName = this.generateName(name)
-                //添加加载状态
-                if(!this.beforeUploadFile(rawFile, newName)){return}
-                //'avatarFile'要和后端指定好相同的名字
-                let formData = new FormData()
+            uploadFiles(rawFiles) {
+                for(let i=0;i<rawFiles.length;i++){
+                    let rawFile=rawFiles[i]
+                    let {name, type, size} = rawFile
+                    //检测名字是否重复，并做处理
+                    let newName = this.generateName(name)
+                    //添加加载状态
+                    if(!this.beforeUploadFiles(rawFile, newName)){return}
+                    //'avatarFile'要和后端指定好相同的名字
+                    let formData = new FormData()
 
-                formData.append(this.name, rawFile)
-                this.doUploadFile(formData, (response) => {
-                    let url = this.parseResponse(response)
-                    this.url = url
-                    //删除加载状态
-                    this.afterUploadFile(rawFile, newName, url)
-                }, (xhr) => {
-                    this.uploadError(xhr,newName)
-                })
+                    formData.append(this.name, rawFile)
+                    console.log('上传了');
+                    this.doUploadFiles(formData, (response) => {
+                        let url = this.parseResponse(response)
+                        this.url = url
+                        //删除加载状态
+                        this.afterUploadFiles(newName, url)
+                    }, (xhr) => {
+                        this.uploadError(xhr,newName)
+                    })
+                }
+
             },
             uploadError(xhr, newName) {
                 let file = this.fileList.filter(f => f.name === newName)
@@ -143,7 +151,6 @@
                 fileListCopy.splice(index, 1, fileCopy)
                 console.log('失败',fileListCopy);
                 this.$emit('update:fileList', fileListCopy)
-
                 let error = ''
                 if (xhr.status === 0) {
                     error = '网络无法连接'
@@ -159,7 +166,7 @@
                 }
                 return name
             },
-            doUploadFile(formData, success, fail) {
+            doUploadFiles(formData, success, fail) {
                 var xhr = new XMLHttpRequest()
                 xhr.open('post', this.action)
                 xhr.onload = function () {
@@ -173,6 +180,7 @@
             createInput() {
                 let input = document.createElement('input')
                 input.type = 'file'
+                input.multiple=true
                 input.accept = this.accept
                 this.$refs.temp.appendChild(input)
                 return input

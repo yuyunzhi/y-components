@@ -11,6 +11,7 @@
                   class="uploader"
                   @error="error"
                   :size="2*1024*1024"
+                  @addFile="addFile"
         >
             <y-button icon="upload">上传</y-button>
         </y-upload>
@@ -47,6 +48,9 @@
             },
             error(error){
                 alert(error)
+            },
+            addFile(file){
+                this.fileList.push(file)
             }
         }
     }

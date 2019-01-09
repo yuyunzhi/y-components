@@ -4,9 +4,7 @@
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="完善uploader样式">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button/button.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/upload.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/var.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,9 +89,9 @@
     <session id="1085007978">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="71" />
+          <entry key="project.closed" value="72" />
           <entry key="project.open.time.1" value="6" />
-          <entry key="project.open.time.10" value="14" />
+          <entry key="project.open.time.10" value="15" />
           <entry key="project.open.time.11" value="9" />
           <entry key="project.open.time.12" value="16" />
           <entry key="project.open.time.13" value="5" />
@@ -109,7 +107,7 @@
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="78" />
+          <entry key="project.opened" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -121,7 +119,7 @@
           <entry key="scss" value="106" />
           <entry key="sh" value="20" />
           <entry key="txt" value="449" />
-          <entry key="vue" value="20802" />
+          <entry key="vue" value="21158" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -133,7 +131,7 @@
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="469" />
           <entry key="SCSS" value="106" />
-          <entry key="Vue.js" value="20790" />
+          <entry key="Vue.js" value="21146" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -143,14 +141,14 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="11" />
           <entry key="ico" value="1" />
-          <entry key="js" value="78" />
+          <entry key="js" value="79" />
           <entry key="json" value="17" />
           <entry key="md" value="41" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="9" />
           <entry key="sh" value="4" />
           <entry key="ts" value="2" />
-          <entry key="vue" value="151" />
+          <entry key="vue" value="152" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
@@ -160,13 +158,13 @@
           <entry key="HTML" value="11" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="78" />
+          <entry key="JavaScript" value="79" />
           <entry key="Markdown" value="41" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="9" />
           <entry key="TypeScript" value="2" />
-          <entry key="Vue.js" value="151" />
+          <entry key="Vue.js" value="152" />
           <entry key="YAML" value="3" />
           <entry key="tsconfig" value="1" />
         </counts>
@@ -180,52 +178,32 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.39565504">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#533#563#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/upload.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="872">
-                  <caret line="225" column="31" selection-start-line="225" selection-start-column="31" selection-end-line="225" selection-end-column="31" />
-                  <folding>
-                    <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/upload.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-276">
-                  <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
-                  <folding>
-                    <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+              <folding>
+                <element signature="e#584#614#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/upload.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -258,6 +236,7 @@
       <find>script</find>
       <find>should</find>
       <find>indexof</find>
+      <find>uploadFile</find>
     </findStrings>
     <replaceStrings>
       <replace>$</replace>
@@ -329,8 +308,8 @@
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/button/button.vue" />
         <option value="$PROJECT_DIR$/styles/var.scss" />
-        <option value="$PROJECT_DIR$/src/upload.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/upload.vue" />
       </list>
     </option>
   </component>
@@ -350,11 +329,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-70" />
-    <option name="y" value="33" />
-    <option name="width" value="1943" />
-    <option name="height" value="994" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="742" />
+    <option name="y" value="16" />
+    <option name="width" value="1487" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -398,7 +377,7 @@
     <property name="SearchEverywhereHistoryKey" value="sort lines&#9;ACTION&#9;linessorter.sort&#10;sort line&#9;ACTION&#9;linessorter.sort&#10;sort&#9;null&#9;null&#10;vcs&#9;ACTION&#9;Vcs.QuickListPopupAction&#10;reformat&#9;ACTION&#9;ReformatCode" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node-serve" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -550,7 +529,8 @@
       <workItem from="1546609486791" duration="24000" />
       <workItem from="1546827877576" duration="11399000" />
       <workItem from="1546862088486" duration="12630000" />
-      <workItem from="1547028618182" duration="5405000" />
+      <workItem from="1547028618182" duration="5687000" />
+      <workItem from="1547037380945" duration="4430000" />
     </task>
     <task id="LOCAL-00027" summary="toast初步实现，使用了plugin">
       <created>1539694803352</created>
@@ -899,7 +879,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483770000" />
+    <option name="totallyTimeSpent" value="488482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -911,10 +891,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="302" y="14" width="1554" height="795" extended-state="0" />
-    <editor active="true" />
+    <frame x="594" y="13" width="1189" height="796" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976599" weight="0.23719676" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.18110919" />
       <window_info id="Structure" order="1" sideWeight="0.5023401" side_tool="true" weight="0.23719676" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -935,28 +914,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.23719676" />
-      <window_info id="Structure" order="1" sideWeight="0.5023401" side_tool="true" weight="0.23719676" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2877698" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289256" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32986626" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.33381295" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289256" />
-      <window_info anchor="bottom" id="TypeScript" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1036,7 +993,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>52</line>
+          <line>56</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1197,13 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/click-outside.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/nav/nav-item.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-207">
@@ -1356,20 +1306,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/click-outside.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="184">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
-            <element signature="e#533#563#0" expanded="true" />
+            <element signature="e#584#614#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/upload.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276">
-          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+        <state relative-caret-position="161">
+          <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
