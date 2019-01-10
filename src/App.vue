@@ -4,14 +4,12 @@
         <y-upload accept="image/*"
                   action="http://127.0.0.1:3000/upload"
                   name="file"
-                  methods="0"
                   :fileList.sync="fileList"
                   :parseResponse="parseResponse"
                   @update:fileList="yyy"
                   class="uploader"
                   @error="error"
                   :size="2*1024*1024"
-                  @addFile="addFile"
         >
             <y-button icon="upload">上传</y-button>
         </y-upload>
@@ -49,9 +47,6 @@
             error(error){
                 alert(error)
             },
-            addFile(file){
-                this.fileList.push(file)
-            }
         }
     }
 </script>

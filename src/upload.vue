@@ -70,9 +70,6 @@
             onClickUpload() {
                 let input = this.createInput()
                 input.addEventListener('change', () => {
-                    console.log('input.files');
-                    console.log(input.files);
-
                     this.uploadFiles(input.files)
                     input.remove()
                 })
@@ -88,23 +85,36 @@
                     this.$emit('update:fileList', copy)
                 }
             },
-            beforeUploadFiles(rawFile, newName) {
-                let {type, size} = rawFile
-                if(size>this.size){
-                    this.$emit('error','文字大于2MB')
-                    return false
-                }else{
-                    //this.$emit('update:fileList', [...this.fileList, {name, type, size, status: 'uploading'}])
-                    this.$emit('addFile',  {name:newName, type, size, status: 'uploading'})
-                    return true
+            //上传前，判断文件大小
+            //触发事件给外部，添加list清单
+            beforeUploadFiles(rawFiles, newNames) {
+                //对象转化成数组 rawFiles 是可以for遍历且含有length的对象
+                rawFiles = Array.from(rawFiles)
+
+                //判断每个文件的大小，只要超过限制就通知error
+                for (let i = 0; i < rawFiles.length; i++) {
+                    let {size, type} = rawFiles[i]
+                    if (size > this.size) {
+                        this.$emit('error', '文件大于2MB')
+                        return false
+                    }
                 }
 
-            },
-            //上传成功的一次只有一个，所以不需要遍历
-            //找到修改替换上传成功的url status
-            //通知外部，传入fileList
-            afterUploadFiles(newName, url) {
+                //map 返回一个新的数组包含了该次上传的所有文件，标记uploading状态
+                let allFile = rawFiles.map((rawFile, i) => {
+                    let {type, size} = rawFile
+                    return {name: newNames[i], type, size, status: 'uploading'}
+                })
 
+                this.$emit('update:fileList', [...this.fileList, ...allFile])
+                return true
+
+            },
+
+            afterUploadFiles(newName, url) {
+                //上传成功的一次只有一个，所以不需要遍历
+                //找到修改替换上传成功的url status
+                //通知外部，传入fileList
                 let file = this.fileList.filter(f => f.name === newName)[0]
                 let index = this.fileList.indexOf(file)
                 let fileCopy  = JSON.parse(JSON.stringify(file))
@@ -116,26 +126,32 @@
                 this.$emit('update:fileList', fileListCopy)
                 this.$emit('uploaded')
             },
-            uploadFiles(rawFiles) {
-                for(let i=0;i<rawFiles.length;i++){
-                    let rawFile=rawFiles[i]
-                    let {name, type, size} = rawFile
-                    //检测名字是否重复，并做处理
-                    let newName = this.generateName(name)
-                    //添加加载状态
-                    if(!this.beforeUploadFiles(rawFile, newName)){return}
-                    //'avatarFile'要和后端指定好相同的名字
-                    let formData = new FormData()
 
+            uploadFiles(rawFiles) {
+
+                let newNames = []
+                //生成新的名字
+                for (let i = 0; i < rawFiles.length; i++) {
+                    let rawFile = rawFiles[i]
+                    let {name, size, type} = rawFile
+                    let newName = this.generateName(name)
+                    newNames[i] = newName
+                }
+                //一次性生成所有图片的加载中状态
+                if (!this.beforeUploadFiles(rawFiles, newNames)) {return}
+
+                //对每一个图片进行发送请求
+                for (let i = 0; i < rawFiles.length; i++) {
+                    let rawFile = rawFiles[i]
+                    let newName = newNames[i]
+                    let formData = new FormData()
                     formData.append(this.name, rawFile)
-                    console.log('上传了');
                     this.doUploadFiles(formData, (response) => {
                         let url = this.parseResponse(response)
                         this.url = url
-                        //删除加载状态
                         this.afterUploadFiles(newName, url)
                     }, (xhr) => {
-                        this.uploadError(xhr,newName)
+                        this.uploadError(xhr, newName)
                     })
                 }
 
@@ -149,7 +165,7 @@
                 let index = this.fileList.indexOf(file)
                 let fileListCopy = [...this.fileList]
                 fileListCopy.splice(index, 1, fileCopy)
-                console.log('失败',fileListCopy);
+
                 this.$emit('update:fileList', fileListCopy)
                 let error = ''
                 if (xhr.status === 0) {
