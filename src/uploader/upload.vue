@@ -30,7 +30,7 @@
 </template>
 
 <script>
-    import YIcon from './icon'
+    import YIcon from '../icon'
 
     export default {
         name: 'YUpload',
