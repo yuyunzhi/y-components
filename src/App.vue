@@ -1,14 +1,15 @@
 <template>
     <div class="wrapper">
-        {{selected}}
+        {{selectedItems}}
+        <!--注意：dataSource一定要有id，否则不支持-->
         <y-table
             :columns="columns"
             :data-source="dataSource"
             :numberVisible="false"
-            :borderd="false"
+            :hasBorder="true"
             :compact="false"
-            :striped="false"
-            @selectItem="x"
+            :striped="true"
+            :selected-items.sync="selectedItems"
         >
         </y-table>
     </div>
@@ -37,23 +38,14 @@
                     {text:'姓名',field:'name'},
                     {text:'分数',field:'score'},
                 ],
-                selected:[],
+                selectedItems:[],
             }
         },
-
-        methods: {
-            x(obj){
-                let {selected,item,index}=obj
-                if(selected){
-                    this.selected.push(item)
-                }else{
-                    let l = this.selected.indexOf(item)
-                    this.selected.splice(l,1)
-                }
-
+        watch:{
+            selectedItems(aNew,bOld){
+                console.log(aNew);
             }
-
-        }
+        },
     }
 </script>
 
