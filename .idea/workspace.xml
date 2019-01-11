@@ -33,8 +33,7 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/uploader.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/uploader.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uploader/demo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/uploader/demo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/unit/uploader.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/uploader.spec.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -144,7 +143,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="261" />
-          <entry key="js" value="3867" />
+          <entry key="js" value="4039" />
           <entry key="json" value="14" />
           <entry key="md" value="1262" />
           <entry key="scss" value="106" />
@@ -158,7 +157,7 @@
         <counts>
           <entry key="HTML" value="284" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="3864" />
+          <entry key="JavaScript" value="4036" />
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="516" />
           <entry key="SCSS" value="106" />
@@ -173,7 +172,7 @@
           <entry key="html" value="11" />
           <entry key="ico" value="1" />
           <entry key="js" value="92" />
-          <entry key="json" value="18" />
+          <entry key="json" value="20" />
           <entry key="md" value="41" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="9" />
@@ -188,7 +187,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="11" />
           <entry key="Image" value="1" />
-          <entry key="JSON" value="17" />
+          <entry key="JSON" value="19" />
           <entry key="JavaScript" value="92" />
           <entry key="Markdown" value="41" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -222,12 +221,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/unit/uploader.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+            <state relative-caret-position="23">
+              <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <element signature="e#1859#3483#0" />
+                <element signature="e#2024#3648#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -331,13 +339,13 @@
         <option value="$PROJECT_DIR$/src/sticky.vue" />
         <option value="$PROJECT_DIR$/src/sticky/demo.vue" />
         <option value="$PROJECT_DIR$/src/sticky/sticky.vue" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/http.js" />
         <option value="$PROJECT_DIR$/src/XMLHttpRequest.js" />
         <option value="$PROJECT_DIR$/src/uploader/uploader.vue" />
         <option value="$PROJECT_DIR$/src/uploader/demo.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/karma.conf.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tests/unit/uploader.spec.js" />
       </list>
     </option>
@@ -359,8 +367,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="446" />
-    <option name="y" value="6" />
+    <option name="x" value="586" />
+    <option name="y" value="52" />
     <option name="width" value="1494" />
     <option name="height" value="994" />
   </component>
@@ -562,7 +570,7 @@
       <workItem from="1547037380945" duration="5300000" />
       <workItem from="1547086934349" duration="10583000" />
       <workItem from="1547117412125" duration="1199000" />
-      <workItem from="1547180791863" duration="9792000" />
+      <workItem from="1547180791863" duration="10279000" />
     </task>
     <task id="LOCAL-00031" summary="实现只能有一个toast">
       <created>1539772625821</created>
@@ -911,7 +919,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="510926000" />
+    <option name="totallyTimeSpent" value="511413000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -923,7 +931,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="497" y="10" width="1195" height="795" extended-state="0" />
+    <frame x="357" y="5" width="1195" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.18017241" />
@@ -1339,13 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/uploader/demo.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1412,13 +1413,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unit/uploader.spec.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unit/uploader.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#1859#3483#0" />
+            <element signature="e#2024#3648#0" />
           </folding>
         </state>
       </provider>

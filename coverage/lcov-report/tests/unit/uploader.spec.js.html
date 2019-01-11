@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">72% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/24</span>
+        <span class='fraction'>18/25</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">72% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/24</span>
+        <span class='fraction'>18/25</span>
       </div>
     </div>
   </div>
@@ -172,7 +172,16 @@
 127
 128
 129
-130</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,6 +193,7 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -198,6 +208,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,24 +228,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -314,6 +332,7 @@ describe('Uploader.vue', () =&gt; {
     it('存在.', () =&gt; {
         expect(Uploader).to.exist
     })
+&nbsp;
     it('可以上传一个文件', () =&gt; {
         let stub = sinon.stub($http, 'post').callsFake((url, options) =&gt; {
             setTimeout(function () <span class="fstat-no" title="function not covered" >{</span>
@@ -326,6 +345,7 @@ describe('Uploader.vue', () =&gt; {
                 name: 'file',
                 action: '/upload',
                 method: 'post',
+                accept:'image/*',
                 parseResponse: (response) =&gt; <span class="fstat-no" title="function not covered" >{</span>
                     let object = <span class="cstat-no" title="statement not covered" >JSON.parse(response)</span>
 <span class="cstat-no" title="statement not covered" >                    return `/preview/${object.id}`</span>
@@ -336,6 +356,8 @@ describe('Uploader.vue', () =&gt; {
             listeners: {
                 'update:fileList': (fileList) =&gt; { wrapper.setProps({fileList}) },
                 'uploaded': () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    console.log(1);</span>
 <span class="cstat-no" title="statement not covered" >                    expect(wrapper.find('use').exists()).to.eq(false)</span>
 <span class="cstat-no" title="statement not covered" >                    expect(wrapper.props().fileList[0].url).to.eq('/preview/123123')</span>
 <span class="cstat-no" title="statement not covered" >                    stub.restore()</span>
@@ -344,15 +366,20 @@ describe('Uploader.vue', () =&gt; {
                 }
             }
         })
+        //触发button
         wrapper.find('#x').trigger('click')
+&nbsp;
+        //找到input ,创建新文件
         let inputWrapper = wrapper.find('input[type="file"]')
         let input = inputWrapper.element
         let file1 = new File(['xxxxxxxxx'], 'xxx.txt')
 &nbsp;
+        //给input 设置文件
         const data = new DataTransfer()
         data.items.add(file1)
         input.files = data.files;
 &nbsp;
+        //上传后期待出现loading
         let use = wrapper.find('use').element
         expect(use.getAttribute('xlink:href')).to.eq('#i-loading')
 &nbsp;
@@ -436,7 +463,7 @@ describe('Uploader.vue', () =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 11 2019 15:17:07 GMT+0800 (GMT+08:00)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 11 2019 15:24:56 GMT+0800 (GMT+08:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>
