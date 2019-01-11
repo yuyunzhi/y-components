@@ -1,11 +1,14 @@
 <template>
     <div class="wrapper">
+        {{selected}}
         <y-table
             :columns="columns"
             :data-source="dataSource"
             :numberVisible="false"
             :borderd="false"
             :compact="false"
+            :striped="false"
+            @selectItem="x"
         >
         </y-table>
     </div>
@@ -34,10 +37,21 @@
                     {text:'姓名',field:'name'},
                     {text:'分数',field:'score'},
                 ],
+                selected:[],
             }
         },
 
         methods: {
+            x(obj){
+                let {selected,item,index}=obj
+                if(selected){
+                    this.selected.push(item)
+                }else{
+                    let l = this.selected.indexOf(item)
+                    this.selected.splice(l,1)
+                }
+
+            }
 
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <div class="y-table-wrapper">
-        <table class="y-table" :class="{borderd,compact}">
+        <table class="y-table" :class="{borderd,compact,striped}">
             <thead>
             <tr>
                 <th class="y-table-checkbox">
@@ -18,7 +18,7 @@
             <tr v-for="(item,index) in dataSource">
                 <td class="y-table-checkbox">
                     <label>
-                        <input type="checkbox" >
+                        <input type="checkbox" @click="onChangeCheckbox($event,item,index)">
                     </label>
                 </td>
                 <td  class="y-table-cell" v-if="numberVisible">{{index+1}}</td>
@@ -54,6 +54,15 @@
             borderd:{
                 type:Boolean,
                 default:false,
+            },
+            striped:{
+                type:Boolean,
+                default:true,
+            }
+        },
+        methods:{
+            onChangeCheckbox(e,item,index){
+                this.$emit('selectItem',{selected:e.target.checked,item,index})
             }
         }
     }
@@ -78,6 +87,22 @@
                 padding:5px;
             }
         }
+        &.striped{
+            tbody{
+                >tr{
+                    &:nth-child(even){
+                        background: lighten($grey,5%)
+                    }
+                }
+            }
+        }
+        tbody{
+            tr:hover{
+
+                background:rgb(245,247,250);
+
+            }
+        }
 
         td,th{
             text-align: left;
@@ -92,17 +117,9 @@
             font-size:14px;
             border-bottom:1px solid $grey;
             //border:1px solid $grey;
+
         }
-        tbody{
-            >tr{
-                &:nth-child(odd){
-                    background: white;
-                }
-                &:nth-child(even){
-                    background: lighten($grey,5%)
-                }
-            }
-        }
+
 
     }
 </style>

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/table.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/table.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -119,7 +119,7 @@
           <entry key="scss" value="106" />
           <entry key="sh" value="20" />
           <entry key="txt" value="496" />
-          <entry key="vue" value="23374" />
+          <entry key="vue" value="23900" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -131,7 +131,7 @@
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="516" />
           <entry key="SCSS" value="106" />
-          <entry key="Vue.js" value="23362" />
+          <entry key="Vue.js" value="23888" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -182,8 +182,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="309">
+              <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -191,8 +191,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/table.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+            <state relative-caret-position="263">
+              <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -324,8 +324,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="296" />
-    <option name="y" value="111" />
+    <option name="x" value="487" />
+    <option name="y" value="70" />
     <option name="width" value="1494" />
     <option name="height" value="1020" />
   </component>
@@ -516,7 +516,7 @@
       <workItem from="1547037380945" duration="5300000" />
       <workItem from="1547086934349" duration="10583000" />
       <workItem from="1547117412125" duration="1199000" />
-      <workItem from="1547180791863" duration="18162000" />
+      <workItem from="1547180791863" duration="19675000" />
     </task>
     <task id="LOCAL-00031" summary="实现只能有一个toast">
       <created>1539772625821</created>
@@ -865,7 +865,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="519296000" />
+    <option name="totallyTimeSpent" value="520809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -877,7 +877,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="598" y="4" width="1195" height="816" extended-state="0" />
+    <frame x="390" y="56" width="1195" height="816" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.18017241" />
@@ -1006,7 +1006,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>43</line>
+          <line>56</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1365,15 +1365,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/table.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+        <state relative-caret-position="263">
+          <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="309">
+          <caret line="42" column="18" lean-forward="true" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
         </state>
       </provider>
     </entry>
