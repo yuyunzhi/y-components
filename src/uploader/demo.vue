@@ -9,6 +9,7 @@
                   class="uploader"
                   @error="error"
                   :size="2*1024*1024"
+                  @uploaded="uploaded"
         >
             <y-button icon="upload">上传</y-button>
         </y-upload>
@@ -43,6 +44,9 @@
             error(error){
                 alert(error)
             },
+            uploaded(){
+                //上传成功
+            }
         }
     }
 </script>

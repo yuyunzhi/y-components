@@ -14,13 +14,16 @@ describe('Uploader.vue', () => {
     })
 
 
-    it('可以上传文件',(done)=>{
-      $http.post=(url,options)=>{
-            setTimeout(function(){
-                options.success('{"id":"123123123"}')
-                console.log(wrapper.html());
+    it('可以上传文件',()=>{
 
-            },1000)
+        //mock 服务器
+      $http.post=(url,options)=>{
+
+          setTimeout(function(){
+
+              options.success('{"id":"123123123"}')
+
+          },10)
         }
 
         const wrapper = mount(Uploader, {
@@ -43,7 +46,7 @@ describe('Uploader.vue', () => {
                 //监听sync事件3
                 'update:fileList':(fileList)=>{
                     wrapper.setProps({fileList})
-                }
+                },
             }
         })
 
@@ -69,7 +72,7 @@ describe('Uploader.vue', () => {
 
         let use = wrapper.find('use').element
         expect(use.getAttribute('xlink:href')).to.eq('#i-loading')
-        done()
+
     })
 
 })

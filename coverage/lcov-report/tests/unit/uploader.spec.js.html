@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.77% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>21/26</span>
+        <span class='fraction'>20/24</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.77% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>21/26</span>
+        <span class='fraction'>20/24</span>
       </div>
     </div>
   </div>
@@ -117,7 +117,10 @@
 72
 73
 74
-75</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,23 +137,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,7 +194,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import chai, {expect} from 'chai'
@@ -207,13 +213,16 @@ describe('Uploader.vue', () =&gt; {
     })
 &nbsp;
 &nbsp;
-    it('可以上传文件',(done)=&gt;{
-      $http.post=(url,options)=&gt;{
-            setTimeout(function()<span class="fstat-no" title="function not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                options.success('{"id":"123123123"}')</span>
-<span class="cstat-no" title="statement not covered" >                console.log(wrapper.html());</span>
+    it('可以上传文件',()=&gt;{
 &nbsp;
-            },1000)
+        //mock 服务器
+      $http.post=(url,options)=&gt;{
+&nbsp;
+          setTimeout(function()<span class="fstat-no" title="function not covered" >{</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >              options.success('{"id":"123123123"}')</span>
+&nbsp;
+          },1000)
         }
 &nbsp;
         const wrapper = mount(Uploader, {
@@ -236,7 +245,7 @@ describe('Uploader.vue', () =&gt; {
                 //监听sync事件3
                 'update:fileList':(fileList)=&gt;{
                     wrapper.setProps({fileList})
-                }
+                },
             }
         })
 &nbsp;
@@ -259,10 +268,10 @@ describe('Uploader.vue', () =&gt; {
         input.files=data.files
 &nbsp;
         //期待会出现loading
-&nbsp;
+        
         let use = wrapper.find('use').element
         expect(use.getAttribute('xlink:href')).to.eq('#i-loading')
-        done()
+&nbsp;
     })
 &nbsp;
 })</pre></td></tr>
@@ -271,7 +280,7 @@ describe('Uploader.vue', () =&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 11 2019 14:19:27 GMT+0800 (GMT+08:00)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 11 2019 14:35:29 GMT+0800 (GMT+08:00)
 </div>
 </div>
 <script src="../../prettify.js"></script>

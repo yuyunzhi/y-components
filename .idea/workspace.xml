@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/XMLHttpRequest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/unit/uploader.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/XMLHttpRequest.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/XMLHttpRequest.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/button/button.vue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/button/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/button/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/click-outside.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/click-outside.js.html" afterDir="false" />
@@ -22,6 +21,8 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides-item.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides-item.vue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/slides/slides.vue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/svg.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/svg.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/uploader/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/uploader/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/uploader/uploader.vue.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/uploader/uploader.vue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/src/validate.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/src/validate.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/button.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/button.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/index.html" afterDir="false" />
@@ -29,11 +30,11 @@
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/pager.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/pager.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/popover.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/popover.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/slides.spec.js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/uploader.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/uploader.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov-report/tests/unit/validate.spec.js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uploader/upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/uploader/uploader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uploader/demo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/uploader/demo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/uploader.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/uploader.spec.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -142,13 +143,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="261" />
-          <entry key="js" value="3686" />
+          <entry key="js" value="3848" />
           <entry key="json" value="14" />
           <entry key="md" value="1262" />
           <entry key="scss" value="106" />
           <entry key="sh" value="20" />
           <entry key="txt" value="477" />
-          <entry key="vue" value="21875" />
+          <entry key="vue" value="21898" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -156,11 +157,11 @@
         <counts>
           <entry key="HTML" value="284" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="3683" />
+          <entry key="JavaScript" value="3845" />
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="497" />
           <entry key="SCSS" value="106" />
-          <entry key="Vue.js" value="21863" />
+          <entry key="Vue.js" value="21886" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -223,8 +224,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/unit/uploader.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="-11">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -253,8 +254,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uploader/demo.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1265">
-              <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+            <state relative-caret-position="391">
+              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -262,8 +263,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/uploader/uploader.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+            <state relative-caret-position="460">
+              <caret line="130" column="36" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#1190#1217#0" expanded="true" />
@@ -369,7 +370,6 @@
         <option value="$PROJECT_DIR$/src/button/button.vue" />
         <option value="$PROJECT_DIR$/styles/var.scss" />
         <option value="$PROJECT_DIR$/src/upload.vue" />
-        <option value="$PROJECT_DIR$/src/uploader/demo.vue" />
         <option value="$PROJECT_DIR$/src/sticky.vue" />
         <option value="$PROJECT_DIR$/src/sticky/demo.vue" />
         <option value="$PROJECT_DIR$/src/sticky/sticky.vue" />
@@ -378,6 +378,7 @@
         <option value="$PROJECT_DIR$/src/XMLHttpRequest.js" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/uploader/uploader.vue" />
+        <option value="$PROJECT_DIR$/src/uploader/demo.vue" />
         <option value="$PROJECT_DIR$/tests/unit/uploader.spec.js" />
       </list>
     </option>
@@ -399,8 +400,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-108" />
-    <option name="y" value="42" />
+    <option name="x" value="662" />
+    <option name="y" value="30" />
     <option name="width" value="1494" />
     <option name="height" value="994" />
   </component>
@@ -613,7 +614,7 @@
       <workItem from="1547037380945" duration="5300000" />
       <workItem from="1547086934349" duration="10583000" />
       <workItem from="1547117412125" duration="1199000" />
-      <workItem from="1547180791863" duration="6758000" />
+      <workItem from="1547180791863" duration="7768000" />
     </task>
     <task id="LOCAL-00030" summary="toast实现position：middle top bottom功能，默认为top">
       <created>1539761075870</created>
@@ -962,7 +963,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="507892000" />
+    <option name="totallyTimeSpent" value="508902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -974,7 +975,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-86" y="34" width="1195" height="795" extended-state="0" />
+    <frame x="530" y="24" width="1195" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.18017241" />
@@ -1394,24 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uploader/demo.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uploader/uploader.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1190#1217#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1436,10 +1419,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/uploader/uploader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="130" column="36" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1190#1217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uploader/demo.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/unit/uploader.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="-11">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
