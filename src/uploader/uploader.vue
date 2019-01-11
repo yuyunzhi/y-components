@@ -17,7 +17,7 @@
                     <img class="y-uploader-image" :src="file.url" width="32" height="32" alt="">
                 </template>
                 <template v-else-if="file.status ==='fail'">
-                    <img src="https://i.loli.net/2019/01/09/5c35d9915d5ed.jpg"  class="y-uploader-defaultImage"/>
+                    <img src="https://i.loli.net/2019/01/09/5c35d9915d5ed.jpg" class="y-uploader-defaultImage"/>
                 </template>
                 <span @click="onRemoveFile(file)">
                        <y-icon name="searchclose" class="y-uploader-delete"></y-icon>
@@ -31,7 +31,7 @@
 
 <script>
     import YIcon from '../icon'
-
+    import $http from '../XMLHttpRequest.js'
     export default {
         name: 'YUpload',
         components: {YIcon},
@@ -48,6 +48,10 @@
                 type: String,
                 required: true,
             },
+            method:{
+                type: String,
+                default:'post'
+            },
             parseResponse: {
                 type: Function,
                 required: true,
@@ -56,9 +60,9 @@
                 type: Array,
                 default: () => []
             },
-            size:{
-                type:Number,
-                default:2*1024*1024
+            size: {
+                type: Number,
+                default: 2 * 1024 * 1024
             }
         },
         data() {
@@ -117,11 +121,11 @@
                 //通知外部，传入fileList
                 let file = this.fileList.filter(f => f.name === newName)[0]
                 let index = this.fileList.indexOf(file)
-                let fileCopy  = JSON.parse(JSON.stringify(file))
+                let fileCopy = JSON.parse(JSON.stringify(file))
                 fileCopy.url = url
                 fileCopy.status = 'success'
                 let fileListCopy = [...this.fileList]
-               fileListCopy.splice(index, 1, fileCopy)
+                fileListCopy.splice(index, 1, fileCopy)
 
                 this.$emit('update:fileList', fileListCopy)
                 this.$emit('uploaded')
@@ -138,7 +142,9 @@
                     newNames[i] = newName
                 }
                 //一次性生成所有图片的加载中状态
-                if (!this.beforeUploadFiles(rawFiles, newNames)) {return}
+                if (!this.beforeUploadFiles(rawFiles, newNames)) {
+                    return
+                }
 
                 //对每一个图片进行发送请求
                 for (let i = 0; i < rawFiles.length; i++) {
@@ -183,20 +189,15 @@
                 return name
             },
             doUploadFiles(formData, success, fail) {
-                var xhr = new XMLHttpRequest()
-                xhr.open('post', this.action)
-                xhr.onload = function () {
-                    success(xhr.response)
-                }.bind(this)
-                xhr.onerror=function(){
-                    fail(xhr,xhr.response)
-                }.bind(this)
-                xhr.send(formData)
+                //封装过函数了，便于测试
+                $http[this.method.toLowerCase()](this.action,{
+                    success,fail,data:formData
+                })
             },
             createInput() {
                 let input = document.createElement('input')
                 input.type = 'file'
-                input.multiple=true
+                input.multiple = true
                 input.accept = this.accept
                 this.$refs.temp.appendChild(input)
                 return input
@@ -239,7 +240,7 @@
             }
 
         }
-        &-image{
+        &-image {
             vertical-align: middle;
             display: inline-block;
             width: 70px;

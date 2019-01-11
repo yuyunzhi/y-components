@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\click-outside.js</title>
+    <title>Code coverage report for src\XMLHttpRequest.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> click-outside.js
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> XMLHttpRequest.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/10</span>
+        <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/10</span>
+        <span class='fraction'>0/8</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -60,53 +60,41 @@
 15
 16
 17
-18
-19
-20
-21
-22</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+18</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">let onClickDocument = (e) =&gt; <span class="fstat-no" title="function not covered" >{</span>
-    let {target} = <span class="cstat-no" title="statement not covered" >e;</span>
-<span class="cstat-no" title="statement not covered" >    callbacks.forEach((item) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" >        if (target === item.el || item.el.contains(target)) {</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >            item.callback()</span>
-        }
-    })
-};
-document.addEventListener('click', onClickDocument);
-let callbacks = [];
-export default {
-    bind: function (el, binding, vnode) {
-        callbacks.push({el, callback: binding.value})
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function core(method,url,options)<span class="fstat-no" title="function not covered" >{</span>
+    var xhr = <span class="cstat-no" title="statement not covered" >new XMLHttpRequest()</span>
+<span class="cstat-no" title="statement not covered" >    xhr.open(method, url)</span>
+<span class="cstat-no" title="statement not covered" >    xhr.onload = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        options.success&amp;&amp;options.success(xhr.response)</span>
     }
+<span class="cstat-no" title="statement not covered" >    xhr.onerror = () =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        options.fail&amp;&amp;options.fail(xhr, xhr.response)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    xhr.send(options.data)</span>
 }
-&nbsp;
-let removeListener = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    document.removeEventListener('click', onClickDocument)</span>
-};
-&nbsp;
-export {removeListener}</pre></td></tr>
+export default {
+    post(url,options)<span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        return core('post',url,options)</span>
+    },
+    get()<span class="fstat-no" title="function not covered" >{},</span>
+    delete()<span class="fstat-no" title="function not covered" >{},</span>
+}</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
