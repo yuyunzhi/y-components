@@ -8,6 +8,7 @@
                   :parseResponse="parseResponse"
                   class="uploader"
                   @error="error"
+                  method="post"
                   :size="2*1024*1024"
                   @uploaded="uploaded"
         >
