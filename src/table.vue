@@ -10,8 +10,14 @@
                     </label>
                 </th>
                 <th class="y-table-cell" v-if="numberVisible">序号</th>
-                <th class="y-table-cell" v-for="column in columns" :key="column.field">
+                <th class="y-table-cell sorter" v-for="column in columns" :key="column.field">
                     {{column.text}}
+                    <span v-if="column.field in orderBy"
+                          class="y-table-sorter"
+                          @click="changeOrderBy(column.field)">
+                        <y-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
+                        <y-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
+                    </span>
                 </th>
             </tr>
             </thead>
@@ -35,8 +41,11 @@
 </template>
 
 <script>
+    import YIcon from './icon.vue'
+
     export default {
         name: "YTable",
+        components: {YIcon},
         props: {
             columns: {
                 type: Array,
@@ -68,6 +77,10 @@
             selectedItems: { //选中的数据
                 type: Array,
                 default: () => [],
+            },
+            orderBy: {
+                type: Object,
+                default: () => ({})
             }
         },
         data() {
@@ -78,7 +91,9 @@
             areAllItemsSelected() {
                 let a = this.dataSource.map(item => item.id).sort()
                 let b = this.selectedItems.map(item => item.id).sort()
-                if (a.length !== b.length) { return false }
+                if (a.length !== b.length) {
+                    return false
+                }
                 let equal = true
                 for (let i = 0; i < a.length; i++) {
                     if (a[i] !== b[i]) {
@@ -102,10 +117,25 @@
             }
         },
         methods: {
+            //切换排序状态，并通知组件外部
+            changeOrderBy(key){
+                const newOrderBy = JSON.parse(JSON.stringify(this.orderBy))
+                let old = newOrderBy[key]
+                if (old === 'asc') {
+                    newOrderBy[key] = 'desc'
+                } else if (old === 'desc') {
+                    newOrderBy[key] = true
+                } else {
+                    newOrderBy[key] = 'asc'
+                }
+                this.$emit('update:orderBy', newOrderBy)
+            },
             //每条数据checkbox是否被选中
             isSelectedCheckbox(item) {
                 return this.selectedItems.filter(i => i.id === item.id).length > 0
             },
+
+            //是否点击了某个数据的checkbox
             onChangeCheckbox(e, item, index) {
                 let selected = e.target.checked
                 let copy = JSON.parse(JSON.stringify(this.selectedItems))
@@ -116,6 +146,8 @@
                 }
                 this.$emit('update:selectedItems', copy)
             },
+
+            //是否选中 顶部的checkbox
             onChangeAllCheckbox(e) {
                 let selected = e.target.checked
                 if (selected) {
@@ -158,12 +190,12 @@
         }
         tbody {
             tr:hover {
-
                 background: rgb(245, 247, 250);
-
             }
         }
+        &-cell.sorter{
 
+        }
         td, th {
             text-align: left;
             box-sizing: border-box;
@@ -177,8 +209,29 @@
             font-size: 14px;
             border-bottom: 1px solid $grey;
             //border:1px solid $grey;
-
         }
-
+        &-sorter {
+            display: inline-flex;
+            flex-direction: column;
+            margin: 0 4px;
+            cursor: pointer;
+            vertical-align: middle;
+            svg {
+                width: 10px;
+                height: 10px;
+                fill: $grey;
+                &.active {
+                    fill: rgb(96, 98, 102);
+                }
+                &:first-child {
+                    position: relative;
+                    bottom: -1px;
+                }
+                &:nth-child(2) {
+                    position: relative;
+                    top: -1px;
+                }
+            }
+        }
     }
 </style>
