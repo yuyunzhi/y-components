@@ -2,8 +2,10 @@
     <div class="y-table-wrapper">
         <table class="y-table" :class="{hasBorder,compact,striped}">
             <thead>
+
             <tr>
-                <th class="y-table-checkbox">
+                <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField"></th>
+                <th class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
                     <label>
                         <input type="checkbox" @click="onChangeAllCheckbox" ref="allChecked"
                                :checked="areAllItemsSelected">
@@ -19,22 +21,47 @@
                         <y-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
                     </span>
                 </th>
+                <td class="y-table-button"></td>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(item,index) in dataSource" :key="item.id">
-                <td class="y-table-checkbox">
-                    <label>
-                        <input type="checkbox" @click="onChangeCheckbox($event,item,index)"
-                               :checked="isSelectedCheckbox(item)"
-                        >
-                    </label>
-                </td>
-                <td class="y-table-cell" v-if="numberVisible">{{index+1}}</td>
-                <template v-for="column in columns">
-                    <td class="y-table-cell" :key="column.field">{{item[column.field]}}</td>
-                </template>
-            </tr>
+            <template v-for="(item,index) in dataSource">
+
+                <tr :key="item.id">
+                    <td :style="{width:'50px','text-align':'center'}" class="y-table-expendField">
+                        <y-icon name="right"
+                                class="y-table-icon"
+                                :class="{'open':isInexpendIds(item),'close':!isInexpendIds(item)}"
+                                @click="openItem(item.id)"
+                                v-if="item[expendField]"
+                        ></y-icon>
+                    </td>
+                    <td class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
+                        <label>
+                            <input type="checkbox" @click="onChangeCheckbox($event,item,index)"
+                                   :checked="isSelectedCheckbox(item)"
+                            >
+                        </label>
+                    </td>
+                    <td class="y-table-cell" v-if="numberVisible">{{index+1}}</td>
+                    <template v-for="column in columns">
+                        <td class="y-table-cell" :key="column.field">{{item[column.field]}}</td>
+                    </template>
+                    <td class="y-table-button">
+                        <slot :item="item"></slot>
+                    </td>
+                </tr >
+                <!--S 此为展开内容-->
+                <tr :key="`${item.id}abc`"  v-if="isInexpendIds(item)&& item[expendField]">
+                    <td :colspan="columns.length+expendedCellColSpan">
+                        {{item[expendField]}}
+                    </td>
+                </tr>
+
+                <!--E 此为展开内容-->
+            </template>
+
+
             </tbody>
         </table>
         <div class="y-table-loading" v-if="loading">
@@ -81,19 +108,41 @@
                 type: Array,
                 default: () => [],
             },
-            orderBy: {
+            orderBy: { //排序方式
                 type: Object,
                 default: () => ({})
             },
             loading:{
                 type:Boolean,
                 default:false,
+            },
+            expendField:{ //是否要展开
+                type:String,
+            },
+            checkable:{ //是否有选中
+                type:Boolean,
+                default:false,
             }
         },
         data() {
-            return {}
+            return {
+                expendIds:[],
+            }
         },
         computed: {
+            expendedCellColSpan(){
+                let colSpan=1
+              if(this.checkable){
+                  colSpan++
+              }
+              if(this.expendField){
+                  colSpan++
+              }
+              if(this.numberVisible){
+                  colSpan++
+              }
+              return colSpan
+            },
             //判断两个数组是否是一样的，来切换全选或不选状态的checkbox
             areAllItemsSelected() {
                 let a = this.dataSource.map(item => item.id).sort()
@@ -124,6 +173,20 @@
             }
         },
         methods: {
+            isInexpendIds(item){
+                return this.expendIds.indexOf(item.id)>=0
+            },
+            //打开每一项展开的内容
+            openItem(id){
+                let index = this.expendIds.indexOf(id)
+                console.log(index);
+                if(index>=0){
+                    this.expendIds.splice(index,1)
+                }else{
+                    this.expendIds.push(id)
+                }
+                console.log(this.expendIds);
+            },
             //切换排序状态，并通知组件外部
             changeOrderBy(key){
                 const newOrderBy = JSON.parse(JSON.stringify(this.orderBy))
@@ -171,6 +234,7 @@
     .y-table-wrapper{
         position: relative;
     }
+
     .y-table {
 
         width: 100%;
@@ -217,7 +281,9 @@
             color: rgb(96, 98, 102);
             font-size: 14px;
             border-bottom: 1px solid $grey;
+            text-align: left;
             //border:1px solid $grey;
+
         }
         &-sorter {
             display: inline-flex;
@@ -248,7 +314,6 @@
         }
         &-loading{
             position: absolute;
-
             width:100%;
             height:100%;
             display: flex;
@@ -263,8 +328,20 @@
                 height:60px;
                 animation:loadingSpan 2s linear infinite;
             }
+        }
 
+        &-icon{
+            width:12px;
+            height:12px;
+            cursor: pointer;
+            @keyframes xxx {
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(90deg)}
+            }
+            &.open{
+                animation:xxx .3s linear;
+                animation-fill-mode:forwards
+            }
         }
     }
-
 </style>

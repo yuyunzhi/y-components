@@ -4,9 +4,13 @@
             {{result || '&nbsp;'}}
         </div>
         <div class="popover-wrapper" v-if="popoverVisible">
-            <cascader-items :items="source" class="popover" :loadData="loadData"
+            <cascader-items :items="source" class="popover"
+                            :loadData="loadData"
                             :loading-item="loadingItem"
-                            :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected"></cascader-items>
+                            :height="popoverHeight"
+                            :selected="selected"
+                            @update:selected="onUpdateSelected"
+            ></cascader-items>
         </div>
     </div>
 </template>
