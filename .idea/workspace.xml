@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44b8769e-963b-45e7-a63d-ceb4f73f488d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/svg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/table.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -121,7 +119,7 @@
           <entry key="scss" value="106" />
           <entry key="sh" value="20" />
           <entry key="txt" value="496" />
-          <entry key="vue" value="26892" />
+          <entry key="vue" value="27617" />
           <entry key="yml" value="15" />
         </counts>
       </usages-collector>
@@ -133,7 +131,7 @@
           <entry key="Markdown" value="1254" />
           <entry key="PLAIN_TEXT" value="516" />
           <entry key="SCSS" value="106" />
-          <entry key="Vue.js" value="26880" />
+          <entry key="Vue.js" value="27605" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -147,7 +145,7 @@
           <entry key="json" value="20" />
           <entry key="md" value="41" />
           <entry key="rnc" value="1" />
-          <entry key="scss" value="9" />
+          <entry key="scss" value="10" />
           <entry key="sh" value="4" />
           <entry key="ts" value="2" />
           <entry key="vue" value="165" />
@@ -164,7 +162,7 @@
           <entry key="Markdown" value="41" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SCSS" value="9" />
+          <entry key="SCSS" value="10" />
           <entry key="TypeScript" value="2" />
           <entry key="Vue.js" value="165" />
           <entry key="YAML" value="3" />
@@ -184,8 +182,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="59" column="75" selection-start-line="59" selection-start-column="75" selection-end-line="59" selection-end-column="75" />
+            <state relative-caret-position="460">
+              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <folding>
+                <element signature="e#504#536#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,8 +194,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/table.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+            <state relative-caret-position="1803">
+              <caret line="245" column="24" lean-forward="true" selection-start-line="245" selection-start-column="24" selection-end-line="245" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/var.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="25" selection-start-line="25" selection-end-line="26" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -325,9 +335,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="52" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="418" />
+    <option name="y" value="50" />
     <option name="width" value="1495" />
     <option name="height" value="1048" />
   </component>
@@ -357,6 +367,11 @@
               <item name="y-components" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="uploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="y-components" type="b2602c69:ProjectViewProjectNode" />
+              <item name="y-components" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -526,7 +541,7 @@
       <workItem from="1547117412125" duration="1199000" />
       <workItem from="1547180791863" duration="26055000" />
       <workItem from="1547224691264" duration="613000" />
-      <workItem from="1547277506474" duration="6881000" />
+      <workItem from="1547277506474" duration="9185000" />
     </task>
     <task id="LOCAL-00031" summary="实现只能有一个toast">
       <created>1539772625821</created>
@@ -875,7 +890,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="534683000" />
+    <option name="totallyTimeSpent" value="536987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -887,7 +902,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="539" y="34" width="1196" height="838" extended-state="0" />
+    <frame x="335" y="40" width="1196" height="838" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976599" visible="true" weight="0.18173988" />
@@ -1016,7 +1031,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.vue</url>
-          <line>63</line>
+          <line>80</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1236,13 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/var.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/click-outside.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1361,17 +1369,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/styles/var.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="25" selection-start-line="25" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/table.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+        <state relative-caret-position="1803">
+          <caret line="245" column="24" lean-forward="true" selection-start-line="245" selection-start-column="24" selection-end-line="245" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="59" column="75" selection-start-line="59" selection-start-column="75" selection-end-line="59" selection-end-column="75" />
+        <state relative-caret-position="460">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding>
+            <element signature="e#504#536#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

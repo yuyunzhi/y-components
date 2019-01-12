@@ -1,32 +1,36 @@
 <template>
     <div class="wrapper">
-        {{selectedItems}}
-        <hr>
-
         <!--注意：dataSource一定要有id，否则不支持-->
         <y-table
             :columns="columns"
             :data-source="dataSource"
-            :numberVisible="false"
-            :hasBorder="true"
+            :numberVisible="numberVisible"
+            :hasBorder="hasBorder"
             :compact="false"
-            :striped="true"
+            :striped="striped"
             :selected-items.sync="selectedItems"
             :order-by.sync="sortRules"
+            :loading="loading"
             @update:orderBy="x"
 
         >
         </y-table>
+
+        <div class="box">
+            <y-button @click="numberVisible=!numberVisible">有无序号</y-button>
+            <y-button  @click="striped=!striped">有无间隔条纹</y-button>
+            <y-button @click="hasBorder=!hasBorder">有无边框</y-button>
+        </div>
 
     </div>
 </template>
 
 <script>
     import YTable from './table.vue'
-
+    import YButton from './button/button.vue'
     export default {
         components: {
-            YTable,
+            YTable,YButton
         },
         data() {
             return {
@@ -46,6 +50,11 @@
                   score:true
                 },
                 selectedItems:[],
+                loading:false,
+                hasBorder:false,
+                striped:true,
+                numberVisible:true,
+
             }
         },
         watch:{
@@ -54,10 +63,21 @@
             }
         },
         methods:{
+            //根据排序的规则，发送请求，渲染数据
             x(sortRules){
                 //true 表示默认排序，asc 表示升序，desc表示降序
                 console.log(sortRules);
-                this.dataSource=this.dataSource.sort((a,b)=>a.score-b.score)
+                this.loading=true
+
+
+                //发送请求，渲染页面
+                setTimeout(()=>{
+                    this.dataSource=this.dataSource.sort((a,b)=>a.score-b.score)
+
+                    this.loading=false
+                },2000)
+
+
             }
         }
     }
@@ -67,5 +87,10 @@
 .wrapper{
     padding:20px;
 }
-
+.box{
+    margin-top:30px;
+    .y-button{
+        margin-left:20px;
+    }
+}
 </style>

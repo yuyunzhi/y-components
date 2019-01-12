@@ -37,6 +37,9 @@
             </tr>
             </tbody>
         </table>
+        <div class="y-table-loading" v-if="loading">
+            <y-icon name="loading" class="y-table-loading-inner"></y-icon>
+        </div>
     </div>
 </template>
 
@@ -81,6 +84,10 @@
             orderBy: {
                 type: Object,
                 default: () => ({})
+            },
+            loading:{
+                type:Boolean,
+                default:false,
             }
         },
         data() {
@@ -161,7 +168,9 @@
 </script>
 <style scoped lang="scss">
     @import "var";
-
+    .y-table-wrapper{
+        position: relative;
+    }
     .y-table {
 
         width: 100%;
@@ -233,5 +242,29 @@
                 }
             }
         }
+        @keyframes loadingSpan{
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        &-loading{
+            position: absolute;
+
+            width:100%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.5);
+            z-index: 2;
+            top: 0;
+            left: 0;
+            &-inner{
+                width:60px;
+                height:60px;
+                animation:loadingSpan 2s linear infinite;
+            }
+
+        }
     }
+
 </style>
