@@ -1,6 +1,8 @@
 <template>
     <div class="wrapper">
         {{selectedItems}}
+        <hr>
+
         <!--注意：dataSource一定要有id，否则不支持-->
         <y-table
             :columns="columns"
@@ -12,6 +14,7 @@
             :selected-items.sync="selectedItems"
         >
         </y-table>
+
     </div>
 </template>
 
@@ -29,10 +32,7 @@
                     {id:2,name:'余咖咖2',score:99},
                     {id:3,name:'余咖咖3',score:46},
                     {id:4,name:'余咖咖4',score:62},
-                    {id:5,name:'余咖咖5',score:86},
-                    {id:6,name:'余咖咖6',score:123},
-                    {id:7,name:'余咖咖7',score:45},
-                    {id:8,name:'余咖咖8',score:78},
+
                 ],
                 columns:[
                     {text:'姓名',field:'name'},

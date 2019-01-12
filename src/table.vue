@@ -5,7 +5,8 @@
             <tr>
                 <th class="y-table-checkbox">
                     <label>
-                        <input type="checkbox" @click="onChangeAllCheckbox" ref="allCheckbox">
+                        <input type="checkbox" @click="onChangeAllCheckbox" ref="allChecked"
+                               :checked="areAllItemsSelected">
                     </label>
                 </th>
                 <th class="y-table-cell" v-if="numberVisible">序号</th>
@@ -19,7 +20,7 @@
                 <td class="y-table-checkbox">
                     <label>
                         <input type="checkbox" @click="onChangeCheckbox($event,item,index)"
-                               :checkbox="isSelectedCheckbox(item)"
+                               :checked="isSelectedCheckbox(item)"
                         >
                     </label>
                 </td>
@@ -60,7 +61,7 @@
                 type: Boolean,
                 default: true,
             },
-            striped: {
+            striped: {//间隔颜色css实现
                 type: Boolean,
                 default: true,
             },
@@ -72,18 +73,36 @@
         data() {
             return {}
         },
+        computed: {
+            //判断两个数组是否是一样的，来切换全选或不选状态的checkbox
+            areAllItemsSelected() {
+                let a = this.dataSource.map(item => item.id).sort()
+                let b = this.selectedItems.map(item => item.id).sort()
+                if (a.length !== b.length) { return false }
+                let equal = true
+                for (let i = 0; i < a.length; i++) {
+                    if (a[i] !== b[i]) {
+                        equal = false
+                        break
+                    }
+                }
+                return equal
+            }
+        },
         watch: {
+            //切换半选状态
             selectedItems() {
                 if (this.selectedItems.length === this.dataSource.length) {
-                    this.$refs.allCheckbox.indeterminate = false
+                    this.$refs.allChecked.indeterminate = false
                 } else if (this.selectedItems.length === 0) {
-                    this.$refs.allCheckbox.indeterminate = false
+                    this.$refs.allChecked.indeterminate = false
                 } else {
-                    this.$refs.allCheckbox.indeterminate = true
+                    this.$refs.allChecked.indeterminate = true
                 }
             }
         },
         methods: {
+            //每条数据checkbox是否被选中
             isSelectedCheckbox(item) {
                 return this.selectedItems.filter(i => i.id === item.id).length > 0
             },
@@ -93,7 +112,7 @@
                 if (selected) {
                     copy.push(item)
                 } else {
-                    copy = copy.filter(i=>i.id!==item.id)
+                    copy = copy.filter(i => i.id !== item.id)
                 }
                 this.$emit('update:selectedItems', copy)
             },
@@ -108,7 +127,6 @@
         }
     }
 </script>
-
 <style scoped lang="scss">
     @import "var";
 
