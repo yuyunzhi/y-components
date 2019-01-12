@@ -21,7 +21,7 @@
                         <y-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
                     </span>
                 </th>
-                <td class="y-table-button"></td>
+                <th class="y-table-cell y-table-button">功能</th>
             </tr>
             </thead>
             <tbody>

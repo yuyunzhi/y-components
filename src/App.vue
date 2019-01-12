@@ -17,8 +17,8 @@
 
         >
             <template slot-scope="xxx">
-                    <button @click="edit(xxx.item)">编辑</button>
-                    <button @click="view(xxx.item)">查看</button>
+                    <span class="btn" @click="edit(xxx.item)">编辑</span>
+                    <span  class="btn"@click="view(xxx.item)">查看</span>
             </template>
         </y-table>
 
@@ -107,4 +107,12 @@
         margin-left:20px;
     }
 }
+    .btn{
+        font-size:14px;
+        border:none;
+        background:transparent;
+        color:#40a9ff;
+        cursor: pointer;
+        margin-right:10px;
+    }
 </style>
