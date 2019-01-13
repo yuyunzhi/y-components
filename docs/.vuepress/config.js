@@ -20,7 +20,7 @@ module.exports = {
                     '/components/grid',
                     '/components/layout',
                     '/components/toast',
-                    '/components/collapse',
+                    // '/components/collapse',
 
                 ]
             }

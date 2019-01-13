@@ -133,8 +133,8 @@
             white-space: nowrap;
             margin-top: 2px;
             box-shadow: 0 0 3px fade_out(black, 0.9);
-            border-radius: $border-radius;
-            font-size: $font-size;
+            border-radius: 4px;
+            font-size: 14px;
             //overflow: hidden;
             &.vertical{
                 position: static;

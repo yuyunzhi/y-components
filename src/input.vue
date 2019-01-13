@@ -40,17 +40,16 @@
 <style scoped lang="scss">
     $height: 32px;
     $border-color: #999;
-    $border-color-hover: #1890ff;
     $border-radius: 4px;
     $font-size: 12px;
     $box-shadow-color: #1890ff;
     $red: #F1453D;
-    .wrapper { font-size: $font-size; display: inline-flex;
+    .wrapper { font-size: 14px; display: inline-flex;
         align-items: center;
         > :not(:last-child) {margin-right: .5em; }
         > input { height: 32px;
-            border: 1px solid $border-color; border-radius: 4px; padding: 0 8px; font-size: inherit;
-            &:hover { border-color: $border-color-hover; }
+            border: 1px solid #999; border-radius: 4px; padding: 0 8px; font-size: inherit;
+            &:hover { border-color: #1890ff; }
             &:focus { box-shadow: 0px 0px 1px 1px $box-shadow-color; border-color:$box-shadow-color;outline: none; }
             &[disabled], &[readonly] {border-color: #bbb;color: #bbb;cursor: not-allowed; }
         }

@@ -61,10 +61,13 @@ showToast(){
                         text:'关闭',
                         callback:(toast)=>{
                             this.log(); //组件外部函数
-                            toast.log() //组件内部函数
+                            //toast.log() //组件内部函数
                         },
                     }
                 })
+            },
+            log(){
+                alert('调用了组件外部的函数')
             }
         }
     }

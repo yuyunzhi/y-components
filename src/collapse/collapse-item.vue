@@ -78,8 +78,8 @@
         }
         &:last-child{
             > .title:last-child{
-                border-bottom-left-radius: $border-radius;
-                border-bottom-right-radius: $border-radius;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
             }
         }
     }

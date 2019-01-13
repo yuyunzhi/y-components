@@ -2,7 +2,6 @@
     <div class="y-table-wrapper">
         <table class="y-table" :class="{hasBorder,compact,striped}">
             <thead>
-
             <tr>
                 <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField"></th>
                 <th class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
@@ -21,7 +20,7 @@
                         <y-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
                     </span>
                 </th>
-                <th class="y-table-cell y-table-button">功能</th>
+                <th class="y-table-cell y-table-button"></th>
             </tr>
             </thead>
             <tbody>
@@ -71,7 +70,7 @@
 </template>
 
 <script>
-    import YIcon from './icon.vue'
+    import YIcon from '../icon.vue'
 
     export default {
         name: "YTable",

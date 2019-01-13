@@ -113,7 +113,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import "../var";
+
     .cascader {
         display: inline-block;
         position: relative;
@@ -124,8 +124,8 @@
             align-items: center;
             padding: 0 1em;
             min-width: 10em;
-            border: 1px solid $border-color;
-            border-radius: $border-radius;
+            border: 1px solid #999;
+            border-radius: 4px;
         }
         .popover-wrapper {
             position: absolute; top: 100%; left: 0; background: white; display: flex;

@@ -30,15 +30,15 @@
                 margin-left: -1px;
             }
             &:first-child{
-                border-top-left-radius:$border-radius;
-                border-bottom-left-radius:$border-radius;
+                border-top-left-radius:4px;
+                border-bottom-left-radius:4px;
             }
             &:last-child{
-                border-top-right-radius: $border-radius;
-                border-bottom-right-radius:$border-radius;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius:4px;
             }
             &:hover{
-                border-color:$border-color-hover;
+                border-color:#1890ff;
                 position:relative;
                 z-index: 1;
             }

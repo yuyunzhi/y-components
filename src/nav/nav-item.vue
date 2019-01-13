@@ -72,7 +72,7 @@
     .y-sub-nav .y-nav-item:not(.vertical) {
         color: $light-color;
         &.active {
-            border-radius: $border-radius;
+            border-radius: 4px;
             background: $grey;
             color: $black;
             &::after {

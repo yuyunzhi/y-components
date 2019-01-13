@@ -44,8 +44,7 @@
   }
 </script>
 <style lang="scss" scoped>
-@import 'var.scss';
-/*     $button-height: 32px;
+    $button-height: 32px;
      $font-size: 14px;
      $button-bg: #40a9ff;
      $button-active-bg:  #096dd9;//#40a9ff
@@ -54,7 +53,7 @@
       $border-color: white;
      $border-color-hover: #1890ff;  //#096dd9
      $disabled-color:rgb(153,153,153);
-     $disabled-bg:white;*/
+     $disabled-bg:white;
 
      @keyframes spin {
          0%{transform: rotate(0)}
@@ -64,17 +63,17 @@
          animation: spin 2s linear infinite;
      }
      .y-button {
-         font-size: $font-size;
-         height: $button-height;
+         font-size: 14px;
+         height: 32px;
          padding: 0 1em;
-         border-radius: $border-radius;
-         border: 1px solid $button-bg;
-         background: $button-bg;
+         border-radius: 4px;
+         border: 1px solid #40a9ff;
+         background: #40a9ff;
          display:inline-flex;
          justify-content: center;
          align-items: center;
          vertical-align: middle;
-         color:$color;
+         color:white;
          .icon{
              fill:white;
          }
@@ -82,10 +81,10 @@
              padding: 0;
          }
          &:hover {
-             border-color: $border-color-hover;
+             border-color: #1890ff;
              cursor: pointer;
          }
-         &:active {background-color: $button-active-bg;}
+         &:active {background-color: #096dd9;}
          &:focus {outline: none;}
          > .content{order:2;}
          > .icon{order:1;margin-right:.3em;}
@@ -94,9 +93,9 @@
              > .icon{order:2;margin-right:0;margin-left:.3em;}
          }
          &.disabled{
-             border:1px solid $disabled-color;
-             color:$disabled-color;
-             background:$disabled-bg;
+             border:1px solid rgb(153,153,153);
+             color:rgb(153,153,153);
+             background:white;
              cursor: not-allowed;
          }
      }

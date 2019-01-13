@@ -1,24 +1,32 @@
 <template>
-    <div class="y-pager" :class="{hide: hideIfOnePage === true && totalPage <= 1}">
-    <span class="y-pager-nav prev" :class="{disabled:currentPage===1}"
-          @click="onClickPage(currentPage-1)">
-      <y-icon name="left"></y-icon>
-    </span>
+    <div class="y-pager" :class="{hide: hidePager === true && totalPage <= 1}">
+
+        <span class="y-pager-nav prev" :class="{disabled:currentPage===1}"
+              @click="onClickPage(currentPage-1)">
+              <y-icon name="left"></y-icon>
+        </span>
+
         <template v-for="page in pages">
+
             <template v-if="page === currentPage">
                 <span class="y-pager-item current" :data-number="currentPage">{{page}}</span>
             </template>
+
             <template v-else-if="page === '...'">
                 <y-icon class="y-pager-separator" name="dots"></y-icon>
             </template>
+
             <template v-else>
                 <span class="y-pager-item other" @click="onClickPage(page)">{{page}}</span>
             </template>
+
         </template>
+
         <span class="y-pager-nav next" :class="{disabled: currentPage===totalPage}"
               @click="onClickPage(currentPage+1)">
-      <y-icon name="right"></y-icon>
-    </span>
+             <y-icon name="right"></y-icon>
+        </span>
+
     </div>
 </template>
 <script>
@@ -36,22 +44,22 @@
                 type: Number,
                 required: true
             },
-            hideIfOnePage: {
+            hidePager: {
                 type: Boolean,
                 default: true
             }
         },
         computed: {
             pages() { // 依赖了 totalPage 和 currentPage
-                return unique([1, this.totalPage,
-                    this.currentPage,
-                    this.currentPage - 1, this.currentPage - 2,
-                    this.currentPage + 1, this.currentPage + 2]
+                return this.unique([1, this.currentPage - 1,
+                    this.currentPage, this.currentPage + 1,
+                    this.totalPage,]
                     .filter((n) => n >= 1 && n <= this.totalPage)
                     .sort((a, b) => a - b))
                     .reduce((prev, current, index, array) => {
                         prev.push(current)
-                        array[index + 1] !== undefined && array[index + 1] - array[index] > 1 && prev.push('...')
+                        let canAddSeparator=array[index + 1] !== undefined && array[index + 1] - array[index] > 1
+                        if(canAddSeparator){prev.push('...')}
                         return prev
                     }, [])
             }
@@ -61,19 +69,22 @@
                 if (n >= 1 && n <= this.totalPage) {
                     this.$emit('update:currentPage', n)
                 }
+            },
+            //对数组去重
+            unique(array){
+                // return [...new Set(array)]
+                // array = [1 1 2 3 4 5 20]
+                const obj = {}
+                array.map((i) => {
+                    obj[i] = true
+                })
+                //console.log('object.keys',Object.keys(object));
+                return Object.keys(obj).map((string) => parseInt(string, 10))
             }
+
         }
     }
 
-    function unique(array) {
-        // return [...new Set(array)]
-        // array = [1 1 2 3 4 5 20]
-        const object = {}
-        array.map((number) => {
-            object[number] = true
-        })
-        return Object.keys(object).map((s) => parseInt(s, 10))
-    }
 </script>
 <style scoped lang="scss">
     @import "var";
@@ -91,14 +102,14 @@
         }
         &-separator {
             width: $width;
-            font-size: $font-size;
+            font-size: 14px;
         }
         &-item {
             min-width: $width;
             height: $height;
-            font-size: $font-size;
+            font-size: 14px;
             border: 1px solid #e1e1e1;
-            border-radius: $border-radius;
+            border-radius: 4px;
             padding: 0 4px;
             display: inline-flex;
             justify-content: center;
@@ -121,7 +132,7 @@
             height: $height;
             width: $width;
             border-radius: $border-radius;
-            font-size: $font-size;
+            font-size: 14px;
             cursor: pointer;
             &.disabled {
                 cursor: default;

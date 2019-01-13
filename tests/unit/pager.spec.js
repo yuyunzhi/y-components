@@ -29,7 +29,7 @@ describe('Pager.vue', () => {
         expect(wrapper.find('.disabled').exists()).to.be.true
     })
 
-    it('它可以设置hide one page', () => {
+    it('它可以设置hide pager', () => {
         const wrapper = mount(Pager, {
             propsData: {
                 totalPage: 1,

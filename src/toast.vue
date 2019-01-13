@@ -20,7 +20,7 @@
     name: 'YToast',
     props: {
       autoClose: {
-        type: Boolean,
+        type: [Boolean,Number],
         default: 3,
         validator (value) {
           return value === false || typeof value === 'number';
@@ -59,10 +59,13 @@
     },
     methods: {
       updateStyles () {
-        this.$nextTick(() => {
-          this.$refs.line.style.height =
-            `${this.$refs.toast.getBoundingClientRect().height}px`
-        })
+          if(!this.autoClose){
+              this.$nextTick(() => {
+                  this.$refs.line.style.height =
+                      `${this.$refs.toast.getBoundingClientRect().height}px`
+              })
+          }
+
       },
       execAutoClose () {
         if (this.autoClose) {
@@ -136,7 +139,7 @@
         }
     }
     .toast {
-        font-size: $font-size; min-height: $toast-min-height; line-height: 1.8;
+        font-size: 14px; min-height: $toast-min-height; line-height: 1.8;
         display: flex;
         color: $toast-color; align-items: center; background: $toast-bg; border-radius: 4px;
         padding: 0 16px;
