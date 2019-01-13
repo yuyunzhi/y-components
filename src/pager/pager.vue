@@ -1,9 +1,10 @@
 <template>
     <div class="y-pager" :class="{hide: hidePager === true && totalPage <= 1}">
 
-        <span class="y-pager-nav prev" :class="{disabled:currentPage===1}"
-              @click="onClickPage(currentPage-1)">
-              <y-icon name="left"></y-icon>
+        <span class="y-pager-nav prev"
+              :class="{disabled:currentPage===1}">
+              <y-icon name="left"   @click="onClickPage(currentPage-1)" ></y-icon>
+
         </span>
 
         <template v-for="page in pages">
@@ -16,15 +17,16 @@
                 <y-icon class="y-pager-separator" name="dots"></y-icon>
             </template>
 
-            <template v-else>
+            <template v-else >
                 <span class="y-pager-item other" @click="onClickPage(page)">{{page}}</span>
             </template>
 
         </template>
 
-        <span class="y-pager-nav next" :class="{disabled: currentPage===totalPage}"
-              @click="onClickPage(currentPage+1)">
-             <y-icon name="right"></y-icon>
+        <span class="y-pager-nav next"
+              @click="onClickPage(currentPage+1)"
+              :class="{disabled: currentPage===totalPage}">
+             <y-icon name="right"     @click="onClickPage(currentPage+1)" ></y-icon>
         </span>
 
     </div>
@@ -87,16 +89,19 @@
 
 </script>
 <style scoped lang="scss">
-    @import "var";
 
+    $width: 20px;
+    $height: 20px;
+    $font-size: 12px;
+    $border-radius:4px;
+    $border-color1:#e1e1e1;
+    $blue:#4a90e2;
+    $grey: #eee;
     .y-pager {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         user-select: none;
-        $width: 20px;
-        $height: 20px;
-        $font-size: 12px;
         &.hide {
             display: none;
         }
@@ -108,7 +113,7 @@
             min-width: $width;
             height: $height;
             font-size: 14px;
-            border: 1px solid #e1e1e1;
+            border: 1px solid $border-color1;
             border-radius: 4px;
             padding: 0 4px;
             display: inline-flex;
@@ -117,7 +122,7 @@
             margin: 0 4px;
             cursor: pointer;
             &.current, &:hover {
-                border-color: $blue;
+                border-color: $blue ;
             }
             &.current {
                 cursor: default;

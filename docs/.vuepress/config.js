@@ -21,7 +21,9 @@ module.exports = {
                     '/components/layout',
                     '/components/toast',
                     '/components/collapse',
-
+                    '/components/pager',
+                    '/components/sticky',
+                    '/components/captcha',
                 ]
             }
 
