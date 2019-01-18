@@ -24,6 +24,7 @@ module.exports = {
                     '/components/pager',
                     '/components/sticky',
                     '/components/captcha',
+                    '/components/table',
                 ]
             }
 

@@ -3,8 +3,8 @@
         <table class="y-table" :class="{hasBorder,compact,striped}">
             <thead>
             <tr>
-                <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField" v-if="expendField"></th>
-                <th class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
+                <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField y-table-cell" v-if="expendField"></th>
+                <th class="y-table-checkbox y-table-cell" :style="{width:'50px','text-align':'center'}" v-if="checkable">
                     <label>
                         <input type="checkbox" @click="onChangeAllCheckbox" ref="allChecked"
                                :checked="areAllItemsSelected">
@@ -27,7 +27,7 @@
             <template v-for="(item,index) in dataSource">
 
                 <tr :key="item.id">
-                    <td :style="{width:'50px','text-align':'center'}" class="y-table-expendField"  v-if="expendField">
+                    <td :style="{width:'50px','text-align':'center'}" class="y-table-expendField y-table-cell"  v-if="expendField">
                         <y-icon name="right"
                                 class="y-table-icon"
                                 :class="{'open':isInexpendIds(item),'close':!isInexpendIds(item)}"
@@ -35,7 +35,7 @@
                                 v-if="item[expendField]"
                         ></y-icon>
                     </td>
-                    <td class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
+                    <td class="y-table-checkbox y-table-cell" :style="{width:'50px','text-align':'center'}" v-if="checkable">
                         <label>
                             <input type="checkbox" @click="onChangeCheckbox($event,item,index)"
                                    :checked="isSelectedCheckbox(item)"
@@ -97,15 +97,19 @@
             },
             hasBorder: {
                 type: Boolean,
-                default: true,
+                default: false,
             },
             striped: {//间隔颜色css实现
                 type: Boolean,
                 default: true,
             },
-            selectedItems: { //选中的数据
+            selectedItems: { //选中的数据 与 checkable同时使用
                 type: Array,
                 default: () => [],
+            },
+            checkable:{ //是否有选中 与 selectedItems同时使用
+                type:Boolean,
+                default:false,
             },
             orderBy: { //排序方式
                 type: Object,
@@ -117,10 +121,6 @@
             },
             expendField:{ //是否要展开
                 type:String,
-            },
-            checkable:{ //是否有选中
-                type:Boolean,
-                default:false,
             },
             hasButton:{
                 type:Boolean,
@@ -233,21 +233,29 @@
     }
 </script>
 <style scoped lang="scss">
-    @import "var";
+
+    $grey: #eee;
+
+    @mixin spin {
+        animation: spin 2s infinite linear;
+    }
+    @keyframes loadingSpan{
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
     .y-table-wrapper{
         position: relative;
+
     }
 
     .y-table {
-
-        width: 100%;
+        width:100%;
         border-collapse: collapse;
         border-spacing: 0;
-        border-bottom: 1px solid $grey;
         &.hasBorder {
-            border: 1px solid $grey;
             tr, td, th {
-                border: 1px solid $grey;
+               border: 1px solid $grey;
             }
         }
         &.compact {
@@ -269,9 +277,6 @@
                 background: rgb(245, 247, 250);
             }
         }
-        &-cell.sorter{
-
-        }
         td, th {
             text-align: left;
             box-sizing: border-box;
@@ -285,7 +290,6 @@
             font-size: 14px;
             border-bottom: 1px solid $grey;
             text-align: left;
-            //border:1px solid $grey;
 
         }
         &-sorter {
@@ -310,10 +314,6 @@
                     top: -1px;
                 }
             }
-        }
-        @keyframes loadingSpan{
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
         &-loading{
             position: absolute;
