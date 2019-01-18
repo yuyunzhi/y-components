@@ -4,13 +4,25 @@
         <y-table
                 :columns="columns"
                 :data-source="dataSource"
+                :numberVisible="numberVisible"
+                :hasBorder="hasBorder"
+                :compact="compact"
                 :striped="striped"
+                :selected-items.sync="selectedItems"
                 :order-by.sync="sortRules"
-                @update:orderBy="x"
                 :loading="loading"
-
+                @update:orderBy="x"
+                :checkable="checkable"
         >
         </y-table>
+
+        <div class="box">
+            <y-button @click="numberVisible=!numberVisible">有无序号</y-button>
+            <y-button @click="striped=!striped">有无间隔条纹</y-button>
+            <y-button @click="hasBorder=!hasBorder">有无边框</y-button>
+            <y-button @click="checkable=!checkable">有无选中</y-button>
+            <y-button @click="compact=!compact">是否紧凑</y-button>
+        </div>
 
     </div>
 </template>
@@ -41,7 +53,12 @@
                 },
                 selectedItems:[],
                 loading:false,
+                hasBorder:false,
                 striped:true,
+                numberVisible:false,
+                checkable:false,
+                compact:false,
+
             }
         },
         watch:{
@@ -51,6 +68,7 @@
         },
         methods:{
             edit(item){
+                console.log(item);
                 alert('编辑：'+item.id)
             },
             view(item){

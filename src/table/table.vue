@@ -3,7 +3,7 @@
         <table class="y-table" :class="{hasBorder,compact,striped}">
             <thead>
             <tr>
-                <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField"></th>
+                <th :style="{width:'50px','text-align':'center'}" class="y-table-expendField" v-if="expendField"></th>
                 <th class="y-table-checkbox" :style="{width:'50px','text-align':'center'}" v-if="checkable">
                     <label>
                         <input type="checkbox" @click="onChangeAllCheckbox" ref="allChecked"
@@ -13,21 +13,21 @@
                 <th class="y-table-cell" v-if="numberVisible">序号</th>
                 <th class="y-table-cell sorter" v-for="column in columns" :key="column.field">
                     {{column.text}}
-                    <span v-if="column.field in orderBy"
+                    <span v-if="orderBy && column.field in orderBy"
                           class="y-table-sorter"
                           @click="changeOrderBy(column.field)">
                         <y-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
                         <y-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
                     </span>
                 </th>
-                <th class="y-table-cell y-table-button"></th>
+                <th class="y-table-cell y-table-button" v-if="hasButton"></th>
             </tr>
             </thead>
             <tbody>
             <template v-for="(item,index) in dataSource">
 
                 <tr :key="item.id">
-                    <td :style="{width:'50px','text-align':'center'}" class="y-table-expendField">
+                    <td :style="{width:'50px','text-align':'center'}" class="y-table-expendField"  v-if="expendField">
                         <y-icon name="right"
                                 class="y-table-icon"
                                 :class="{'open':isInexpendIds(item),'close':!isInexpendIds(item)}"
@@ -46,7 +46,7 @@
                     <template v-for="column in columns">
                         <td class="y-table-cell" :key="column.field">{{item[column.field]}}</td>
                     </template>
-                    <td class="y-table-button">
+                    <td class="y-table-button" v-if="hasButton">
                         <slot :item="item"></slot>
                     </td>
                 </tr >
@@ -119,6 +119,10 @@
                 type:String,
             },
             checkable:{ //是否有选中
+                type:Boolean,
+                default:false,
+            },
+            hasButton:{
                 type:Boolean,
                 default:false,
             }
@@ -330,8 +334,8 @@
         }
 
         &-icon{
-            width:12px;
-            height:12px;
+            width:10px;
+            height:10px;
             cursor: pointer;
             @keyframes xxx {
                 0%{transform: rotate(0deg)}

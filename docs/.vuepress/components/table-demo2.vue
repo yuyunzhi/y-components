@@ -5,11 +5,11 @@
                 :columns="columns"
                 :data-source="dataSource"
                 :striped="striped"
-                :order-by.sync="sortRules"
-                @update:orderBy="x"
-                :loading="loading"
-
+                hasButton
         >
+            <template slot-scope="xxx">
+                <span  class="btn" @click="getInformation(xxx.item)">查看</span>
+            </template>
         </y-table>
 
     </div>
@@ -35,39 +35,13 @@
                     {text:'姓名',field:'name'},
                     {text:'分数',field:'score'},
                 ],
-                sortRules:{ //如果不写key，表示那一列不需要排列
-                    // name:'asc',
-                    score:true
-                },
-                selectedItems:[],
-                loading:false,
                 striped:true,
             }
         },
-        watch:{
-            selectedItems(aNew,bOld){
-                console.log(aNew);
-            }
-        },
         methods:{
-            edit(item){
-                alert('编辑：'+item.id)
-            },
-            view(item){
+            getInformation(item){
                 alert('查看：'+item.name)
             },
-            //根据排序的规则，发送请求，渲染数据
-            x(sortRules){
-                //true 表示默认排序，asc 表示升序，desc表示降序
-                console.log(sortRules);
-                this.loading=true
-                //发送请求，渲染页面
-                setTimeout(()=>{
-                    this.dataSource=this.dataSource.sort((a,b)=>a.score-b.score)
-
-                    this.loading=false
-                },2000)
-            }
         }
     }
 </script>
