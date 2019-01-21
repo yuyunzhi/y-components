@@ -41,7 +41,7 @@
             },
             autoPlayDelay:{
                 type: Number,
-                default: 1000
+                default: 1500
             }
         },
         data() {

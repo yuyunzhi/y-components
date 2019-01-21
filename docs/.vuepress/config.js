@@ -25,6 +25,7 @@ module.exports = {
                     '/components/sticky',
                     '/components/captcha',
                     '/components/table',
+                    '/components/slides',
                 ]
             }
 

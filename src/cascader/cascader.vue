@@ -113,6 +113,7 @@
 </script>
 
 <style scoped lang="scss">
+    $input-height: 32px;
 
     .cascader {
         display: inline-block;
@@ -130,7 +131,9 @@
         .popover-wrapper {
             position: absolute; top: 100%; left: 0; background: white; display: flex;
             margin-top: 8px;z-index: 1;
-            @extend .box-shadow;
+            .box-shadow {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            }
         }
     }
 </style>

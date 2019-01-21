@@ -78,7 +78,9 @@
 </script>
 
 <style scoped lang="scss">
-    @import "../var";
+
+    $border-color-light: lighten(#999, 30%);
+    $grey: #eee;
     .cascaderItem {
         display: flex;
         align-items: flex-start;
