@@ -26,6 +26,7 @@ module.exports = {
                     '/components/captcha',
                     '/components/table',
                     '/components/slides',
+                    '/components/uploader',
                 ]
             }
 

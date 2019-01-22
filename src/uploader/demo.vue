@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import YUpload from './uploader/upload'
+    import YUpload from './uploader/uploader'
     import YButton from './button/button'
 
     export default {
@@ -39,7 +39,7 @@
             parseResponse(res){
                 console.log('res',res)
                 let obj = JSON.parse(res)
-                let url=`http://127.0.0.1:3000/upload/${obj.id}`
+                let url=`https://node-server-11.herokuapp.com/upload/${obj.id}`
                 return url
             },
             error(error){

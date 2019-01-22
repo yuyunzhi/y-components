@@ -1,8 +1,8 @@
 <template>
     <div class="y-uploader">
-        <div @click="onClickUpload">
+        <span @click="onClickUpload">
             <slot></slot>
-        </div>
+        </span>
 
         <div ref="temp" style="width:0;height:0;overflow: hidden"></div>
 
@@ -47,6 +47,7 @@
             accept: {
                 type: String,
                 required: true,
+                default:'image/*'
             },
             method:{
                 type: String,
@@ -207,7 +208,6 @@
 </script>
 
 <style scoped lang="scss">
-    @import "var";
 
     .y-uploader {
 
@@ -286,6 +286,13 @@
             justify-content: center;
             align-items: center;
 
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @mixin spin {
+            animation: spin 2s infinite linear;
         }
         &-spin {
             width: 35px;

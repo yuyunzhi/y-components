@@ -83,7 +83,7 @@ getInformation(item){
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
     .wrapper{
         .table{
             .y-table-wrapper{
