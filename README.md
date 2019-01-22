@@ -2,49 +2,55 @@
 
 ![标](https://travis-ci.org/yuyunzhi/y-components.svg?branch=master)
 
-作者：余韵之
+作者：余咖咖
+
 ## 介绍
-这是我在Vue过程中做的一个UI框架。
 
-## 开始使用
+这是我在学习Vue过程中做的一个UI框架，后续在工作中会不断的更新迭代原有的代码及组件。
 
-1.添加CSS样式
-    使用本框架前，在CSS中加入border-box
-    ```
-    *,*::before,*::after{box-sizing:border-box}
-    ```
-    
-  
-2、安装 y-components
+- 该框架参考了element、antDesign的UI界面及API设计
+- 使用了VuePress搭建UI框架官网
+- 目前共计18个UI组件：Button、Input、Grid、Layout、Pager、Sticky、Collapse、Cascader、Table、Popover、Toast、Slides、Tabs、Nav、表单验证、图形验证码、瀑布流布局、单/多图上传。
+- 使用vue-test-utils写单元测试，由于时间有限后期会慢慢完成所有组件的单元测试代码
+- 使用了Travis CI 持续集成
+- 第一次代码提交是在2018年10月1日。
 
+## 使用的技术
 
-3、引入 y-components
+- 单元测试、覆盖率、持续集成
+- 设计模式：单向数据流、测试驱动开发、发布订阅模式、API正交（props）、可测试代码（在标签加入特殊的属性，方便测试的时候可以找到）
+- vue.js技术栈，包括但不限于：指令及自定义指令、计算属性、class动态绑定、条件渲染、列表渲染、事件监听处理、组件注册、props及校验、插槽、动画过渡、过滤器等
+- 测试库：Chai、Karma、Sinon、Vue-test-utils、Travis CI 
+
+## 安装
+
+- 文件夹里包含一个demo,可以参考如何使用，注意引入的路径
+- 下载仓库代码
+
 ```
-import {Button,ButtonGroup,Icon} from 'y-components'
-import 'y-components/dist/index.css'
-
-export default{
-    name:'app',
-    components:{
-        'y-button':Button,
-        'y-icon':Icon
-    }
-}
+git clone git@github.com:yuyunzhi/y-components.git
 ```
 
-4、引入SVG Symbols
-```angular2html
-<script src="//at.alicdn.com/t/font_860042_dp5sptsf4cm.js"></script>
+- 安装依赖
+
+```
+npm install
 ```
 
+- 运行
 
-  
-## 提问
-
-## 变更记录
+```
+npm run serve
+```
 
 ## 联系方式
 
-## 贡献代码
-## 安装
+- 微信:Lambert1129
+- 官网:https://www.yuyunzhi.com
+- github:https://github.com/yuyunzhi
+
+## License
+
+- MIT
+
 
