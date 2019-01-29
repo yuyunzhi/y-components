@@ -18,19 +18,25 @@
             }
         },
         computed: {
+            //gutter是数值，所以动态改style
             rowStyle () {
                 let {gutter} = this;
                 return {marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px'}
             },
+            //align是string,所以添加class来修改style
             rowClass () {
                 let {align} = this;
                 return [align && `align-${align}`]
             }
         },
         mounted () {
-            this.$children.forEach((vm) => {
-                vm.gutter = this.gutter
-            })
+            //把gutter的值传给子组件使用
+            if(this.gutter){
+                this.$children.forEach((vm) => {
+                    vm.gutter = this.gutter
+                })
+            }
+
         }
     }
 </script>
@@ -43,6 +49,7 @@
         }
         &.align-right {
             justify-content: flex-end;
+
         }
         &.align-center {
             justify-content: center;

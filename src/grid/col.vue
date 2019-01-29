@@ -20,7 +20,7 @@
             span: {
                 type: [Number, String]
             },
-            offset: {
+            offset: {//表示间隔多少个
                 type: [Number, String]
             },
             ipad: {type: Object, validator,},
@@ -35,6 +35,7 @@
         },
 
         methods: {
+
             createClasses (obj, str = '') {
                 if (!obj) {return []}
                 let array = [];
@@ -75,14 +76,12 @@
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 width: ($n / 24) * 100%;
-
             }
         }
         $class-prefix: offset-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
                 margin-left: ($n / 24) * 100%;
-
             }
         }
         @media (min-width: 577px) {
