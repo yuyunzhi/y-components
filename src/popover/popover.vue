@@ -1,12 +1,15 @@
 <template>
     <div class="popover" ref="popover">
+
         <div ref="contentWrapper" class="content-wrapper" v-if="visible"
              :class="{[`position-${position}`]:true}">
             <slot name="content" :close="close"></slot>
         </div>
+
         <span ref="triggerWrapper" style="display: inline-block;">
             <slot></slot>
         </span>
+
     </div>
 </template>
 
@@ -35,6 +38,8 @@
             }
         },
         mounted () {
+
+            //注意，是在popover上监听事件
             if (this.trigger === 'click') {
                 this.$refs.popover.addEventListener('click', this.onClick)
             } else {
@@ -43,27 +48,12 @@
             }
         },
         beforeDestroy () {
+            //关闭组件时要销毁事件监听，防止内存泄漏
             if (this.trigger === 'click') {
                 this.$refs.popover.removeEventListener('click', this.onClick)
             } else {
                 this.$refs.popover.removeEventListener('mouseenter', this.open);
                 this.$refs.popover.removeEventListener('mouseleave', this.close)
-            }
-        },
-        computed: {
-            openEvent () {
-                if (this.trigger === 'click') {
-                    return 'click'
-                } else {
-                    return 'mouseenter'
-                }
-            },
-            closeEvent () {
-                if (this.trigger === 'click') {
-                    return 'click'
-                } else {
-                    return 'mouseleave'
-                }
             }
         },
         methods: {
@@ -110,7 +100,7 @@
                 document.removeEventListener('click', this.onClickDocument)
             },
             onClick (event) {
-
+                //console.log(event.target);
                 if (this.$refs.triggerWrapper.contains(event.target)) {
                     if (this.visible === true) {
                         this.close()
@@ -156,7 +146,7 @@
                 left: 10px;
             }
             &::before {
-                border-top-color: black;
+                border-top-color: #999;
                 border-bottom: none;
                 top: 100%;
             }
@@ -173,7 +163,7 @@
             }
             &::before {
                 border-top: none;
-                border-bottom-color: black;
+                border-bottom-color: #999;
                 bottom: 100%;
             }
             &::after {
@@ -190,7 +180,7 @@
                 top: 50%;
             }
             &::before {
-                border-left-color: black;
+                border-left-color: #999;
                 border-right: none;
                 left: 100%;
             }
@@ -207,7 +197,7 @@
                 top: 50%;
             }
             &::before {
-                border-right-color: black;
+                border-right-color: #999;
                 border-left: none;
                 right: 100%;
             }
