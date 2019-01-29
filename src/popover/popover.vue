@@ -1,12 +1,15 @@
 <template>
     <div class="popover" ref="popover">
+
         <div ref="contentWrapper" class="content-wrapper" v-if="visible"
              :class="{[`position-${position}`]:true}">
             <slot name="content" :close="close"></slot>
         </div>
+
         <span ref="triggerWrapper" style="display: inline-block;">
             <slot></slot>
         </span>
+
     </div>
 </template>
 
@@ -156,7 +159,7 @@
                 left: 10px;
             }
             &::before {
-                border-top-color: black;
+                border-top-color: #999;
                 border-bottom: none;
                 top: 100%;
             }
@@ -173,7 +176,7 @@
             }
             &::before {
                 border-top: none;
-                border-bottom-color: black;
+                border-bottom-color: #999;
                 bottom: 100%;
             }
             &::after {
@@ -190,7 +193,7 @@
                 top: 50%;
             }
             &::before {
-                border-left-color: black;
+                border-left-color: #999;
                 border-right: none;
                 left: 100%;
             }
@@ -207,7 +210,7 @@
                 top: 50%;
             }
             &::before {
-                border-right-color: black;
+                border-right-color: #999;
                 border-left: none;
                 right: 100%;
             }
