@@ -14,6 +14,7 @@
             }
         },
         mounted () {
+            //含义是两层最外内和内层的检测,整个组件最重要的点
             this.$children.forEach((vm) => {
                 if (vm.$options.name === 'YSider') {
                     this.layoutClass.hasSider = true
