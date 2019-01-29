@@ -1,60 +1,75 @@
 <template>
     <div class="wrapper">
-        <div>只能上传2MB以内png、jpeg文件</div>
-        <y-upload accept="image/*"
-                  action="https://node-server-11.herokuapp.com/upload"
-                  name="file"
-                  :fileList.sync="fileList"
-                  :parseResponse="parseResponse"
-                  class="uploader"
-                  @error="error"
-                  method="post"
-                  :size="2*1024*1024"
-                  @uploaded="uploaded"
-        >
-            <y-button icon="upload">上传</y-button>
-        </y-upload>
+
+        <y-nav :selected.sync="selected" vertical style="width:200px;" @update:selected="onChange">
+            <y-nav-item name="home">
+                <a href="//www.baidu.com" target="_blank">首页</a>
+            </y-nav-item>
+            <y-sub-nav name="about">
+                <template slot="title">关于</template>
+                <y-nav-item  name="culture">企业文化</y-nav-item>
+                <y-nav-item  name="developers">开发团队</y-nav-item>
+                <y-sub-nav name="contacts">
+                    <template slot="title">联系方式</template>
+                    <y-nav-item name="wechat">微信</y-nav-item>
+                    <y-nav-item name="qq">QQ</y-nav-item>
+                    <y-sub-nav name="phone">
+                        <template slot="title">手机</template>
+                        <y-nav-item name="cb">移动</y-nav-item>
+                        <y-nav-item name="cu">联通</y-nav-item>
+                        <y-nav-item name="cn">电信</y-nav-item>
+                    </y-sub-nav>
+                </y-sub-nav>
+            </y-sub-nav>
+            <y-nav-item name="hire">招聘</y-nav-item>
+        </y-nav>
+
+   <!--     <y-nav :selected.sync="selected"   style="margin-top:200px;">
+            <y-nav-item name="home">首页</y-nav-item>
+            <y-sub-nav name="about">
+                <template slot="title">关于</template>
+                <y-nav-item  name="culture">企业文化</y-nav-item>
+                <y-nav-item  name="developers">开发团队</y-nav-item>
+                <y-sub-nav name="contacts">
+                    <template slot="title">联系方式</template>
+                    <y-nav-item name="wechat">微信</y-nav-item>
+                    <y-nav-item name="qq">QQ</y-nav-item>
+                    <y-sub-nav name="phone">
+                        <template slot="title">手机</template>
+                        <y-nav-item name="cb">移动</y-nav-item>
+                        <y-nav-item name="cu">联通</y-nav-item>
+                        <y-nav-item name="cn">电信</y-nav-item>
+                    </y-sub-nav>
+                </y-sub-nav>
+            </y-sub-nav>
+            <y-nav-item name="hire">招聘</y-nav-item>
+        </y-nav>-->
     </div>
 </template>
 
 <script>
-    import YUpload from './uploader/uploader'
-    import YButton from './button/button'
+    import YNav from './nav/nav.vue'
+    import YNavItem from './nav/nav-item.vue'
+    import YSubNav from './nav/sub-nav.vue'
 
     export default {
-        components: {
-            YUpload: YUpload,
-            YButton,
+        components:{
+            YNav,YNavItem,YSubNav,
         },
-
         data() {
             return {
-                fileList: [],
-                avatarImage: '',
+                selected:'home',
             }
         },
-
-        methods: {
-            //拿到后端的数据，进行处理组成url，并返回url
-            parseResponse(id){
-                let url=`https://node-server-11.herokuapp.com/preview/${id}`
-                return url
-            },
-            error(error){
-                alert(error)
-            },
-            uploaded(){
-                //上传成功
+        methods:{
+            onChange(selected){
+                console.log('点击监听',selected);
             }
         }
     }
 </script>
 
 <style lang="scss">
-    .uploader{
-        width:300px;
-    }
-
-
 
 </style>
+

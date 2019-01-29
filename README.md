@@ -9,6 +9,7 @@
 这是我在学习Vue过程中做的一个UI框架，后续在工作中会不断的更新迭代原有的代码及组件。
 
 - 该框架参考了element、antDesign的UI界面及API设计
+- 适应PC端和移动端
 - 使用了VuePress搭建UI框架官网
 - 目前共计18个UI组件：Button、Input、Grid、Layout、Pager、Sticky、Collapse、Cascader、Table、Popover、Toast、Slides、Tabs、Nav、表单验证、图形验证码、瀑布流布局、单/多图上传。
 - 使用vue-test-utils写单元测试，由于时间有限后期会慢慢完成所有组件的单元测试代码

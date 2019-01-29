@@ -90,6 +90,7 @@
             height: 100%;
             padding: .3em 0;
             overflow: auto;
+            border:1px solid $grey;
         }
         .right {
             height: 100%;
