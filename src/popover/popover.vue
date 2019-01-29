@@ -38,6 +38,8 @@
             }
         },
         mounted () {
+
+            //注意，是在popover上监听事件
             if (this.trigger === 'click') {
                 this.$refs.popover.addEventListener('click', this.onClick)
             } else {
@@ -46,27 +48,12 @@
             }
         },
         beforeDestroy () {
+            //关闭组件时要销毁事件监听，防止内存泄漏
             if (this.trigger === 'click') {
                 this.$refs.popover.removeEventListener('click', this.onClick)
             } else {
                 this.$refs.popover.removeEventListener('mouseenter', this.open);
                 this.$refs.popover.removeEventListener('mouseleave', this.close)
-            }
-        },
-        computed: {
-            openEvent () {
-                if (this.trigger === 'click') {
-                    return 'click'
-                } else {
-                    return 'mouseenter'
-                }
-            },
-            closeEvent () {
-                if (this.trigger === 'click') {
-                    return 'click'
-                } else {
-                    return 'mouseleave'
-                }
             }
         },
         methods: {
@@ -113,7 +100,7 @@
                 document.removeEventListener('click', this.onClickDocument)
             },
             onClick (event) {
-
+                //console.log(event.target);
                 if (this.$refs.triggerWrapper.contains(event.target)) {
                     if (this.visible === true) {
                         this.close()
