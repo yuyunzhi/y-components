@@ -1,6 +1,6 @@
 module.exports = {
     base: '/y-components/',
-    title: 'Y-Components UI',
+    title: 'Y-Components',
     description: 'Just playing around',
     themeConfig: {
         sidebar: [
