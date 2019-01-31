@@ -11,7 +11,6 @@
                 <div class="content" >{{getData.x.content}}</div>
             </template>
         </y-waterfall>
-
     </div>
 </template>
 
@@ -126,4 +125,3 @@
     }
 
 </style>
-
