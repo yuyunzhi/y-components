@@ -1,4 +1,4 @@
-# Y-Components 一个Vue UI 组件
+# Vue UI 组件库
 
 ![标](https://travis-ci.org/yuyunzhi/y-components.svg?branch=master)
 
