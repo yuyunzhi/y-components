@@ -12,7 +12,7 @@
 
         <div class="y-slides-dots">
       <span @click="onClickPrev" data-action="prev">
-        <y-icon name="left"></y-icon>
+        <y-icon name="left" class="icon"></y-icon>
       </span>
             <span v-for="n in childrenLength" :class="{active: selectedIndex === n-1}"
                   :key="n" :data-index="n-1"
@@ -20,7 +20,7 @@
         {{n}}
       </span>
             <span @click="onClickNext" data-action="next">
-        <y-icon name="right"></y-icon>
+        <y-icon name="right" class="icon"></y-icon>
       </span>
         </div>
     </div>
@@ -41,7 +41,7 @@
             },
             autoPlayDelay:{
                 type: Number,
-                default: 1500
+                default: 2000
             }
         },
         data() {
@@ -178,6 +178,9 @@
 
 <style lang="scss" scoped>
     .y-slides {
+        .icon{
+            fill:white;
+        }
         &-window {
             overflow: hidden;
         }
@@ -195,15 +198,16 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                background: #ddd;
+                background:  #40a9ff ;
                 border-radius: 50%;
                 margin: 0 8px;
                 font-size: 12px;
+                color:white;
                 &:hover {
                     cursor: pointer;
                 }
                 &.active {
-                    background: black;
+                    background: rgb(253,208,0);
                     color: white;
                     &:hover {
                         cursor: default;

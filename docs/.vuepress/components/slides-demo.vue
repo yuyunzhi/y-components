@@ -60,11 +60,12 @@
     .box {
         width: 100%;
         height: 300px;
-        background: #ddd;
+        background:#40a9ff;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size:40px;
+        color:white;
 
     }
 </style>
