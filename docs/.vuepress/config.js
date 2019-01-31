@@ -26,6 +26,7 @@ module.exports = {
                     '/components/table',
                     '/components/slides',
                     '/components/uploader',
+                    '/components/popover',
                 ]
             }
 
