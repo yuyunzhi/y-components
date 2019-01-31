@@ -1,12 +1,12 @@
 <template>
     <div class="y-waterfall-wrapper" ref="waterfallWrapper">
 
-
-        <span v-for="(item) in dataSource" ref="singleBlock" class="y-waterfall-item">
-            <!--<img :src="item.url" ref="imgs">-->
-            <!--<slot :x="item"></slot>-->
-            我
-        </span>
+        <div v-for="(item) in dataSource" ref="singleBlock" class="y-waterfall-item">
+            <img :src="item.url" ref="imgs" >
+            <div class="content" ref="content">
+                <slot :x="item"></slot>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -14,73 +14,88 @@
 <script>
     export default {
         name: "YWaterfall",
-        props:{
-            dataSource:{
-                type:Array,
-                required:true,
+        props: {
+            dataSource: {
+                type: Array,
+                required: true,
             },
-            singleWidth:{
-                type:Number,
-                required:true,
+            imgWidth: {
+                type: Number,
+                required: true,
+            },
+            imgHeight:{
+                type: Number,
+                required: true,
             }
         },
-        mounted(){
+        mounted() {
+
             //总宽度
-            let wrapperWidth=this.$refs.waterfallWrapper.getBoundingClientRect().width;
-            console.log('wrapperWidth',wrapperWidth);
+            let wrapperWidth = this.$refs.waterfallWrapper.getBoundingClientRect().width;
+            console.log('wrapperWidth', wrapperWidth);
+
             //总列数
-            let columns = parseInt(wrapperWidth/this.singleWidth,10);
+            let columns = parseInt(wrapperWidth / this.imgWidth, 10);
             console.log('columns', columns);
 
+            let marginBottom = (wrapperWidth-columns*this.imgWidth)/(columns+1)
 
+            let wrapperBlockWith=wrapperWidth / columns
+            this.$refs.singleBlock.forEach((block) => {
+                block.style.width = wrapperBlockWith+ 'px';
+                block.children[0].style.width = this.imgWidth + 'px';
+                block.children[0].style.height = this.imgHeight + 'px';
+                block.children[1].style.width = this.imgWidth + 'px';
+            })
 
+            let arrayHeight = []
+            for (let i = 0; i < columns; i++) {
+                let height=this.$refs.singleBlock[i].getBoundingClientRect().height
+                arrayHeight.push(height);
+            }
+            console.log(arrayHeight);
+            //arrayHeight [100,150,80.74.120]
+            this.$refs.singleBlock.forEach((block, index) => {
+                let minId = 0;
+                let minHeight = arrayHeight[0];
+                for (let i = 0; i < arrayHeight.length; i++) {
+                    if (arrayHeight[i] < minHeight) {
+                        minHeight = arrayHeight[i];
+                        minId = i;
+                    }
+                }
+                // console.log('------------分割线-------------' + index);
+                // console.log('minId',minId);
+                // console.log('minHeight',minHeight);
 
-            this.$refs.singleBlock.forEach((block,index)=>{
-                block.style.width=(wrapperWidth/columns)+'px'
+                if (index < columns) {
+                    block.style.left = index * wrapperBlockWith+ 'px'
+                    block.style.top = '0px'
+                    block.style.marginBottom= marginBottom+'px';
+                } else {
+                    block.style.left = minId * wrapperBlockWith + 'px'
+                    block.style.top = minHeight + 'px'
+                    arrayHeight[minId] = arrayHeight[minId] + block.getBoundingClientRect().height
+                }
+
 
             })
 
 
-
-/*            this.$refs.imgs.forEach((img,index)=>{
-                img.style.width=this.singleWidth+'px';
-
-            })*/
-
-
-//             let arrayHeight =[]
-//             for(let i = 0; i<columns;i++){
-//                 let height = this.$refs.imgs[i].getBoundingClientRect().height
-//                 arrayHeight.push(height);
-//             }
-//             console.log(arrayHeight);
-//
-//
-//             this.$refs.imgs.forEach((img,index)=>{
-//                 let minId=0;
-//                 let minHeight=arrayHeight[0];
-//                 for(let i=0;i<arrayHeight.length;i++){
-//                     if(arrayHeight[i]<minHeight){
-//                         minHeight=arrayHeight[i];
-//                         minId=i;
-//                     }
-//                 }
-// /*                img.style.left=minId*this.singleWidth+'px'
-//                 img.style.top=minHeight+'px'
-//                 arrayHeight[minId]= arrayHeight[minId]+img.getBoundingClientRect().height*/
-//             })
-
-        }
+        },
+        methods: {}
     }
 </script>
 
 <style scoped lang="scss">
-    .y-waterfall-wrapper{
+    .y-waterfall-wrapper {
         display: flex !important;
         flex-direction: row;
-        flex-wrap:wrap;
-        span{
-            display: block;
+        flex-wrap: wrap;
+        position: relative;
+        .y-waterfall-item {
+            text-align: left;
+            position: absolute;
         }
     }
 
