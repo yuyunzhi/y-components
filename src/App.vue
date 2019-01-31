@@ -1,75 +1,128 @@
 <template>
     <div class="wrapper">
+        <y-waterfall
+                :dataSource="items"
+                :imgWidth="150"
+                :imgHeight="150"
+                class="waterfall"
+        >
+            <template slot-scope="x">
+                <div class="content" >{{x.x.content}}</div>
+            </template>
+        </y-waterfall>
 
-        <y-nav :selected.sync="selected" vertical style="width:200px;" @update:selected="onChange">
-            <y-nav-item name="home">
-                <a href="//www.baidu.com" target="_blank">首页</a>
-            </y-nav-item>
-            <y-sub-nav name="about">
-                <template slot="title">关于</template>
-                <y-nav-item  name="culture">企业文化</y-nav-item>
-                <y-nav-item  name="developers">开发团队</y-nav-item>
-                <y-sub-nav name="contacts">
-                    <template slot="title">联系方式</template>
-                    <y-nav-item name="wechat">微信</y-nav-item>
-                    <y-nav-item name="qq">QQ</y-nav-item>
-                    <y-sub-nav name="phone">
-                        <template slot="title">手机</template>
-                        <y-nav-item name="cb">移动</y-nav-item>
-                        <y-nav-item name="cu">联通</y-nav-item>
-                        <y-nav-item name="cn">电信</y-nav-item>
-                    </y-sub-nav>
-                </y-sub-nav>
-            </y-sub-nav>
-            <y-nav-item name="hire">招聘</y-nav-item>
-        </y-nav>
-
-   <!--     <y-nav :selected.sync="selected"   style="margin-top:200px;">
-            <y-nav-item name="home">首页</y-nav-item>
-            <y-sub-nav name="about">
-                <template slot="title">关于</template>
-                <y-nav-item  name="culture">企业文化</y-nav-item>
-                <y-nav-item  name="developers">开发团队</y-nav-item>
-                <y-sub-nav name="contacts">
-                    <template slot="title">联系方式</template>
-                    <y-nav-item name="wechat">微信</y-nav-item>
-                    <y-nav-item name="qq">QQ</y-nav-item>
-                    <y-sub-nav name="phone">
-                        <template slot="title">手机</template>
-                        <y-nav-item name="cb">移动</y-nav-item>
-                        <y-nav-item name="cu">联通</y-nav-item>
-                        <y-nav-item name="cn">电信</y-nav-item>
-                    </y-sub-nav>
-                </y-sub-nav>
-            </y-sub-nav>
-            <y-nav-item name="hire">招聘</y-nav-item>
-        </y-nav>-->
     </div>
 </template>
 
 <script>
-    import YNav from './nav/nav.vue'
-    import YNavItem from './nav/nav-item.vue'
-    import YSubNav from './nav/sub-nav.vue'
-
+    import YWaterfall from './waterfall/waterfall'
+    import YButton from './button/button'
     export default {
-        components:{
-            YNav,YNavItem,YSubNav,
+        components: {
+            YWaterfall,YButton
         },
-        data() {
-            return {
-                selected:'home',
-            }
-        },
-        methods:{
-            onChange(selected){
-                console.log('点击监听',selected);
+        data(){
+            return{
+                items:[
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqfDCARzriAAH02_btBdk74.jpeg',
+                        content:'我禁不住抬起头来，看那天窗外空中的一轮明月。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FGLTk-AeP5LAAyavtXusQc09.jpeg',
+                        content:'李白，字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。'
+                    },
+                    {
+                        url:'http://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFPCxmAHMIiAA67iRy_22417.jpeg',
+                        content:'我禁不住抬起头来。'
+                    },
+                    {
+                        url: 'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFpEbSAaY4AAAOMd0VNyWg95.jpeg',
+                        content:'我禁不住抬起头来，看那天窗外空中的一轮明月，不由得低头沉思，想起远方的家乡。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqa6SAPu0jAAGC0-PeOFE20.jpeg',
+                        content:'床前明月光，疑是地上霜。'
+                    },
+
+                    {
+                        url:'http://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFPCxmAHMIiAA67iRy_22417.jpeg',
+                        content:'李白，字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FGLTk-AeP5LAAyavtXusQc09.jpeg',
+                        content:'白居易，字乐天，号香山居士，又号醉吟先生，祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。是唐代伟大的现实主义诗人，唐代三大诗人之一。'
+                    },
+                    {
+                        url: 'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFpEbSAaY4AAAOMd0VNyWg95.jpeg',
+                        content:'看那天窗外空中的一轮明月，不由得低头沉思。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqa6SAPu0jAAGC0-PeOFE20.jpeg',
+                        content:'苏轼，北宋文学家、书画家、美食家。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqfDCARzriAAH02_btBdk74.jpeg',
+                        content:'杜甫，字子美，自号少陵野老，世称“杜工部”、“杜少陵”等，汉族，河南府巩县（今河南省巩义市）人，唐代伟大的现实主义诗人，杜甫被世人尊为“诗圣”，其诗被称为“诗史”。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqfDCARzriAAH02_btBdk74.jpeg',
+                        content:'我禁不住抬起头来，看那天窗外空中的一轮明月'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FGLTk-AeP5LAAyavtXusQc09.jpeg',
+                        content:'李白，字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。'
+                    },
+                    {
+                        url:'http://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFPCxmAHMIiAA67iRy_22417.jpeg',
+                        content:'我禁不住抬起头来'
+                    },
+                    {
+                        url: 'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFpEbSAaY4AAAOMd0VNyWg95.jpeg',
+                        content:'我禁不住抬起头来，看那天窗外空中的一轮明月，不由得低头沉思，想起远方的家乡。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqa6SAPu0jAAGC0-PeOFE20.jpeg',
+                        content:'床前明月光，疑是地上霜。'
+                    },
+
+                    {
+                        url:'http://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFPCxmAHMIiAA67iRy_22417.jpeg',
+                        content:'李白，字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FGLTk-AeP5LAAyavtXusQc09.jpeg',
+                        content:'白居易，字乐天，号香山居士，又号醉吟先生，祖籍太原，到其曾祖父时迁居下邽，生于河南新郑。是唐代伟大的现实主义诗人，唐代三大诗人之一。'
+                    },
+                    {
+                        url: 'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFpEbSAaY4AAAOMd0VNyWg95.jpeg',
+                        content:'看那天窗外空中的一轮明月，不由得低头沉思。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqa6SAPu0jAAGC0-PeOFE20.jpeg',
+                        content:'苏轼，北宋文学家、书画家、美食家。'
+                    },
+                    {
+                        url:'https://cxqy20190125.oss-cn-shanghai.aliyuncs.com/images/wKgB3FFqfDCARzriAAH02_btBdk74.jpeg',
+                        content:'杜甫，字子美，自号少陵野老，世称“杜工部”、“杜少陵”等。'
+                    },
+                ]
             }
         }
     }
 </script>
 
 <style lang="scss">
+    .wrapper{
+        .waterfall{
+            width:800px;
+
+            display: block;
+            .content{
+                font-size:14px;
+            }
+        }
+    }
 
 </style>
 

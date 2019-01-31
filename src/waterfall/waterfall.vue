@@ -28,62 +28,69 @@
                 required: true,
             }
         },
-        mounted() {
-
-            //总宽度
-            let wrapperWidth = this.$refs.waterfallWrapper.getBoundingClientRect().width;
-            console.log('wrapperWidth', wrapperWidth);
-
-            //总列数
-            let columns = parseInt(wrapperWidth / this.imgWidth, 10);
-            console.log('columns', columns);
-
-            let marginBottom = (wrapperWidth-columns*this.imgWidth)/(columns+1)
-
-            let wrapperBlockWith=wrapperWidth / columns
-            this.$refs.singleBlock.forEach((block) => {
-                block.style.width = wrapperBlockWith+ 'px';
-                block.children[0].style.width = this.imgWidth + 'px';
-                block.children[0].style.height = this.imgHeight + 'px';
-                block.children[1].style.width = this.imgWidth + 'px';
-            })
-
-            let arrayHeight = []
-            for (let i = 0; i < columns; i++) {
-                let height=this.$refs.singleBlock[i].getBoundingClientRect().height
-                arrayHeight.push(height);
-            }
-            console.log(arrayHeight);
-            //arrayHeight [100,150,80.74.120]
-            this.$refs.singleBlock.forEach((block, index) => {
-                let minId = 0;
-                let minHeight = arrayHeight[0];
-                for (let i = 0; i < arrayHeight.length; i++) {
-                    if (arrayHeight[i] < minHeight) {
-                        minHeight = arrayHeight[i];
-                        minId = i;
-                    }
-                }
-                // console.log('------------分割线-------------' + index);
-                // console.log('minId',minId);
-                // console.log('minHeight',minHeight);
-
-                if (index < columns) {
-                    block.style.left = index * wrapperBlockWith+ 'px'
-                    block.style.top = '0px'
-                    block.style.marginBottom= marginBottom+'px';
-                } else {
-                    block.style.left = minId * wrapperBlockWith + 'px'
-                    block.style.top = minHeight + 'px'
-                    arrayHeight[minId] = arrayHeight[minId] + block.getBoundingClientRect().height
-                }
-
-
-            })
-
-
+        data(){
+          return{
+              wrapperWidth:null,//总宽度
+              columns:null,//列数
+              paddingBottom:null,//每个block的padding
+              wrapperBlockWith:null,//每个block的宽度
+          }
         },
-        methods: {}
+        mounted() {
+            this.doWaterfall()
+            
+        },
+        methods: {
+
+            doWaterfall(){
+                //总宽度
+                this.wrapperWidth = this.$refs.waterfallWrapper.getBoundingClientRect().width;
+
+                //总列数
+                this.columns = parseInt(this.wrapperWidth / this.imgWidth, 10);
+
+                //每个block的padding-bottom
+                this.paddingBottom = (this.wrapperWidth-this.columns*this.imgWidth)/(this.columns+1)
+
+                //每个block的宽度
+                this.wrapperBlockWith=this.wrapperWidth / this.columns;
+
+                this.$refs.singleBlock.forEach((block) => {
+                    block.style.paddingBottom=this.paddingBottom+'px';
+                    block.style.width = this.wrapperBlockWith+ 'px';
+                    block.children[0].style.width = this.imgWidth + 'px';
+                    block.children[0].style.height = this.imgHeight + 'px';
+                    block.children[1].style.width = this.imgWidth + 'px';
+                })
+
+                let arrayHeight = []
+                for (let i = 0; i < this.columns; i++) {
+                    let height=this.$refs.singleBlock[i].getBoundingClientRect().height
+                    arrayHeight.push(height);
+                }
+
+                this.$refs.singleBlock.forEach((block, index) => {
+                    let minId = 0;
+                    let minHeight = arrayHeight[0];
+                    for (let i = 0; i < arrayHeight.length; i++) {
+                        if (arrayHeight[i] < minHeight) {
+                            minHeight = arrayHeight[i];
+                            minId = i;
+                        }
+                    }
+                    if (index < this.columns) {
+                        block.style.left = index * this.wrapperBlockWith+ 'px';
+                        block.style.top = '0px'
+                    } else {
+                        block.style.left = minId * this.wrapperBlockWith + 'px';
+                        block.style.top = minHeight + 'px';
+                        arrayHeight[minId] = arrayHeight[minId] + block.getBoundingClientRect().height
+                    }
+
+
+                })
+            }
+        }
     }
 </script>
 
