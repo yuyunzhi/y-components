@@ -49,7 +49,6 @@
         methods:{
             onClick(){
                 if(this.disabled){return}
-
                 this.eventBus.$emit('update:selected',this.name,this);
                 this.$emit('click',this)
             }
