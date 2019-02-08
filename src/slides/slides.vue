@@ -39,7 +39,7 @@
                 type: Boolean,
                 default: true
             },
-            autoPlayDelay:{
+            autoPlayDelay: {
                 type: Number,
                 default: 2000
             }
@@ -112,10 +112,10 @@
                 })
             },
             onClickPrev() {
-                    this.select(this.selectedIndex - 1)
+                this.select(this.selectedIndex - 1)
             },
             onClickNext() {
-                    this.select(this.selectedIndex + 1)
+                this.select(this.selectedIndex + 1)
 
             },
             playAutomatically() {
@@ -178,8 +178,8 @@
 
 <style lang="scss" scoped>
     .y-slides {
-        .icon{
-            fill:white;
+        .icon {
+            fill: white;
         }
         &-window {
             overflow: hidden;
@@ -198,16 +198,16 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                background:  #40a9ff ;
+                background: #40a9ff;
                 border-radius: 50%;
                 margin: 0 8px;
                 font-size: 12px;
-                color:white;
+                color: white;
                 &:hover {
                     cursor: pointer;
                 }
                 &.active {
-                    background: rgb(253,208,0);
+                    background: rgb(253, 208, 0);
                     color: white;
                     &:hover {
                         cursor: default;
