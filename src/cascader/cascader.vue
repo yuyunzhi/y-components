@@ -27,7 +27,8 @@
                 type: Array
             },
             popoverHeight: {
-                type: String
+                type: String,
+                required:true
             },
             selected: {
                 type: Array,
@@ -104,6 +105,9 @@
                 }
             }
         },
+        mounted(){
+            console.log(this.source);
+        },
         computed: {
             result () {
                 return this.selected.map((item) => item.name).join('/')
@@ -130,7 +134,7 @@
         }
         .popover-wrapper {
             position: absolute; top: 100%; left: 0; background: white; display: flex;
-            margin-top: 8px;z-index: 1;
+            margin-top: 8px;z-index: 10;
             .box-shadow {
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
             }

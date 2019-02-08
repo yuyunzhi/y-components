@@ -13,6 +13,7 @@
         </span>
             </div>
         </div>
+
         <div class="right" v-if="rightItems">
             <y-cascader-items ref="right" :items="rightItems" :height="height"
                                  :loading-item="loadingItem"
@@ -68,6 +69,8 @@
                 let copy = JSON.parse(JSON.stringify(this.selected))
                 copy[this.level] = item
                 copy.splice(this.level + 1) // 一句话
+                console.log('copy');
+                console.log(copy);
                 this.$emit('update:selected', copy)
             },
             onUpdateSelected (newSelected) {

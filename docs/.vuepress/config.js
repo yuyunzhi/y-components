@@ -18,6 +18,7 @@ module.exports = {
                     '/components/tabs',
                     '/components/grid',
                     '/components/layout',
+                    '/components/waterfall',
                     '/components/toast',
                     '/components/collapse',
                     '/components/pager',
@@ -27,6 +28,7 @@ module.exports = {
                     '/components/slides',
                     '/components/uploader',
                     '/components/popover',
+                    '/components/cascader',
                 ]
             }
 
