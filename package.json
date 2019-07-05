@@ -12,7 +12,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
