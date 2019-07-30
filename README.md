@@ -49,6 +49,7 @@ npm run serve
 - 微信:Lambert1129 
 - 官网:[点击此处跳转](https://www.yuyunzhi.com)
 - Github:[点击此处跳转](https://github.com/yuyunzhi)
+- 电子邮箱:635429583@qq.com
 
 
 ## License
